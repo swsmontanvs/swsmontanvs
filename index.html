@@ -92,7 +92,7 @@
     const zoomSpeed = 0.0001; // zoom mértéke (nagyon kicsi!)
 
     const translate = -scrollY * speed;
-    const scale = 1 - scrollY * zoomSpeed;
+    const scale = 1 + scrollY * zoomSpeed;
 
     bg.style.transform = `translateY(${translate}px) scale(${scale})`;
   });
