@@ -1,10 +1,13 @@
+/* ALAP RESET */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  overflow-x: hidden; /* EZ SZEDI KI A VÍZSZINTES CSÚSZKÁT */
 }
 
-/* HERO SZEKCIÓ */
+/* HERO KÉP */
 .hero {
+  width: 100%;
   height: 100vh;
 
   background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb')
@@ -12,7 +15,7 @@ body {
   background-size: cover;
 }
 
-/* SÖTÉT OVERLAY */
+/* SÖTÉT RÉTEG */
 .overlay {
   position: fixed;
   top: 0;
@@ -20,16 +23,23 @@ body {
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.5);
+  z-index: 1;
 }
 
 /* TARTALOM */
 .content {
   width: 100%;
+  box-sizing: border-box; /* EZ IS FONTOS! */
+
   padding: 80px 40px;
 
   background: rgba(255,255,255,0.9);
 
   box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+
+  margin-top: -150px; /* LEBEGÉS */
+  position: relative;
+  z-index: 2;
 }
 
 /* CÍM */
