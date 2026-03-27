@@ -85,16 +85,26 @@
 <script>
   const bg = document.querySelector(".hero-bg");
 
+  let ticking = false;
+
   window.addEventListener("scroll", () => {
-    const scrollY = window.scrollY;
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
 
-    const speed = 0.25;     // függőleges mozgás
-    const zoomSpeed = 0.00008; // zoom mértéke (nagyon kicsi!)
+        const speed = 0.25;
+        const zoomSpeed = 0.00008;
 
-    const translate = -scrollY * speed;
-    const scale = 1 + scrollY * zoomSpeed;
+        const translate = -scrollY * speed;
+        const scale = 1 + scrollY * zoomSpeed;
 
-    bg.style.transform = `translateY(${translate}px) scale(${scale})`;
+        bg.style.transform = `translateY(${translate}px) scale(${scale})`;
+
+        ticking = false;
+      });
+
+      ticking = true;
+    }
   });
 </script>
 
