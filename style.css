@@ -84,5 +84,5 @@ body {
   );
 
   pointer-events: none;
-  z-index: 2; /* 👈 EZ A KULCS */
+  z-index: 3; /* 👈 EZ A KULCS */
 }
