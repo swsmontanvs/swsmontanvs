@@ -1,29 +1,38 @@
 body {
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: Georgia, serif;
   background-color: #0b0b0b;
   color: white;
-  letter-spacing: 0.5px;
 }
 
-/* HERO */
-.hero {
+/* 🔥 FIXED HÁTTÉR (külön réteg) */
+.hero-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100vh;
-  position: relative;
-  z-index: 1;
 
   background-image: url("hegy.png");
   background-size: cover;
   background-position: 50% 20%;
-  background-attachment: fixed;
+
+  z-index: 0;
 }
 
-/* SÖTÉT OVERLAY */
-.hero::before {
-  content: "";
+/* HERO (csak térkitöltő + szöveg) */
+.hero {
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+/* SZÖVEG */
+.hero-text {
   position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -30%);
 }
 
 /* ALSÓ FADE */
@@ -36,47 +45,13 @@ body {
   background: linear-gradient(to bottom, transparent, #0b0b0b);
 }
 
-/* SZÖVEG */
-.hero-text {
-  position: absolute;
-  bottom: 120px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  z-index: 2;
-}
-
-.hero-text h1 {
-  font-size: 42px;
-  letter-spacing: 2px;
-  margin: 0;
-}
-
-.hero-text p {
-  margin-top: 10px;
-  opacity: 0.8;
-  font-size: 14px;
-}
-
-/* CONTENT – RÁÚSZÁS */
+/* CONTENT – EZ MOZOG */
 .content {
   position: relative;
   z-index: 2;
 
   margin-top: -140px;
   background: #0b0b0b;
-
-  padding: 120px 20px 80px;
+  padding: 80px 20px;
   text-align: center;
-}
-
-/* FELSŐ ÁRNYÉK */
-.content::before {
-  content: "";
-  position: absolute;
-  top: -40px;
-  left: 0;
-  width: 100%;
-  height: 40px;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
 }
