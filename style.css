@@ -4,7 +4,7 @@ body {
   overflow-x: hidden;
 }
 
-/* HERO (felső kép) */
+/* HERO */
 .hero {
   width: 100%;
   height: 100vh;
@@ -14,17 +14,19 @@ body {
   background-size: cover;
 }
 
-/* CONTENT – MOST TISZTA FEHÉR */
+/* CONTENT */
 .content {
   width: 100%;
   box-sizing: border-box;
   padding: 80px 40px;
 
-  background: white; /* <-- EZ A LÉNYEG */
+  background: white;
 
-  margin-top: -120px;
+  /* 🔥 EZ A TRÜKK */
   position: relative;
-  z-index: 2;
+  top: -120px;
+
+  z-index: 10;
 
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
