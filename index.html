@@ -84,6 +84,7 @@
 
 <script>
   const bg = document.querySelector(".hero-bg");
+  const content = document.querySelector(".content");
 
   let ticking = false;
 
@@ -94,11 +95,19 @@
 
         const speed = 0.25;
         const zoomSpeed = 0.00008;
+        const blurSpeed = 0.003;
+        const contentSpeed = 0.85;
 
         const translate = -scrollY * speed;
         const scale = 1 + scrollY * zoomSpeed;
+        const blur = scrollY * blurSpeed;
+
+        const contentTranslate = scrollY * (1 - contentSpeed);
 
         bg.style.transform = `translateY(${translate}px) scale(${scale})`;
+        bg.style.filter = `blur(${blur}px)`;
+
+        content.style.transform = `translateY(${contentTranslate}px)`;
 
         ticking = false;
       });
