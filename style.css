@@ -54,4 +54,6 @@ body {
   background: #0b0b0b;
   padding: 80px 20px;
   text-align: center;
+
+  will-change: transform; /* 👈 IDE */
 }
