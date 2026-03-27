@@ -93,14 +93,15 @@
       window.requestAnimationFrame(() => {
         const scrollY = window.scrollY;
 
-        const speed = 0.25;
-        const zoomSpeed = 0.00008;
-        const blurSpeed = 0.003;
+        const speed = 0.2;
+        const zoomSpeed = 0.00005;
+        const blurSpeed = 0.002;
         const contentSpeed = 0.85;
 
         const translate = -scrollY * speed;
         const scale = 1 + scrollY * zoomSpeed;
-        const blur = scrollY * blurSpeed;
+
+        const blur = Math.min(scrollY * blurSpeed, 3);
 
         const contentTranslate = scrollY * (1 - contentSpeed);
 
