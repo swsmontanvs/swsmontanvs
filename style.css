@@ -5,14 +5,14 @@ body {
   color: white;
 }
 
-/* HERO KÉP */
+/* HERO */
 .hero {
   position: relative;
   height: 100vh;
-  background: url("hegy.png") center/cover no-repeat;
+  background: url("hegy.png") center top / cover no-repeat;
 }
 
-/* SÖTÉTÍTÉS (hogy ne vakítson) */
+/* SÖTÉTÍTÉS */
 .overlay {
   position: absolute;
   width: 100%;
@@ -20,7 +20,7 @@ body {
   background: rgba(0, 0, 0, 0.55);
 }
 
-/* SZÖVEG */
+/* HERO SZÖVEG */
 .hero-text {
   position: absolute;
   top: 50%;
@@ -37,4 +37,23 @@ body {
 .hero-text p {
   font-size: 16px;
   opacity: 0.8;
+}
+
+/* ALSÓ ÁTMENET (cinematic hatás) */
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(to bottom, transparent, #0b0b0b);
+}
+
+/* CONTENT – EZ CSÚSZIK RÁ A KÉPRE */
+.content {
+  position: relative;
+  margin-top: -120px;
+  background: #0b0b0b;
+  padding: 60px 20px;
+  text-align: center;
 }
