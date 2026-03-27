@@ -5,12 +5,13 @@ body {
   color: white;
 }
 
+/* HÁTTÉR */
 .hero-bg {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 120vh; /* fontos: nagyobb legyen! */
+  height: 120vh;
 
   background-image: url("hegy.png");
   background-size: cover;
@@ -20,24 +21,28 @@ body {
   will-change: transform;
 }
 
-/* HERO (csak térkitöltő + szöveg) */
+/* HERO */
 .hero {
   height: 100vh;
   position: relative;
   z-index: 1;
 }
 
-/* SZÖVEG – KÖZÉPRE IGAZÍTVA */
+/* SZÖVEG – VÍZSZINTES KÖZÉP */
 .hero-text {
   position: absolute;
-  top: 50%;
+  top: 75%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
+
   text-align: center;
   z-index: 2;
+
+  width: 100%;
+  max-width: 900px;
 }
 
-/* CÍM FINOMHANGOLÁS */
+/* CÍM */
 .hero-text h1 {
   margin-bottom: 10px;
 }
@@ -46,24 +51,15 @@ body {
 .hero-text p {
   opacity: 0.8;
   font-size: 14px;
+  margin-top: 10px;
 }
 
-/* ALSÓ FADE */
-.hero::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 220px;
-  background: linear-gradient(to bottom, transparent, #0b0b0b);
-}
-
-/* CONTENT – EZ MOZOG */
+/* CONTENT */
 .content {
   position: relative;
   z-index: 2;
 
-  margin-top: 0px;
+  margin-top: 0;
   background: #0b0b0b;
   padding: 80px 20px;
   text-align: center;
