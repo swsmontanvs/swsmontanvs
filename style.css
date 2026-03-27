@@ -9,7 +9,7 @@ body {
 .hero {
   position: relative;
   height: 100vh;
-  background: url("assets/hegy.jpg") center/cover no-repeat;
+  background: url("assets/hegy.png") center/cover no-repeat;
 }
 
 /* SÖTÉTÍTÉS (hogy ne vakítson) */
