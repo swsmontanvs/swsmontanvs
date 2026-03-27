@@ -1,8 +1,14 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+}
 
-  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb') no-repeat center center fixed;
+/* HERO külön blokk */
+.hero {
+  height: 100vh;
+
+  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb')
+              no-repeat center center;
   background-size: cover;
 }
 
