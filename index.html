@@ -82,5 +82,18 @@
 
 </section>
 
+  <script>
+  const bg = document.querySelector(".hero-bg");
+
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+
+    // Parallax erősség (állítható!)
+    const speed = 0.3;
+
+    bg.style.transform = `translateY(${scrollY * speed}px)`;
+  });
+</script>
+
 </body>
 </html>
