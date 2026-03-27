@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: Playfair Display;
+  font-family: 'Playfair Display', serif;
   overflow-x: hidden;
 }
 
@@ -19,17 +19,21 @@ body {
   width: 100%;
   box-sizing: border-box;
   padding: 80px 40px;
-  text-align: center;
 
   background: white;
 
-  /* 🔥 EZ A TRÜKK */
   position: relative;
   top: -120px;
-
   z-index: 10;
 
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+
+  text-align: center;
+}
+
+/* SZÖVEG KÖZÉPRE */
+h1, p {
+  text-align: center;
 }
 
 h1 {
