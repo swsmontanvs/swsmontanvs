@@ -27,12 +27,25 @@ body {
   z-index: 1;
 }
 
-/* SZÖVEG */
+/* SZÖVEG – KÖZÉPRE IGAZÍTVA */
 .hero-text {
   position: absolute;
-  top: 75%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, -30%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+}
+
+/* CÍM FINOMHANGOLÁS */
+.hero-text h1 {
+  margin-bottom: 10px;
+}
+
+/* ALÁSZÖVEG */
+.hero-text p {
+  opacity: 0.8;
+  font-size: 14px;
 }
 
 /* ALSÓ FADE */
@@ -55,5 +68,5 @@ body {
   padding: 80px 20px;
   text-align: center;
 
-  will-change: transform; /* 👈 IDE */
+  will-change: transform;
 }
