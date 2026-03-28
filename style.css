@@ -136,36 +136,28 @@ body {
   width: 220px;
   height: auto;
 
-  opacity: 0.9;
+  opacity: 0.95;
 
-.corner-logo {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-
-  width: 220px;
-  height: auto;
-
-  opacity: 0.9;
-
-  z-index: 5;
+  z-index: 9999; /* 🔥 EZ A KULCS – mindig felül lesz */
 
   pointer-events: auto;
 
   transform-origin: bottom right;
 
-  filter: drop-shadow(0 0 14px rgba(255, 120, 60, 0.7));
+  /* 🔥 VISSZAHOZOTT ERŐS GLOW */
+  filter: drop-shadow(0 0 16px rgba(255, 120, 60, 0.8));
 
-  transition: transform 0.8s ease-out,
-              filter 0.5s ease,
-              opacity 0.4s ease;
+  /* 🔥 FINOM, LASSÚ MOZGÁS */
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              filter 0.4s ease,
+              opacity 0.3s ease;
 }
 
-/* 🔥 FINOM, NEM TÁMADÓ NAGYÍTÁS */
+/* 🔥 HOVER – FINOM, NEM TARANTELLA */
 .corner-logo:hover {
-  transform: scale(2.2);
+  transform: scale(2.1);
 
-  filter: drop-shadow(0 0 28px rgba(255, 140, 80, 0.95));
+  filter: drop-shadow(0 0 30px rgba(255, 140, 80, 0.95));
 
   opacity: 1;
 }
