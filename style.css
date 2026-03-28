@@ -129,7 +129,7 @@ body {
 
   opacity: 0.95;
 
-  filter: drop-shadow(2px 6px 12px rgba(0,0,0,0.5));
+  filter: drop-shadow(3px 8px 16px rgba(0,0,0,0.55));
 
   transition: transform 0.3s cubic-bezier(0.22, 1.6, 0.36, 1),
               filter 0.3s ease,
