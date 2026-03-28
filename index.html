@@ -91,6 +91,7 @@
 <script>
   const bg = document.querySelector(".hero-bg");
   const content = document.querySelector(".content");
+  const homeLink = document.querySelector(".home-link"); // 👈 HOZZÁADVA
 
   let ticking = false;
 
@@ -115,6 +116,13 @@
         bg.style.filter = `blur(${blur}px)`;
 
         content.style.transform = `translateY(${contentTranslate}px)`;
+
+        // 🔥 HOMELINK SHRINK LOGIKA (HOZZÁADVA)
+        if (scrollY > 150) {
+          homeLink.classList.add("shrink");
+        } else {
+          homeLink.classList.remove("shrink");
+        }
 
         ticking = false;
       });
