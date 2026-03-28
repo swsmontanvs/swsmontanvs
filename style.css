@@ -89,10 +89,12 @@ body {
 .lang-switcher {
   position: fixed;
   top: 30px;
-  right: 120px; /* nem a sarokban */
+  right: 120px; /* dupláztuk */
 
   display: flex;
-  gap: 10px;
+  gap: 40px; /* dupláztuk */
+
+  align-items: center;
 
   z-index: 10;
 }
