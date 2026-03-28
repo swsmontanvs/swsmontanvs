@@ -99,9 +99,9 @@
 
         // 🔥 HOMELINK SMOOTH SHRINK
 
-        const heroHeight = hero.offsetHeight;
+        const scrollRange = hero.offsetHeight + 300;
 
-        let progress = Math.min(scrollY / heroHeight, 1);
+        let progress = Math.min(scrollY / scrollRange, 1);
 
         // késleltetett indulás
         progress = Math.max((progress - 0.75) / 0.25, 0);
