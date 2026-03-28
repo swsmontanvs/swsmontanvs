@@ -106,13 +106,12 @@ body {
   z-index: 10;
 
   transform-origin: top left;
-  transition: none; /* JS irányít */
+  transition: none;
 }
 
 .home-link img {
   width: 250px;
   height: auto;
-
   opacity: 0.95;
 
   filter: drop-shadow(0 0 8px rgba(255, 120, 60, 0.7));
@@ -125,6 +124,25 @@ body {
 .home-link img:hover {
   opacity: 1;
   transform: scale(1.1);
-
   filter: drop-shadow(0 0 16px rgba(255, 140, 80, 0.8));
+}
+
+/* 🔥 JOBB ALSÓ LOGÓ */
+.corner-logo {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+
+  width: 140px;
+  height: auto;
+
+  opacity: 0.9;
+
+  z-index: 5;
+
+  pointer-events: none;
+
+  filter: drop-shadow(0 0 12px rgba(255, 120, 60, 0.6));
+
+  transition: transform 0.4s ease, opacity 0.3s ease;
 }
