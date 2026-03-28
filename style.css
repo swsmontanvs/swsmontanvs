@@ -133,7 +133,7 @@ body {
   bottom: 30px;
   right: 30px;
 
-  width: 140px;
+  width: 220px;
   height: auto;
 
   opacity: 0.9;
@@ -142,7 +142,7 @@ body {
 
   pointer-events: none;
 
-  filter: drop-shadow(0 0 12px rgba(255, 120, 60, 0.6));
+  filter: drop-shadow(0 0 14px rgba(255, 120, 60, 0.7));
 
   transition: transform 0.4s ease, opacity 0.3s ease;
 }
