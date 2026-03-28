@@ -118,11 +118,23 @@
         content.style.transform = `translateY(${contentTranslate}px)`;
 
         // 🔥 HOMELINK SHRINK LOGIKA (HOZZÁADVA)
-        if (scrollY > 150) {
-          homeLink.classList.add("shrink");
-        } else {
-          homeLink.classList.remove("shrink");
-        }
+const maxScroll = window.innerHeight;
+
+let progress = Math.min(scrollY / maxScroll, 1);
+
+// késleltetett indulás
+progress = Math.max((progress - 0.4) / 0.6, 0);
+
+// scale
+const scale = 1 - (progress * 0.55);
+
+// pozíció
+const top = 30 - (progress * 15);
+const left = 80 - (progress * 65);
+
+homeLink.style.transform = `scale(${scale})`;
+homeLink.style.top = `${top}px`;
+homeLink.style.left = `${left}px`;
 
         ticking = false;
       });
