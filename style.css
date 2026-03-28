@@ -146,13 +146,16 @@ body {
 }
 
 /* 🔥 SHRINK ÁLLAPOT – HOZZÁADVA */
-.home-link.shrink {
-  top: 15px;
-  left: 15px;
-}
+.home-link {
+  position: fixed;
+  top: 30px;
+  left: 80px;
 
-.home-link.shrink img {
-  transform: scale(0.45);
+  z-index: 10;
+
+  transform-origin: top left;
+
+  transition: none; /* ❗ most JS irányít */
 }
 
 /* (marad, nem nyúlok hozzá) */
