@@ -12,7 +12,6 @@
   <img src="homelink.png" alt="Montanus">
 </a>
 
-<!-- 🌍 NYELVVÁLASZTÓ -->
 <div class="lang-switcher">
   <img src="eng.png" alt="English" data-lang="en">
   <img src="hun.png" alt="Magyar" data-lang="hu">
@@ -30,41 +29,6 @@
 <section class="content">
   <h2>Welcome</h2>
   <p>This is where the journey begins...</p>
-
-  <h3>Lorem Ipsum</h3>
-
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-  <p>Duis aute irure dolor in reprehenderit.</p>
-  <p>Excepteur sint occaecat cupidatat non proident.</p>
-
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-  <p>Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
-
-  <h3>More Content</h3>
-
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-  <p>In condimentum facilisis porta.</p>
-  <p>Donec sit amet eros.</p>
-  <p>Maecenas fermentum consequat mi.</p>
-
-  <p>Duis sapien sem, aliquet nec.</p>
-  <p>Aliquam faucibus elit ut dictum aliquet.</p>
-
-  <h3>Even More</h3>
-
-  <p>Curabitur augue lorem.</p>
-  <p>Aenean magna nisl.</p>
-  <p>In hac habitasse platea dictumst.</p>
-
-  <h3>Scroll Test Zone</h3>
-
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-
 </section>
 
 <script>
@@ -97,25 +61,23 @@
 
         content.style.transform = `translateY(${contentTranslate}px)`;
 
-        // 🔥 HOMELINK SMOOTH SHRINK
+        // 🔥 HOMELINK – HOSSZABB + LÁGYABB
 
-        const scrollRange = hero.offsetHeight + 300;
+        const scrollRange = hero.offsetHeight + 600; // 🔥 MEGNÖVELVE
 
         let progress = Math.min(scrollY / scrollRange, 1);
 
-        // késleltetett indulás
-        progress = Math.max((progress - 0.75) / 0.25, 0);
+        // később indul
+        progress = Math.max((progress - 0.7) / 0.6, 0);
 
-        // 🔥 EZ AZ ÚJ RÉSZ
-        progress = 1 - Math.pow(1 - progress, 3);
-        
-        // scale
+        // 🔥 LÁGY easing (nem gyorsít a végén!)
+        progress = progress * progress;
+
         const logoScale = 1 - (progress * 0.55);
-        
-        // pozíció
+
         const top = 30 - (progress * 15);
         const left = 80 - (progress * 65);
-        
+
         homeLink.style.transform = `scale(${logoScale})`;
         homeLink.style.top = `${top}px`;
         homeLink.style.left = `${left}px`;
