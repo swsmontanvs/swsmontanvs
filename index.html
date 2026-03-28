@@ -33,110 +33,90 @@
 
   <h3>Lorem Ipsum</h3>
 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-  <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-  <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
-  <p>Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+  <p>Duis aute irure dolor in reprehenderit.</p>
+  <p>Excepteur sint occaecat cupidatat non proident.</p>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  <p>Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
 
   <h3>More Content</h3>
 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.</p>
-  <p>In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla.</p>
-  <p>Donec sit amet eros. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-  <p>Maecenas fermentum consequat mi. Donec fermentum. Pellentesque malesuada nulla a mi.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  <p>In condimentum facilisis porta.</p>
+  <p>Donec sit amet eros.</p>
+  <p>Maecenas fermentum consequat mi.</p>
 
-  <p>Duis sapien sem, aliquet nec, commodo eget, consequat quis, neque.</p>
-  <p>Aliquam faucibus, elit ut dictum aliquet, felis nisl adipiscing sapien, sed malesuada diam lacus eget erat.</p>
-  <p>Cras mollis scelerisque nunc. Nullam arcu. Aliquam consequat.</p>
+  <p>Duis sapien sem, aliquet nec.</p>
+  <p>Aliquam faucibus elit ut dictum aliquet.</p>
 
   <h3>Even More</h3>
 
-  <p>Curabitur augue lorem, dapibus quis, laoreet et, pretium ac, nisi.</p>
-  <p>Aenean magna nisl, mollis quis, molestie eu, feugiat in, orci.</p>
+  <p>Curabitur augue lorem.</p>
+  <p>Aenean magna nisl.</p>
   <p>In hac habitasse platea dictumst.</p>
-  <p>Fusce convallis, mauris imperdiet gravida bibendum, nisl turpis suscipit mauris.</p>
-
-  <p>Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.</p>
-  <p>Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.</p>
 
   <h3>Scroll Test Zone</h3>
 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
 
 </section>
 
 <script>
   const bg = document.querySelector(".hero-bg");
   const content = document.querySelector(".content");
-  const homeLink = document.querySelector(".home-link"); // 👈 HOZZÁADVA
+  const homeLink = document.querySelector(".home-link");
+  const hero = document.querySelector(".hero");
 
   let ticking = false;
 
   window.addEventListener("scroll", () => {
     if (!ticking) {
       window.requestAnimationFrame(() => {
+
         const scrollY = window.scrollY;
 
+        // 🎬 PARALLAX
         const speed = 0.2;
         const zoomSpeed = 0.00005;
         const blurSpeed = 0.002;
         const contentSpeed = 0.85;
 
         const translate = -scrollY * speed;
-        const scale = 1 + scrollY * zoomSpeed;
-
+        const bgScale = 1 + scrollY * zoomSpeed;
         const blur = Math.min(scrollY * blurSpeed, 3);
-
         const contentTranslate = scrollY * (1 - contentSpeed);
 
-        bg.style.transform = `translateY(${translate}px) scale(${scale})`;
+        bg.style.transform = `translateY(${translate}px) scale(${bgScale})`;
         bg.style.filter = `blur(${blur}px)`;
 
         content.style.transform = `translateY(${contentTranslate}px)`;
 
-        // 🔥 HOMELINK SHRINK LOGIKA (HOZZÁADVA)
-const maxScroll = window.innerHeight;
+        // 🔥 HOMELINK SMOOTH SHRINK
 
-let progress = Math.min(scrollY / maxScroll, 1);
+        const heroHeight = hero.offsetHeight;
 
-// késleltetett indulás
-progress = Math.max((progress - 0.4) / 0.6, 0);
+        let progress = Math.min(scrollY / heroHeight, 1);
 
-// scale
-const scale = 1 - (progress * 0.55);
+        // késleltetett indulás
+        progress = Math.max((progress - 0.6) / 0.4, 0);
 
-// pozíció
-const top = 30 - (progress * 15);
-const left = 80 - (progress * 65);
+        const logoScale = 1 - (progress * 0.55);
 
-homeLink.style.transform = `scale(${scale})`;
-homeLink.style.top = `${top}px`;
-homeLink.style.left = `${left}px`;
+        const top = 30 - (progress * 15);
+        const left = 80 - (progress * 65);
+
+        homeLink.style.transform = `scale(${logoScale})`;
+        homeLink.style.top = `${top}px`;
+        homeLink.style.left = `${left}px`;
 
         ticking = false;
+
       });
 
       ticking = true;
