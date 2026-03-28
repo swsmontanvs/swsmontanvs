@@ -124,16 +124,18 @@ body {
 }
 
 .home-link img {
-  width: 240px;
+  width: 140px;
   height: auto;
 
   opacity: 0.9;
-  transition: 0.25s ease;
+
+  transition: transform 0.3s cubic-bezier(0.22, 1.6, 0.36, 1),
+              opacity 0.2s ease;
 }
 
 .home-link img:hover {
   opacity: 1;
-  animation: pulseZoom 0.4s ease;
+  transform: scale(1.1);
 }
 
 @keyframes pulseZoom {
