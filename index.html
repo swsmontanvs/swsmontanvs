@@ -107,7 +107,7 @@
         progress = Math.max((progress - 0.75) / 0.25, 0);
 
         // 🔥 EZ AZ ÚJ RÉSZ
-        progress = progress * progress;
+        progress = 1 - Math.pow(1 - progress, 3);
         
         // scale
         const logoScale = 1 - (progress * 0.55);
