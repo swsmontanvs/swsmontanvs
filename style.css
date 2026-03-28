@@ -133,5 +133,17 @@ body {
 
 .home-link img:hover {
   opacity: 1;
-  transform: translateY(-2px);
+  animation: pulseZoom 0.4s ease;
+}
+
+@keyframes pulseZoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.12);
+  }
+  100% {
+    transform: scale(1.08);
+  }
 }
