@@ -29,6 +29,57 @@
 <section class="content">
   <h2>Welcome</h2>
   <p>This is where the journey begins...</p>
+
+  <h3>Lorem Ipsum</h3>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+  <p>Duis aute irure dolor in reprehenderit.</p>
+  <p>Excepteur sint occaecat cupidatat non proident.</p>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  <p>Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
+
+  <h3>More Content</h3>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  <p>In condimentum facilisis porta.</p>
+  <p>Donec sit amet eros.</p>
+  <p>Maecenas fermentum consequat mi.</p>
+
+  <p>Duis sapien sem, aliquet nec.</p>
+  <p>Aliquam faucibus elit ut dictum aliquet.</p>
+
+  <h3>Even More</h3>
+
+  <p>Curabitur augue lorem.</p>
+  <p>Aenean magna nisl.</p>
+  <p>In hac habitasse platea dictumst.</p>
+
+  <h3>Scroll Test Zone</h3>
+
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+
 </section>
 
 <script>
@@ -45,7 +96,7 @@
 
         const scrollY = window.scrollY;
 
-        // 🎬 PARALLAX
+        // PARALLAX
         const speed = 0.2;
         const zoomSpeed = 0.00005;
         const blurSpeed = 0.002;
@@ -58,20 +109,18 @@
 
         bg.style.transform = `translateY(${translate}px) scale(${bgScale})`;
         bg.style.filter = `blur(${blur}px)`;
-
         content.style.transform = `translateY(${contentTranslate}px)`;
 
-        // 🔥 HOMELINK – HOSSZABB + LÁGYABB
+        // 🔥 HOMELINK – HOSSZÚ, EGYENLETES MOZGÁS
 
-        const scrollRange = hero.offsetHeight + 1200; // 🔥 MEGNÖVELVE
+        const scrollRange = hero.offsetHeight + 1200;
 
         let progress = Math.min(scrollY / scrollRange, 1);
 
-        // később indul
+        // később indul, hosszú szakaszon mozog
         progress = Math.max((progress - 0.6) / 0.8, 0);
 
-        // 🔥 LÁGY easing (nem gyorsít a végén!)
-        //progress = progress * progress;
+        // NINCS easing → lineáris, egyenletes
 
         const logoScale = 1 - (progress * 0.55);
 
