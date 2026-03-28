@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="hu">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Official website of S.W.S. Montanus – author of Areanis.">
   <title>S.W.S. Montanus</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -133,19 +135,14 @@
         bg.style.filter = `blur(${blur}px)`;
         content.style.transform = `translateY(${contentTranslate}px)`;
 
-        // 🔥 HOMELINK – HOSSZÚ, EGYENLETES MOZGÁS
+        // HOMELINK MOZGÁS
 
         const scrollRange = hero.offsetHeight + 1200;
 
         let progress = Math.min(scrollY / scrollRange, 1);
-
-        // később indul, hosszú szakaszon mozog
         progress = Math.max((progress - 0.25) / 0.75, 0);
 
-        // NINCS easing → lineáris, egyenletes
-
         const logoScale = 1 - (progress * 0.55);
-
         const top = 30 - (progress * 15);
         const left = 80 - (progress * 65);
 
