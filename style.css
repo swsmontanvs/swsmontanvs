@@ -89,10 +89,10 @@ body {
 .lang-switcher {
   position: fixed;
   top: 30px;
-  right: 160px; /* dupláztuk */
+  right: 160px;
 
   display: flex;
-  gap: 30px; /* dupláztuk */
+  gap: 30px;
 
   align-items: center;
 
@@ -121,6 +121,8 @@ body {
   left: 80px;
 
   z-index: 10;
+
+  transition: top 0.3s ease, left 0.3s ease;
 }
 
 .home-link img {
@@ -143,6 +145,17 @@ body {
   filter: drop-shadow(0 0 16px rgba(255, 140, 80, 0.8));
 }
 
+/* 🔥 SHRINK ÁLLAPOT – HOZZÁADVA */
+.home-link.shrink {
+  top: 15px;
+  left: 15px;
+}
+
+.home-link.shrink img {
+  transform: scale(0.45);
+}
+
+/* (marad, nem nyúlok hozzá) */
 @keyframes pulseZoom {
   0% {
     transform: scale(1);
