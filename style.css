@@ -199,6 +199,52 @@ body {
   opacity: 1;
 }
 
+/* 🔥 SCROLL TO TOP */
+
+.scroll-top {
+  position: fixed;
+  bottom: 260px; /* pecsét fölé */
+  right: 40px;
+
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 26px;
+  text-decoration: none;
+
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+
+  border-radius: 50%;
+
+  z-index: 9999;
+
+  backdrop-filter: blur(4px);
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.4s ease,
+              transform 0.3s ease,
+              background 0.3s ease;
+}
+
+/* megjelenés */
+.scroll-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* hover */
+.scroll-top:hover {
+  transform: scale(1.2);
+  background: rgba(255, 140, 60, 0.3);
+}
+
 
 
 
