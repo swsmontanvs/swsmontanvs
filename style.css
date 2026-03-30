@@ -122,27 +122,30 @@ body {
 }
 
 
-/* 🔥 MENÜ */
+/* 🔥 MENÜ – AREANIS */
+
 .main-menu {
   position: fixed;
-  top: 38px;
-  left: 360px;
-  z-index: 10;
+  top: 90px;
+  right: 120px;
+  left: auto;
+  z-index: 1000;
 }
 
-/* 🎯 AREANIS LOGÓ */
 .menu-areanis {
   height: 55px;
+  display: block;
+
   opacity: 0.95;
 
-  transition: transform 0.4s cubic-bezier(0.22,1,0.36,1),
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
               filter 0.3s ease,
               opacity 0.3s ease;
 }
 
 .menu-areanis:hover {
   transform: scale(1.12);
-  filter: drop-shadow(0 0 12px rgba(255,140,60,0.8));
+  filter: drop-shadow(0 0 12px rgba(255, 140, 60, 0.8));
   opacity: 1;
 }
 
