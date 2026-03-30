@@ -126,6 +126,7 @@ const content = document.querySelector(".content");
 const homeLink = document.querySelector(".home-link");
 const hero = document.querySelector(".hero");
 const scrollTopBtn = document.getElementById("scrollTopBtn");
+const cornerLogo = document.querySelector(".corner-logo");
 
 let ticking = false;
 
@@ -151,28 +152,25 @@ window.addEventListener("scroll", () => {
       content.style.transform = `translateY(${contentTranslate}px)`;
 
       // 🔥 LOGO VISELKEDÉS
-if (window.innerWidth <= 768) {
+      if (window.innerWidth <= 768) {
 
-  const scrollRange = hero.offsetHeight;
-  let progress = Math.min(scrollY / scrollRange, 1);
+        // 📱 MOBIL
+        const scrollRange = hero.offsetHeight;
+        let progress = Math.min(scrollY / scrollRange, 1);
 
-  // 🔥 finom indulás (ne azonnal ugorjon)
-  progress = Math.max((progress - 0.05) / 0.95, 0);
+        progress = Math.max((progress - 0.05) / 0.95, 0);
 
-const scale = 1 - (progress * 0.35);   // kicsit nagyobb marad
-const leftPx = 15 + (1 - progress) * (window.innerWidth / 2 - 15);
-const topPos = 80 - (progress * 60);
+        const scale = 1 - (progress * 0.35);
+        const leftPx = 15 + (1 - progress) * (window.innerWidth / 2 - 15);
+        const topPos = 80 - (progress * 60);
 
-// indul középről → szépen balra csúszik pixelben
-homeLink.style.left = `${leftPx}px`;
-homeLink.style.top = `${topPos}px`;
-homeLink.style.transform = `scale(${scale})`;
-
-}
+        homeLink.style.left = `${leftPx}px`;
+        homeLink.style.top = `${topPos}px`;
+        homeLink.style.transform = `scale(${scale})`;
 
       } else {
 
-        // 💻 DESKTOP – animált
+        // 💻 DESKTOP
         const scrollRange = hero.offsetHeight + 1200;
 
         let progress = Math.min(scrollY / scrollRange, 1);
@@ -181,10 +179,9 @@ homeLink.style.transform = `scale(${scale})`;
         const logoScale = 1 - (progress * 0.55);
         const topPos = 30 - (progress * 15);
 
-// 💻 DESKTOP – bal oldalra igazítva
-homeLink.style.transform = `scale(${logoScale})`;
-homeLink.style.left = `${Math.max(15, 80 - (progress * 65))}px`;
-homeLink.style.top = `${topPos}px`;
+        homeLink.style.transform = `scale(${logoScale})`;
+        homeLink.style.left = `${Math.max(15, 80 - (progress * 65))}px`;
+        homeLink.style.top = `${topPos}px`;
       }
 
       // 🔥 SCROLL BUTTON
@@ -202,12 +199,10 @@ homeLink.style.top = `${topPos}px`;
   }
 });
 
-  const cornerLogo = document.querySelector(".corner-logo");
-
+// 🔥 PECSÉT KATTINTÁS
 cornerLogo.addEventListener("click", () => {
   cornerLogo.classList.toggle("active");
 });
-  
 </script>
 
 </body>
