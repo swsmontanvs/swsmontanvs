@@ -162,22 +162,16 @@ window.addEventListener("scroll", () => {
       // 🔥 LOGO VISELKEDÉS
       if (window.innerWidth <= 768) {
 
-        // 📱 MOBIL – stabil, nincs ugrás
         const scrollRange = hero.offsetHeight;
         let progress = Math.min(scrollY / scrollRange, 1);
-
-        // 🔥 késleltetett indulás (hero alatt indul)
         progress = Math.max((progress - 0.7) / 0.35, 0);
 
-        // 🔥 méret (nem zsugorodik túl kicsire)
         const scale = 1 - (progress * 0.35);
 
-        // 🔥 függőleges pozíció – NINCS ZÖTTYENÉS
         const startTop = 80;
         const endTop = 25;
         const topPos = startTop - (progress * (startTop - endTop));
 
-        // 🔥 vízszintes mozgás – NINCS jobbra ugrás
         const left = 50 - (progress * 30);
 
         homeLink.style.left = `${left}%`;
@@ -186,7 +180,6 @@ window.addEventListener("scroll", () => {
 
       } else {
 
-        // 💻 DESKTOP – finomított méret
         const scrollRange = hero.offsetHeight + 1200;
 
         let progress = Math.min(scrollY / scrollRange, 1);
@@ -215,9 +208,26 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// 🔥 PECSÉT KATTINTÁS
-cornerLogo.addEventListener("click", () => {
-  cornerLogo.classList.toggle("active");
+
+// 🔥 PECSÉT – JAVÍTOTT VEZÉRLÉS
+let logoOpen = false;
+
+cornerLogo.addEventListener("click", (e) => {
+  e.stopPropagation();
+
+  logoOpen = !logoOpen;
+
+  if (logoOpen) {
+    cornerLogo.classList.add("active");
+  } else {
+    cornerLogo.classList.remove("active");
+  }
+});
+
+// 🔥 KÜLSŐ KATTINTÁS → VISSZAZÁR
+document.addEventListener("click", () => {
+  cornerLogo.classList.remove("active");
+  logoOpen = false;
 });
 </script>
 
