@@ -114,7 +114,10 @@
 
 </section>
 
-<!-- 🔥 LOGÓ – EZ AZ EGYETLEN HOZZÁADÁS -->
+<!-- 🔥 SCROLL TO TOP GOMB -->
+<a href="#" class="scroll-top" id="scrollTopBtn">↑</a>
+
+<!-- 🔥 LOGÓ -->
 <img src="logo.png" alt="Montanus Seal" class="corner-logo">
 
 <script>
@@ -131,7 +134,6 @@
 
         const scrollY = window.scrollY;
 
-        // PARALLAX
         const speed = 0.2;
         const zoomSpeed = 0.00005;
         const blurSpeed = 0.002;
@@ -146,7 +148,6 @@
         bg.style.filter = `blur(${blur}px)`;
         content.style.transform = `translateY(${contentTranslate}px)`;
 
-        // HOMELINK MOZGÁS
         const scrollRange = hero.offsetHeight + 1200;
 
         let progress = Math.min(scrollY / scrollRange, 1);
@@ -165,6 +166,16 @@
       });
 
       ticking = true;
+    }
+  });
+
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      scrollTopBtn.classList.add("visible");
+    } else {
+      scrollTopBtn.classList.remove("visible");
     }
   });
 </script>
