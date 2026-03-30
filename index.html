@@ -159,13 +159,14 @@ if (window.innerWidth <= 768) {
   // 🔥 finom indulás (ne azonnal ugorjon)
   progress = Math.max((progress - 0.05) / 0.95, 0);
 
-  const scale = 1 - (progress * 0.4);     // 1 → 0.6
-  const left = 50 - (progress * 35);      // közép → bal
-  const topPos = 80 - (progress * 60);    // lejjebb → fel
+const scale = 1 - (progress * 0.35);   // kicsit nagyobb marad
+const leftPx = 15 + (1 - progress) * (window.innerWidth / 2 - 15);
+const topPos = 80 - (progress * 60);
 
-  homeLink.style.left = `${left}%`;
-  homeLink.style.top = `${topPos}px`;
-  homeLink.style.transform = `translateX(-50%) scale(${scale})`;
+// indul középről → szépen balra csúszik pixelben
+homeLink.style.left = `${leftPx}px`;
+homeLink.style.top = `${topPos}px`;
+homeLink.style.transform = `scale(${scale})`;
 
 }
 
