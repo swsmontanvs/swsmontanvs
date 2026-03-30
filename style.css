@@ -125,12 +125,12 @@ body {
 /* 🔥 MENÜ – AREANIS */
 
 .main-menu {
-  position: fixed;
+  position: absolute;
 
-  top: 12%;      /* függőleges pozíció */
-  left: 62%;     /* EZ A KULCS */
+  top: 8%;      /* függőleges pozíció */
+  left: 70%;     /* EZ A KULCS */
 
-  transform: translateX(-50%) translateZ(0);
+  transform: translateX(-50%);
 
   z-index: 9999;
 
