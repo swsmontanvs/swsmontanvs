@@ -316,27 +316,66 @@ html {
 
   .site-footer {
     padding: 60px 20px 40px;
+    min-height: 320px;
   }
 
   .footer-top {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    display: block;
     text-align: center;
   }
 
   .footer-left {
-    text-align: center;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    text-align: left;
+    font-size: 13px;
+    opacity: 0.5;
   }
 
   .footer-right {
-    flex-direction: column;
-    gap: 10px;
-    justify-content: center;
+    position: absolute;
+    top: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 85%;
+    gap: 0;
+  }
+
+  .footer-right a {
+    font-size: 15px;
+    text-align: center;
+    flex: 1;
+  }
+
+  .footer-center {
+    position: absolute;
+    left: 50%;
+    top: 85px;
+    transform: translateX(-50%);
+    text-align: center;
   }
 
   .footer-symbol {
-    width: 100px;
+    width: 160px;
+  }
+
+  .footer-bottom {
+    position: absolute;
+    left: 50%;
+    top: 245px;
+    bottom: auto;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 12px;
+    opacity: 0.5;
+    width: 100%;
   }
 }
 
