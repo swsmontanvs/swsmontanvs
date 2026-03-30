@@ -1,1 +1,177 @@
+<!DOCTYPE html>
+<html lang="hu">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Official website of S.W.S. Montanus – author of Areanis.">
+  <title>S.W.S. Montanus</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- 🏠 HOMELINK -->
+<a href="https://swsmontanvs.com/" class="home-link">
+  <img src="homelink.png" alt="Montanus">
+</a>
+
+<!-- 🌐 NYELVVÁLASZTÓ -->
+<div class="lang-switcher">
+  <img src="eng.png" alt="English">
+  <img src="hun.png" alt="Magyar">
+</div>
+
+<!-- 🔥 MENÜ – KÉPES -->
+<nav class="main-menu">
+  <a href="areanis.html">
+    <img src="areanis.png" alt="Areanis" class="menu-areanis">
+  </a>
+</nav>
+
+<!-- 🌄 HÁTTÉR -->
+<div class="hero-bg"></div>
+
+<!-- 🎬 HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>The official website of S.W.S. Montanus, author</h1>
+    <p>Under development...</p>
+  </div>
+</section>
+
+<!-- 📜 CONTENT -->
+<section class="content">
+  <h2>Welcome</h2>
+  <p>This is where the journey begins...</p>
+
+  <h3>Lorem Ipsum</h3>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+  <p>Duis aute irure dolor in reprehenderit.</p>
+  <p>Excepteur sint occaecat cupidatat non proident.</p>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  <p>Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
+
+  <h3>More Content</h3>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  <p>In condimentum facilisis porta.</p>
+  <p>Donec sit amet eros.</p>
+  <p>Maecenas fermentum consequat mi.</p>
+
+  <p>Duis sapien sem, aliquet nec.</p>
+  <p>Aliquam faucibus elit ut dictum aliquet.</p>
+
+  <h3>Even More</h3>
+
+  <p>Curabitur augue lorem.</p>
+  <p>Aenean magna nisl.</p>
+  <p>In hac habitasse platea dictumst.</p>
+
+  <h3>Scroll Test Zone</h3>
+
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+
+   <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+
+</section>
+
+<!-- 🔥 JOBB ALSÓ PECSÉT -->
+<img src="logo.png" alt="Montanus Seal" class="corner-logo">
+
+<script>
+  const bg = document.querySelector(".hero-bg");
+  const content = document.querySelector(".content");
+  const homeLink = document.querySelector(".home-link");
+  const hero = document.querySelector(".hero");
+
+  let ticking = false;
+
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+
+        const scrollY = window.scrollY;
+
+        const speed = 0.2;
+        const zoomSpeed = 0.00005;
+        const blurSpeed = 0.002;
+        const contentSpeed = 0.85;
+
+        const translate = -scrollY * speed;
+        const bgScale = 1 + scrollY * zoomSpeed;
+        const blur = Math.min(scrollY * blurSpeed, 3);
+        const contentTranslate = scrollY * (1 - contentSpeed);
+
+        bg.style.transform = `translateY(${translate}px) scale(${bgScale})`;
+        bg.style.filter = `blur(${blur}px)`;
+        content.style.transform = `translateY(${contentTranslate}px)`;
+
+        // HOMELINK MOZGÁS
+        const scrollRange = hero.offsetHeight + 1200;
+
+        let progress = Math.min(scrollY / scrollRange, 1);
+        progress = Math.max((progress - 0.25) / 0.75, 0);
+
+        const logoScale = 1 - (progress * 0.55);
+        const top = 30 - (progress * 15);
+        const left = 80 - (progress * 65);
+
+        homeLink.style.transform = `scale(${logoScale})`;
+        homeLink.style.top = `${top}px`;
+        homeLink.style.left = `${left}px`;
+
+        ticking = false;
+
+      });
+
+      ticking = true;
+    }
+  });
+</script>
+
+</body>
+</html>
