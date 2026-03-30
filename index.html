@@ -159,7 +159,7 @@ window.addEventListener("scroll", () => {
         let progress = Math.min(scrollY / scrollRange, 1);
 
         // 🔥 késleltetett indulás (hero alatt indul)
-        progress = Math.max((progress - 0.65) / 0.35, 0);
+        progress = Math.max((progress - 0.7) / 0.35, 0);
 
         // 🔥 méret (nem zsugorodik túl kicsire)
         const scale = 1 - (progress * 0.35);
@@ -170,7 +170,7 @@ window.addEventListener("scroll", () => {
         const topPos = startTop - (progress * (startTop - endTop));
 
         // 🔥 vízszintes mozgás – NINCS jobbra ugrás
-        const left = 50 - (progress * 35);
+        const left = 50 - (progress * 30);
 
         homeLink.style.left = `${left}%`;
         homeLink.style.top = `${topPos}px`;
