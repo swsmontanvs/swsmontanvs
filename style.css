@@ -130,21 +130,26 @@ body {
   top: 12%;      /* függőleges pozíció */
   left: 62%;     /* EZ A KULCS */
 
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateZ(0);
 
   z-index: 9999;
+
+  will-change: auto; /* 🔥 EZ A KULCS */
 }
 
 .menu-areanis {
-transform-origin: center;
-height: 6vw;
-max-height: 120px;
-min-height: 60px;
+  display: block;
+
+  height: 6vw;
+  max-height: 120px;
+  min-height: 60px;
+
+  transform-origin: center;
 
   opacity: 0.95;
 
   /* 🔥 ALAP RAGYOGÁS */
-  filter: drop-shadow(0 0 8px rgba(255, 140, 60, 0.6));
+  filter: drop-shadow(0 0 10px rgba(255, 140, 60, 0.5));
 
   transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
               filter 0.3s ease,
@@ -152,10 +157,9 @@ min-height: 60px;
 }
 
 .menu-areanis:hover {
-  transform: translateX(-50%) scale(1.12);
+  transform: scale(1.12); /* 🔥 NINCS translate */
 
-  /* 🔥 ERŐSEBB GLOW */
-  filter: drop-shadow(0 0 16px rgba(255, 160, 80, 0.9));
+  filter: drop-shadow(0 0 20px rgba(255, 160, 80, 0.9));
 
   opacity: 1;
 }
