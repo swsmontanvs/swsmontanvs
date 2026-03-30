@@ -171,9 +171,10 @@ window.addEventListener("scroll", () => {
         const logoScale = 1 - (progress * 0.55);
         const topPos = 30 - (progress * 15);
 
-        homeLink.style.transform = `translateX(-50%) scale(${logoScale})`;
-        homeLink.style.left = "50%";
-        homeLink.style.top = `${topPos}px`;
+// 💻 DESKTOP – bal oldalra igazítva
+homeLink.style.transform = `scale(${logoScale})`;
+homeLink.style.left = `${Math.max(15, 80 - (progress * 65))}px`;
+homeLink.style.top = `${topPos}px`;
       }
 
       // 🔥 SCROLL BUTTON
