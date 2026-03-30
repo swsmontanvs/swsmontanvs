@@ -135,16 +135,7 @@ window.addEventListener("scroll", () => {
 
       const scrollY = window.scrollY;
 
-      // HERO STATE (TOP)
-      if (scrollY === 0) {
-        homeLink.style.transform = "translateX(-50%) scale(1)";
-        homeLink.style.top = "80px";
-        homeLink.style.left = "50%";
-        ticking = false;
-        return;
-      }
-
-      // PARALLAX
+      // 🔥 PARALLAX
       const speed = 0.2;
       const zoomSpeed = 0.00005;
       const blurSpeed = 0.002;
@@ -159,19 +150,33 @@ window.addEventListener("scroll", () => {
       bg.style.filter = `blur(${blur}px)`;
       content.style.transform = `translateY(${contentTranslate}px)`;
 
-      // LOGO ANIMATION (STABIL, NEM CSÚSZIK OLDALRA)
-      const scrollRange = hero.offsetHeight + 1200;
-      let progress = Math.min(scrollY / scrollRange, 1);
-      progress = Math.max((progress - 0.25) / 0.75, 0);
+      // 🔥 LOGO VISZELKEDÉS
+      if (window.innerWidth <= 768) {
 
-      const logoScale = 1 - (progress * 0.55);
-      const top = 30 - (progress * 15);
+        // 📱 MOBIL – stabil, NEM ugrál
+        const scale = 0.7;
 
-      homeLink.style.transform = `translateX(-50%) scale(${logoScale})`;
-      homeLink.style.top = `${top}px`;
-      homeLink.style.left = "50%";
+        homeLink.style.left = "15px";
+        homeLink.style.top = "20px";
+        homeLink.style.transform = `scale(${scale})`;
 
-      // SCROLL BUTTON
+      } else {
+
+        // 💻 DESKTOP – animált
+        const scrollRange = hero.offsetHeight + 1200;
+
+        let progress = Math.min(scrollY / scrollRange, 1);
+        progress = Math.max((progress - 0.25) / 0.75, 0);
+
+        const logoScale = 1 - (progress * 0.55);
+        const topPos = 30 - (progress * 15);
+
+        homeLink.style.transform = `translateX(-50%) scale(${logoScale})`;
+        homeLink.style.left = "50%";
+        homeLink.style.top = `${topPos}px`;
+      }
+
+      // 🔥 SCROLL BUTTON
       if (scrollY > 400) {
         scrollTopBtn.classList.add("visible");
       } else {
