@@ -15,8 +15,8 @@
 </a>
 
 <div class="lang-switcher">
-  <img src="eng.png" alt="English" data-lang="en">
-  <img src="hun.png" alt="Magyar" data-lang="hu">
+  <img src="eng.png" alt="English">
+  <img src="hun.png" alt="Magyar">
 </div>
 
 <div class="hero-bg"></div>
@@ -90,17 +90,6 @@
   <p>Lorem ipsum dolor sit amet.</p>
   <p>Lorem ipsum dolor sit amet.</p>
 
-   <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-  <p>Lorem ipsum dolor sit amet.</p>
-
   <p>Lorem ipsum dolor sit amet.</p>
   <p>Lorem ipsum dolor sit amet.</p>
   <p>Lorem ipsum dolor sit amet.</p>
@@ -112,72 +101,90 @@
   <p>Lorem ipsum dolor sit amet.</p>
   <p>Lorem ipsum dolor sit amet.</p>
 
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  
 </section>
 
-<!-- 🔥 SCROLL TO TOP GOMB -->
+<!-- SCROLL TOP -->
 <a href="#" class="scroll-top" id="scrollTopBtn">↑</a>
 
-<!-- 🔥 LOGÓ -->
+<!-- LOGÓ -->
 <img src="logo.png" alt="Montanus Seal" class="corner-logo">
 
 <script>
-  const bg = document.querySelector(".hero-bg");
-  const content = document.querySelector(".content");
-  const homeLink = document.querySelector(".home-link");
-  const hero = document.querySelector(".hero");
+const bg = document.querySelector(".hero-bg");
+const content = document.querySelector(".content");
+const homeLink = document.querySelector(".home-link");
+const hero = document.querySelector(".hero");
+const scrollTopBtn = document.getElementById("scrollTopBtn");
 
-  let ticking = false;
+let ticking = false;
 
-  window.addEventListener("scroll", () => {
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
+window.addEventListener("scroll", () => {
+  if (!ticking) {
+    requestAnimationFrame(() => {
 
-        const scrollY = window.scrollY;
+      const scrollY = window.scrollY;
 
-        const speed = 0.2;
-        const zoomSpeed = 0.00005;
-        const blurSpeed = 0.002;
-        const contentSpeed = 0.85;
-
-        const translate = -scrollY * speed;
-        const bgScale = 1 + scrollY * zoomSpeed;
-        const blur = Math.min(scrollY * blurSpeed, 3);
-        const contentTranslate = scrollY * (1 - contentSpeed);
-
-        bg.style.transform = `translateY(${translate}px) scale(${bgScale})`;
-        bg.style.filter = `blur(${blur}px)`;
-        content.style.transform = `translateY(${contentTranslate}px)`;
-
-        const scrollRange = hero.offsetHeight + 1200;
-
-        let progress = Math.min(scrollY / scrollRange, 1);
-        progress = Math.max((progress - 0.25) / 0.75, 0);
-
-        const logoScale = 1 - (progress * 0.55);
-        const top = 30 - (progress * 15);
-        const left = 80 - (progress * 65);
-
-        homeLink.style.transform = `scale(${logoScale})`;
-        homeLink.style.top = `${top}px`;
-        homeLink.style.left = `${left}px`;
-
+      // HERO STATE (TOP)
+      if (scrollY === 0) {
+        homeLink.style.transform = "translateX(-50%) scale(1)";
+        homeLink.style.top = "80px";
+        homeLink.style.left = "50%";
         ticking = false;
+        return;
+      }
 
-      });
+      // PARALLAX
+      const speed = 0.2;
+      const zoomSpeed = 0.00005;
+      const blurSpeed = 0.002;
+      const contentSpeed = 0.85;
 
-      ticking = true;
-    }
-  });
+      const translate = -scrollY * speed;
+      const bgScale = 1 + scrollY * zoomSpeed;
+      const blur = Math.min(scrollY * blurSpeed, 3);
+      const contentTranslate = scrollY * (1 - contentSpeed);
 
-  const scrollTopBtn = document.getElementById("scrollTopBtn");
+      bg.style.transform = `translateY(${translate}px) scale(${bgScale})`;
+      bg.style.filter = `blur(${blur}px)`;
+      content.style.transform = `translateY(${contentTranslate}px)`;
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 400) {
-      scrollTopBtn.classList.add("visible");
-    } else {
-      scrollTopBtn.classList.remove("visible");
-    }
-  });
+      // LOGO ANIMATION (STABIL, NEM CSÚSZIK OLDALRA)
+      const scrollRange = hero.offsetHeight + 1200;
+      let progress = Math.min(scrollY / scrollRange, 1);
+      progress = Math.max((progress - 0.25) / 0.75, 0);
+
+      const logoScale = 1 - (progress * 0.55);
+      const top = 30 - (progress * 15);
+
+      homeLink.style.transform = `translateX(-50%) scale(${logoScale})`;
+      homeLink.style.top = `${top}px`;
+      homeLink.style.left = "50%";
+
+      // SCROLL BUTTON
+      if (scrollY > 400) {
+        scrollTopBtn.classList.add("visible");
+      } else {
+        scrollTopBtn.classList.remove("visible");
+      }
+
+      ticking = false;
+
+    });
+
+    ticking = true;
+  }
+});
 </script>
 
 </body>
