@@ -129,10 +129,11 @@ body {
   top: 70px;
   right: 800px;
   left: auto;
-  z-index: 1000;
+  z-index: 9999; /* 🔥 fontosabb, mint eddig */
 }
 
 .menu-areanis {
+  transform-origin: center;
   height: 120px;
   display: block;
 
