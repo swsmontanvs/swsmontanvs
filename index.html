@@ -166,10 +166,10 @@ const scale = 1 - (progress * 0.35);
 
 // 🔥 pozíció (px-ben)
 const leftPx = 15 + (1 - progress) * (window.innerWidth / 2 - 15);
-const topPos = 90 - (progress * 70); // picit lejjebb indul
+const topPos = 110 - (progress * 80); // picit lejjebb indul
 
 // 🔥 KULCS: középen → translateX(-50%), bal oldalon → nincs
-if (progress < 0.01) {
+if (progress < 0.05) {
   homeLink.style.left = "50%";
   homeLink.style.transform = `translateX(-50%) scale(${scale})`;
 } else {
