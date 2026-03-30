@@ -5,6 +5,10 @@ body {
   color: white;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* 🌄 HÁTTÉR */
 .hero-bg {
   position: fixed;
