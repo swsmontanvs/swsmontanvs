@@ -187,7 +187,7 @@ homeLink.style.top = `${topPos}px`;
         let progress = Math.min(scrollY / scrollRange, 1);
         progress = Math.max((progress - 0.25) / 0.75, 0);
 
-        const logoScale = 1 - (progress * 0.55);
+        const logoScale = 1 - (progress * 0.40);
         const topPos = 30 - (progress * 15);
 
         homeLink.style.transform = `scale(${logoScale})`;
