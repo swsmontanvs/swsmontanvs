@@ -262,25 +262,21 @@ html {
     width: 140px;
 
     transform: scale(1);
-
-    /* 🔥 JAVÍTÁS: origin mobilon */
     transform-origin: center;
   }
 
-  /* 🔥 JAVÍTÁS: hover kikapcsolva mobilon */
   .corner-logo:hover {
     transform: none;
   }
 
-  /* 🔥 JAVÍTÁS: középre pozicionált nagy állapot */
-.corner-logo.active {
-  bottom: 50px; /* ⬆️ kicsit feljebb húzza */
-  left: 50%;
-  right: auto;
-  top: auto;
+  .corner-logo.active {
+    bottom: 50px;
+    left: 50%;
+    right: auto;
+    top: auto;
 
-  transform: translateX(-50%) scale(3.0); /* 🔥 nagyobb lett */
-}
+    transform: translateX(-50%) scale(3.0);
+  }
 
   .home-link {
     left: 50%;
@@ -315,29 +311,33 @@ html {
   .hero-text {
     top: 60%;
   }
-}
 
-.site-footer {
-  padding: 60px 20px 40px;
-}
+  /* 🔥 FOOTER MOBIL */
 
-.footer-logo img {
-  width: 90px;
-}
+  .site-footer {
+    padding: 60px 20px 40px;
+  }
 
-.footer-links {
-  flex-direction: column;
-  gap: 12px;
-}
+  .footer-top {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
 
-.footer-top {
-  flex-direction: column;
-  gap: 20px;
-}
+  .footer-left {
+    text-align: center;
+  }
 
-.footer-right {
-  flex-direction: column;
-  gap: 10px;
+  .footer-right {
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .footer-symbol {
+    width: 100px;
+  }
 }
 
 /* ========================================= */
@@ -372,9 +372,8 @@ html {
 }
 
 
-
 /* ========================================= */
-/* 🔥 FOOTER – ÚJ */
+/* 🔥 FOOTER – FIXED LAYOUT */
 /* ========================================= */
 
 .site-footer {
@@ -382,9 +381,7 @@ html {
   z-index: 2;
 
   background: #050505;
-  padding: 70px 20px 50px;
-
-  text-align: center;
+  padding: 80px 40px 50px;
 }
 
 .site-footer::before {
@@ -398,24 +395,33 @@ html {
   background: linear-gradient(to bottom, transparent, #050505);
 }
 
+/* FELSŐ SOR */
 .footer-top {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
-  max-width: 900px;
+
+  max-width: 1100px;
   margin: 0 auto;
 }
 
+/* BAL */
 .footer-left {
-  font-size: 13px;
+  font-size: 14px;
   opacity: 0.6;
+  text-align: left;
+}
+
+/* KÖZÉP – SZIMBÓLUM */
+.footer-center {
+  text-align: center;
 }
 
 .footer-symbol {
-  width: 90px;
-  opacity: 0.9;
+  width: 140px; /* 🔥 nagyobb */
+  opacity: 0.95;
 
-  filter: drop-shadow(0 0 6px rgba(255, 120, 60, 0.4));
+  filter: drop-shadow(0 0 10px rgba(255, 120, 60, 0.5));
 
   transition: transform 0.4s ease,
               filter 0.4s ease;
@@ -423,16 +429,18 @@ html {
 
 .footer-symbol:hover {
   transform: scale(1.1);
-  filter: drop-shadow(0 0 18px rgba(255, 150, 80, 0.9));
+  filter: drop-shadow(0 0 25px rgba(255, 150, 80, 0.9));
 }
 
+/* JOBB */
 .footer-right {
   display: flex;
-  gap: 20px;
+  justify-content: flex-end;
+  gap: 25px;
 }
 
 .footer-right a {
-  font-size: 13px;
+  font-size: 14px;
   text-decoration: none;
   color: white;
   opacity: 0.6;
@@ -445,8 +453,10 @@ html {
   color: rgba(255, 140, 80, 0.9);
 }
 
+/* ALSÓ SOR – COPYRIGHT */
 .footer-bottom {
-  margin-top: 30px;
-  font-size: 12px;
+  margin-top: 25px;
+  text-align: center;
+  font-size: 13px;
   opacity: 0.5;
 }
