@@ -257,12 +257,12 @@ html {
 
   /* 🔥 JAVÍTÁS: középre pozicionált nagy állapot */
 .corner-logo.active {
-  bottom: 10px;
+  bottom: 40px; /* ⬆️ kicsit feljebb húzza */
   left: 50%;
   right: auto;
   top: auto;
 
-  transform: translateX(-50%) scale(2.2);
+  transform: translateX(-50%) scale(2.8); /* 🔥 nagyobb lett */
 }
 
   .home-link {
