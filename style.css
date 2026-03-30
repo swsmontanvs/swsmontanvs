@@ -250,6 +250,40 @@ html {
 }
 
 
+@media (max-width: 768px) {
+
+  .home-link {
+    left: 50%;
+    top: 80px;
+    transform: translateX(-50%);
+  }
+
+  .home-link img {
+    width: 170px;
+  }
+
+  .lang-switcher {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20px;
+  }
+
+  .main-menu {
+    position: absolute;
+    top: 160px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+  }
+
+  .menu-areanis {
+    height: 36px;
+  }
+
+}
+
 
 
 
