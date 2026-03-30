@@ -271,7 +271,7 @@ html {
 
   .main-menu {
     position: absolute;
-    top: 160px;
+    top: 120px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -280,6 +280,16 @@ html {
 
   .menu-areanis {
     height: 36px;
+  }
+
+  .hero-text {
+    top: 60%;
+  }
+
+  .corner-logo {
+    bottom: 10px;
+    right: 10px;
+    width: 140px;
   }
 
 }
