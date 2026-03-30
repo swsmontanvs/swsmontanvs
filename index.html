@@ -154,34 +154,31 @@ window.addEventListener("scroll", () => {
       // 🔥 LOGO VISELKEDÉS
       if (window.innerWidth <= 768) {
 
-        // 📱 MOBIL
-const scrollRange = hero.offsetHeight;
-let progress = Math.min(scrollY / scrollRange, 1);
+        // 📱 MOBIL – stabil, nincs ugrás
+        const scrollRange = hero.offsetHeight;
+        let progress = Math.min(scrollY / scrollRange, 1);
 
-// 🔥 csak akkor induljon, amikor elérjük a contentet
-progress = Math.max((progress - 0.35) / 0.65, 0);
+        // 🔥 késleltetett indulás (hero alatt indul)
+        progress = Math.max((progress - 0.55) / 0.45, 0);
 
-// 🔥 méret
-const scale = 1 - (progress * 0.35);
+        // 🔥 méret (nem zsugorodik túl kicsire)
+        const scale = 1 - (progress * 0.35);
 
-// 🔥 pozíció (px-ben)
-const leftPx = 15 + (1 - progress) * (window.innerWidth / 2 - 15);
-const topPos = 110 - (progress * 80); // picit lejjebb indul
+        // 🔥 függőleges pozíció – NINCS ZÖTTYENÉS
+        const startTop = 80;
+        const endTop = 25;
+        const topPos = startTop - (progress * (startTop - endTop));
 
-// 🔥 KULCS: középen → translateX(-50%), bal oldalon → nincs
-if (progress < 0.05) {
-  homeLink.style.left = "50%";
-  homeLink.style.transform = `translateX(-50%) scale(${scale})`;
-} else {
-  homeLink.style.left = `${leftPx}px`;
-  homeLink.style.transform = `scale(${scale})`;
-}
+        // 🔥 vízszintes mozgás – NINCS jobbra ugrás
+        const left = 50 - (progress * 45);
 
-homeLink.style.top = `${topPos}px`;
+        homeLink.style.left = `${left}%`;
+        homeLink.style.top = `${topPos}px`;
+        homeLink.style.transform = `translateX(-50%) scale(${scale})`;
 
       } else {
 
-        // 💻 DESKTOP
+        // 💻 DESKTOP – finomított méret
         const scrollRange = hero.offsetHeight + 1200;
 
         let progress = Math.min(scrollY / scrollRange, 1);
