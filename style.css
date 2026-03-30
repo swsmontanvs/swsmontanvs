@@ -127,13 +127,13 @@ body {
 .main-menu {
   position: fixed;
   top: 90px;
-  right: 120px;
+  right: 500px;
   left: auto;
   z-index: 1000;
 }
 
 .menu-areanis {
-  height: 55px;
+  height: 150px;
   display: block;
 
   opacity: 0.95;
