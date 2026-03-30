@@ -300,6 +300,19 @@ html {
   }
 }
 
+.site-footer {
+  padding: 60px 20px 40px;
+}
+
+.footer-logo img {
+  width: 90px;
+}
+
+.footer-links {
+  flex-direction: column;
+  gap: 12px;
+}
+
 /* ========================================= */
 /* 🔥 AREANIS – SAJÁT VILÁG */
 /* ========================================= */
@@ -329,4 +342,74 @@ html {
 
 .areanis-page .content {
   display: none;
+}
+
+
+
+/* ========================================= */
+/* 🔥 FOOTER */
+/* ========================================= */
+
+.site-footer {
+  position: relative;
+  z-index: 2;
+
+  background: #050505;
+  padding: 80px 20px 60px;
+
+  text-align: center;
+}
+
+/* finom átmenet felül */
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  left: 0;
+  width: 100%;
+  height: 80px;
+
+  background: linear-gradient(to bottom, transparent, #050505);
+}
+
+.footer-logo img {
+  width: 120px;
+  opacity: 0.9;
+
+  filter: drop-shadow(0 0 10px rgba(255, 120, 60, 0.5));
+
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.footer-logo img:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 20px rgba(255, 150, 80, 0.9));
+}
+
+.footer-text {
+  margin-top: 25px;
+  font-size: 13px;
+  opacity: 0.6;
+  line-height: 1.6;
+}
+
+.footer-links {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  font-size: 13px;
+  color: white;
+  opacity: 0.6;
+
+  transition: 0.3s ease;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  color: rgba(255, 140, 80, 0.9);
 }
