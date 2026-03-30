@@ -190,6 +190,23 @@ html {
   opacity: 1;
 }
 
+.corner-logo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(circle, rgba(255,140,80,0.6) 0%, transparent 70%);
+  opacity: 0;
+
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+
+.corner-logo:hover::after {
+  opacity: 1;
+  transition-delay: 0.2s;
+}
+
 /* 🔥 SCROLL TO TOP */
 
 .scroll-top {
@@ -313,6 +330,16 @@ html {
   gap: 12px;
 }
 
+.footer-top {
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-right {
+  flex-direction: column;
+  gap: 10px;
+}
+
 /* ========================================= */
 /* 🔥 AREANIS – SAJÁT VILÁG */
 /* ========================================= */
@@ -347,7 +374,7 @@ html {
 
 
 /* ========================================= */
-/* 🔥 FOOTER */
+/* 🔥 FOOTER – ÚJ */
 /* ========================================= */
 
 .site-footer {
@@ -355,12 +382,11 @@ html {
   z-index: 2;
 
   background: #050505;
-  padding: 80px 20px 60px;
+  padding: 70px 20px 50px;
 
   text-align: center;
 }
 
-/* finom átmenet felül */
 .site-footer::before {
   content: "";
   position: absolute;
@@ -372,44 +398,55 @@ html {
   background: linear-gradient(to bottom, transparent, #050505);
 }
 
-.footer-logo img {
-  width: 120px;
-  opacity: 0.9;
-
-  filter: drop-shadow(0 0 10px rgba(255, 120, 60, 0.5));
-
-  transition: transform 0.4s ease, filter 0.4s ease;
+.footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.footer-logo img:hover {
-  transform: scale(1.1);
-  filter: drop-shadow(0 0 20px rgba(255, 150, 80, 0.9));
-}
-
-.footer-text {
-  margin-top: 25px;
+.footer-left {
   font-size: 13px;
   opacity: 0.6;
-  line-height: 1.6;
 }
 
-.footer-links {
-  margin-top: 25px;
+.footer-symbol {
+  width: 90px;
+  opacity: 0.9;
+
+  filter: drop-shadow(0 0 6px rgba(255, 120, 60, 0.4));
+
+  transition: transform 0.4s ease,
+              filter 0.4s ease;
+}
+
+.footer-symbol:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 18px rgba(255, 150, 80, 0.9));
+}
+
+.footer-right {
   display: flex;
-  justify-content: center;
-  gap: 25px;
+  gap: 20px;
 }
 
-.footer-links a {
-  text-decoration: none;
+.footer-right a {
   font-size: 13px;
+  text-decoration: none;
   color: white;
   opacity: 0.6;
 
   transition: 0.3s ease;
 }
 
-.footer-links a:hover {
+.footer-right a:hover {
   opacity: 1;
   color: rgba(255, 140, 80, 0.9);
+}
+
+.footer-bottom {
+  margin-top: 30px;
+  font-size: 12px;
+  opacity: 0.5;
 }
