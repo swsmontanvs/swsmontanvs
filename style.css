@@ -228,6 +228,7 @@ html {
   z-index: 9999;
 
   backdrop-filter: blur(4px);
+-webkit-backdrop-filter: blur(4px);
 
   opacity: 0;
   pointer-events: none;
