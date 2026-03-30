@@ -256,14 +256,14 @@ html {
   }
 
   /* 🔥 JAVÍTÁS: középre pozicionált nagy állapot */
-  .corner-logo.active {
-    top: 50%;
-    left: 50%;
-    right: auto;
-    bottom: auto;
+.corner-logo.active {
+  bottom: 10px;
+  left: 50%;
+  right: auto;
+  top: auto;
 
-    transform: translate(-50%, -50%) scale(2.2);
-  }
+  transform: translateX(-50%) scale(2.2);
+}
 
   .home-link {
     left: 50%;
