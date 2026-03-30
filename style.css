@@ -257,7 +257,7 @@ html {
 
   /* 🔥 JAVÍTÁS: középre pozicionált nagy állapot */
 .corner-logo.active {
-  bottom: 40px; /* ⬆️ kicsit feljebb húzza */
+  bottom: 50px; /* ⬆️ kicsit feljebb húzza */
   left: 50%;
   right: auto;
   top: auto;
