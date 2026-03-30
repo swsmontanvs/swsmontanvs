@@ -155,18 +155,29 @@ window.addEventListener("scroll", () => {
       if (window.innerWidth <= 768) {
 
         // 📱 MOBIL
-        const scrollRange = hero.offsetHeight;
-        let progress = Math.min(scrollY / scrollRange, 1);
+const scrollRange = hero.offsetHeight;
+let progress = Math.min(scrollY / scrollRange, 1);
 
-        progress = Math.max((progress - 0.05) / 0.95, 0);
+// 🔥 csak akkor induljon, amikor elérjük a contentet
+progress = Math.max((progress - 0.35) / 0.65, 0);
 
-        const scale = 1 - (progress * 0.35);
-        const leftPx = 15 + (1 - progress) * (window.innerWidth / 2 - 15);
-        const topPos = 80 - (progress * 60);
+// 🔥 méret
+const scale = 1 - (progress * 0.35);
 
-        homeLink.style.left = `${leftPx}px`;
-        homeLink.style.top = `${topPos}px`;
-        homeLink.style.transform = `scale(${scale})`;
+// 🔥 pozíció (px-ben)
+const leftPx = 15 + (1 - progress) * (window.innerWidth / 2 - 15);
+const topPos = 90 - (progress * 70); // picit lejjebb indul
+
+// 🔥 KULCS: középen → translateX(-50%), bal oldalon → nincs
+if (progress < 0.01) {
+  homeLink.style.left = "50%";
+  homeLink.style.transform = `translateX(-50%) scale(${scale})`;
+} else {
+  homeLink.style.left = `${leftPx}px`;
+  homeLink.style.transform = `scale(${scale})`;
+}
+
+homeLink.style.top = `${topPos}px`;
 
       } else {
 
