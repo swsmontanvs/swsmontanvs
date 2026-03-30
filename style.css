@@ -262,7 +262,7 @@ html {
   right: auto;
   top: auto;
 
-  transform: translateX(-50%) scale(2.8); /* 🔥 nagyobb lett */
+  transform: translateX(-50%) scale(3.0); /* 🔥 nagyobb lett */
 }
 
   .home-link {
