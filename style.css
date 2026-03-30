@@ -374,9 +374,8 @@ html {
 }
 
 
-
 /* ========================================= */
-/* 🔥 FOOTER – FINOMHANGOLT LAYOUT */
+/* 🔥 FOOTER – FINOMHANGOLT, VÉGLEGES */
 /* ========================================= */
 
 .site-footer {
@@ -400,14 +399,7 @@ html {
   background: linear-gradient(to bottom, transparent, #050505);
 }
 
-/* 🔥 FELSŐ RÉSZ */
-.footer-top {
-  position: relative;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-/* 🔥 SZIMBÓLUM – VALÓDI KÖZÉP */
+/* 🔥 SZIMBÓLUM – KÖZÉP */
 .footer-center {
   position: absolute;
   left: 50%;
@@ -416,10 +408,10 @@ html {
 }
 
 .footer-symbol {
-  width: 260px; /* 🔥 nagyobb lett */
+  width: 300px; /* 🔥 MÉG NAGYOBB */
   opacity: 0.95;
 
-  filter: drop-shadow(0 0 20px rgba(255, 120, 60, 0.7));
+  filter: drop-shadow(0 0 25px rgba(255, 120, 60, 0.8));
 
   transition: transform 0.4s ease,
               filter 0.4s ease;
@@ -427,18 +419,21 @@ html {
 
 .footer-symbol:hover {
   transform: scale(1.05);
-  filter: drop-shadow(0 0 40px rgba(255, 150, 80, 1));
+  filter: drop-shadow(0 0 45px rgba(255, 150, 80, 1));
 }
 
-/* 🔥 LINKEK – BAL KÖZÉP */
+/* 🔥 LINKEK – BAL KÖZÉP (FELEZETT POZÍCIÓ) */
 .footer-right {
   position: absolute;
-  left: 120px;  /* 🔥 nem a szélén */
-  top: 40px;
+
+  left: 25%;   /* 🔥 EZ A FELEZETT TÁV */
+  top: 55%;    /* 🔥 KICSIT LEJJEBB */
+
+  transform: translateY(-50%);
 
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 18px; /* 🔥 nagyobb térköz */
 }
 
 .footer-right a {
@@ -455,7 +450,7 @@ html {
   color: rgba(255, 140, 80, 0.9);
 }
 
-/* 🔥 ALSÓ SOR (EGY VONALBAN) */
+/* 🔥 COPYRIGHT – MARAD */
 .footer-bottom {
   position: absolute;
   bottom: 20px;
@@ -466,7 +461,7 @@ html {
   opacity: 0.5;
 }
 
-/* 🔥 BAL ALSÓ – DEVELOPED BY */
+/* 🔥 DEVELOPED BY – VISSZA AZ EREDETI HELYRE */
 .footer-left {
   position: absolute;
   bottom: 20px;
