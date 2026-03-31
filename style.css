@@ -330,20 +330,22 @@ html {
   }
 
   /* 🔥 LINK SOR – VÍZSZINTES */
-  .footer-right {
-    position: absolute;
-    top: 30px;
-    left: 50%;
-    transform: translateX(-50%);
+.footer-right {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
 
-    display: flex !important;
-    flex-direction: row !important;
+  display: flex !important;
+  flex-direction: row !important;
 
-    justify-content: space-between;
-    align-items: center;
+  justify-content: space-between;
+  align-items: center;
 
-    width: 90%;
-  }
+  width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
 
   .footer-right a {
     font-size: 15px;
