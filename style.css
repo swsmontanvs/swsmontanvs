@@ -495,14 +495,14 @@ html {
 .footer-right {
   grid-column: 1;
 
-  justify-self: start;   /* 🔥 NEM end! */
-  align-self: center;    /* 🔥 EZ TARTJA KÖZÉPEN VERTIKÁLISAN */
   display: flex;
   flex-direction: column;
   gap: 30px;
 
-  padding-left: 60px;    /* 🔥 NEM right */
-  transform: translateY(-80px); /* ↑↓ */
+  justify-self: start;
+  align-self: center;
+
+  padding-left: 40px;
 }
 
 /* 🔥 LINK SZÖVEG */
