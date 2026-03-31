@@ -501,7 +501,7 @@ html {
   justify-self: start;
   align-self: start;
   
-  transform: translateY(-80px);
+  transform: translateY(-100px);
 
   display: flex;
   flex-direction: column;
