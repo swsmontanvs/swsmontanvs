@@ -5,6 +5,15 @@ body {
   color: white;
 }
 
+/* 👇 EZ AZ ÚJ RÉSZ */
+html, body {
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 html {
   scroll-behavior: smooth;
 }
