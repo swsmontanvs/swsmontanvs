@@ -5,11 +5,6 @@ body {
   color: white;
 }
 
-/* 🔥 KRITIKUS FIX – EZ SZÜNTETI MEG AZ ELCSÚSZÁST */
-html, body {
-  overflow-x: hidden;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -66,8 +61,6 @@ html {
   padding: 80px 20px;
   text-align: center;
   will-change: transform;
-
-  max-width: 100%;
 }
 
 /* LÁGY ÁTMENET */
@@ -188,9 +181,12 @@ html {
               opacity 0.3s ease;
 }
 
+/* 🔥 HOVER – DESKTOP marad */
 .corner-logo:hover {
   transform: scale(2.1);
+
   filter: drop-shadow(0 0 30px rgba(255, 140, 80, 0.95));
+
   opacity: 1;
 }
 
@@ -316,7 +312,7 @@ html {
     top: 60%;
   }
 
-  /* 🔥 FOOTER MOBIL – EZ VOLT A HIBA */
+  /* 🔥 FOOTER MOBIL */
 
   .site-footer {
     padding: 60px 20px 60px;
@@ -324,6 +320,7 @@ html {
     position: relative;
   }
 
+  /* 🔥 LINK SOR – VÍZSZINTES */
   .footer-right {
     position: absolute;
     top: 30px;
@@ -336,9 +333,7 @@ html {
     justify-content: space-between;
     align-items: center;
 
-    width: 100%; /* 🔥 EZ JAVÍTJA A SZÉTESÉST */
-    padding: 0 20px;
-    box-sizing: border-box;
+    width: 90%;
   }
 
   .footer-right a {
@@ -347,10 +342,11 @@ html {
     flex: 1;
   }
 
+  /* 🔥 SZIMBÓLUM */
   .footer-center {
     position: absolute;
     left: 50%;
-    top: 100px;
+    top: 90px;
     transform: translateX(-50%);
     text-align: center;
   }
@@ -359,16 +355,157 @@ html {
     width: 170px;
   }
 
+  /* 🔥 COPYRIGHT – HELYES POZÍCIÓ */
   .footer-bottom {
     position: absolute;
     left: 50%;
-    top: 280px;
+    top: 250px; /* 👈 EZ A KULCS – nem lóg bele */
     transform: translateX(-50%);
+    text-align: center;
+
+    font-size: 12px;
+    opacity: 0.5;
+    width: 100%;
   }
 
+  /* 🔥 DEVELOPED BY */
   .footer-left {
     position: absolute;
     bottom: 20px;
     left: 20px;
+
+    font-size: 13px;
+    opacity: 0.5;
   }
+}
+
+
+
+/* ========================================= */
+/* 🔥 AREANIS – SAJÁT VILÁG */
+/* ========================================= */
+
+.areanis-page {
+  background-color: #000;
+}
+
+.areanis-page .hero-bg {
+  background-image: none;
+}
+
+.areanis-page .hero {
+  height: 100vh;
+}
+
+.areanis-page .hero-text {
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.areanis-page .hero-text h1 {
+  letter-spacing: 3px;
+  font-size: 28px;
+  opacity: 0.85;
+}
+
+.areanis-page .content {
+  display: none;
+}
+
+
+/* ========================================= */
+/* 🔥 FOOTER – FINOMHANGOLT, VÉGLEGES */
+/* ========================================= */
+
+.site-footer {
+  position: relative;
+  z-index: 2;
+
+  background: #050505;
+  padding: 120px 40px 100px;
+
+  min-height: 350px;
+}
+
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  left: 0;
+  width: 100%;
+  height: 80px;
+
+  background: linear-gradient(to bottom, transparent, #050505);
+}
+
+/* 🔥 SZIMBÓLUM – KÖZÉP */
+.footer-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.footer-symbol {
+  width: 300px; /* 🔥 MÉG NAGYOBB */
+  opacity: 0.95;
+
+  filter: drop-shadow(0 0 25px rgba(255, 120, 60, 0.8));
+
+  transition: transform 0.4s ease,
+              filter 0.4s ease;
+}
+
+.footer-symbol:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 45px rgba(255, 150, 80, 1));
+}
+
+/* 🔥 LINKEK – BAL KÖZÉP (FELEZETT POZÍCIÓ) */
+.footer-right {
+  position: absolute;
+
+  left: 25%;   /* 🔥 EZ A FELEZETT TÁV */
+  top: 55%;    /* 🔥 KICSIT LEJJEBB */
+
+  transform: translateY(-50%);
+
+  display: flex;
+  flex-direction: column;
+  gap: 28px; /* 🔥 nagyobb térköz */
+}
+
+.footer-right a {
+  font-size: 16px; /* 🔥 nagyobb betű */
+  text-decoration: none;
+  color: white;
+  opacity: 0.6;
+
+  transition: 0.3s ease;
+}
+
+.footer-right a:hover {
+  opacity: 1;
+  color: rgba(255, 140, 80, 0.9);
+}
+
+/* 🔥 COPYRIGHT – MARAD */
+.footer-bottom {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  font-size: 13px;
+  opacity: 0.5;
+}
+
+/* 🔥 DEVELOPED BY – VISSZA AZ EREDETI HELYRE */
+.footer-left {
+  position: absolute;
+  bottom: 20px;
+  left: 40px;
+
+  font-size: 13px;
+  opacity: 0.5;
 }
