@@ -499,9 +499,9 @@ html {
 
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 30px;
 
-  margin-left: 120px;    /* 🔥 NEM right */
+  padding-left: 40px;    /* 🔥 NEM right */
 }
 
 /* 🔥 LINK SZÖVEG */
