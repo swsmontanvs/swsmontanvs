@@ -341,7 +341,7 @@ html {
 /* 🔥 LINK SOR – FELÜL, KÖZÉPEN */
 .footer-right {
   position: absolute;
-  top: 40px;
+  top: 10px;
   left: 50%;
   transform: translateX(-50%);
 
@@ -374,7 +374,7 @@ html {
 .footer-bottom {
   position: absolute;
   left: 50%;
-  top: 300px; /* 🔥 lejjebb húzva */
+  top: 350px; /* 🔥 lejjebb húzva */
   transform: translateX(-50%);
   text-align: center;
 
