@@ -461,9 +461,9 @@ html {
 
 /* 🔥 BAL – DEVELOPED BY */
 .footer-left {
-  position: absolute;
-  bottom: 20px;
-  left: 40px;
+  justify-self: start;
+  align-self: end;
+}
 
   font-size: 13px;
   opacity: 0.5;
@@ -496,7 +496,7 @@ html {
   grid-column: 1;
 
   justify-self: start;   /* 🔥 NEM end! */
-  align-self: center;
+  align-self: center;    /* 🔥 EZ TARTJA KÖZÉPEN VERTIKÁLISAN */
   display: flex;
   flex-direction: column;
   gap: 30px;
