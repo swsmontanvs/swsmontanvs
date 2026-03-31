@@ -183,7 +183,7 @@ window.addEventListener("scroll", () => {
 
       bg.style.transform = `translateY(${translate}px) scale(${bgScale})`;
       bg.style.filter = `blur(${blur}px)`;
-      content.style.transform = `translateY(${contentTranslate}px)`;
+      content.style.top = `${contentTranslate}px`;
 
       // 🔥 LOGO VISELKEDÉS
       if (window.innerWidth <= 768) {
