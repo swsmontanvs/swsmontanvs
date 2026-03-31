@@ -338,6 +338,8 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  padding-top: 220; /* 🔥 EZ A KULCS */
 }
   
 .footer-right {
