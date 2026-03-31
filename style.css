@@ -330,73 +330,66 @@ html {
     top: 60%;
   }
 
-  /* 🔥 FOOTER MOBIL */
+/* 🔥 FOOTER MOBIL – JAVÍTOTT */
 
-  .site-footer {
-    padding: 60px 20px 60px;
-    min-height: 360px;
-    position: relative;
-  }
+.site-footer {
+  padding: 60px 20px 60px;
+  min-height: 360px;
+  position: relative;
+}
 
-  /* 🔥 LINK SOR – VÍZSZINTES */
+/* 🔥 LINK SOR – FELÜL, KÖZÉPEN */
 .footer-right {
   position: absolute;
-  top: 30px;
+  top: 20px;
   left: 50%;
   transform: translateX(-50%);
 
   display: flex !important;
   flex-direction: row !important;
 
-  justify-content: space-between;
-  align-items: center;
-
-  width: 100%;
-  padding: 0 10px;
-  box-sizing: border-box;
+  justify-content: center; /* 🔥 közelebb húzza őket */
+  gap: 25px; /* 🔥 kisebb, kontrollált távolság */
 }
 
-  .footer-right a {
-    font-size: 15px;
-    text-align: center;
-    flex: 1;
-  }
+.footer-right a {
+  font-size: 14px;
+  text-align: center;
+}
 
-  /* 🔥 SZIMBÓLUM */
-  .footer-center {
-    position: absolute;
-    left: 50%;
-    top: 90px;
-    transform: translateX(-50%);
-    text-align: center;
-  }
+/* 🔥 SZIMBÓLUM – KÖZÉP */
+.footer-center {
+  position: absolute;
+  left: 50%;
+  top: 70px;
+  transform: translateX(-50%);
+  text-align: center;
+}
 
-  .footer-symbol {
-    width: 170px;
-  }
+.footer-symbol {
+  width: 170px;
+}
 
-  /* 🔥 COPYRIGHT – HELYES POZÍCIÓ */
-  .footer-bottom {
-    position: absolute;
-    left: 50%;
-    top: 250px; /* 👈 EZ A KULCS – nem lóg bele */
-    transform: translateX(-50%);
-    text-align: center;
+/* 🔥 COPYRIGHT – SZIMBÓLUM ALÁ */
+.footer-bottom {
+  position: absolute;
+  left: 50%;
+  top: 230px; /* 🔥 lejjebb húzva */
+  transform: translateX(-50%);
+  text-align: center;
 
-    font-size: 12px;
-    opacity: 0.5;
-    width: 100%;
-  }
+  font-size: 12px;
+  opacity: 0.5;
+}
 
-  /* 🔥 DEVELOPED BY */
-  .footer-left {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
+/* 🔥 DEVELOPED BY – KIJJEBB BALRA */
+.footer-left {
+  position: absolute;
+  bottom: 20px;
+  left: 10px; /* 🔥 ez volt a kérésed */
 
-    font-size: 13px;
-    opacity: 0.5;
-  }
+  font-size: 13px;
+  opacity: 0.5;
 }
 
 
