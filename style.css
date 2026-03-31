@@ -500,9 +500,9 @@ html {
   gap: 30px;
 
   justify-self: start;
-  align-self: center;
+  align-self: start;
 
-  padding-left: 40px;
+  padding-left: 8%;
 }
 
 /* 🔥 LINK SZÖVEG */
