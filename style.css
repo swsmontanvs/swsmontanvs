@@ -335,12 +335,10 @@ html {
 }
 
 .footer-right {
-  grid-column: 1;
-  justify-self: start;
-
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
 
   gap: 25px;
 }
