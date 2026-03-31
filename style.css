@@ -334,18 +334,18 @@ html {
   position: relative;
 }
 
-/* 🔥 LINK SOR – FELÜL, KÖZÉPEN */
 .footer-right {
   position: absolute;
-  top: 10px;
+  top: 100px;
   left: 50%;
   transform: translateX(-50%);
 
   display: flex !important;
   flex-direction: row !important;
+  gap: 20px;
 
-  justify-content: center; /* 🔥 közelebb húzza őket */
-  gap: 25px; /* 🔥 kisebb, kontrollált távolság */
+  background: red; /* 👈 EZ A TESZT */
+  z-index: 99999;   /* 👈 EZ A TESZT */
 }
 
 .footer-right a {
