@@ -315,37 +315,25 @@ html {
   /* 🔥 FOOTER MOBIL */
 
   .site-footer {
-    padding: 60px 20px 40px;
-    min-height: 320px;
+    padding: 60px 20px 60px;
+    min-height: 360px;
+    position: relative;
   }
 
-  .footer-top {
-    display: block;
-    text-align: center;
-  }
-
-  .footer-left {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    text-align: left;
-    font-size: 13px;
-    opacity: 0.5;
-  }
-
+  /* 🔥 LINK SOR – VÍZSZINTES */
   .footer-right {
     position: absolute;
-    top: 28px;
+    top: 30px;
     left: 50%;
     transform: translateX(-50%);
 
-    display: flex;
-    flex-direction: row;
+    display: flex !important;
+    flex-direction: row !important;
+
     justify-content: space-between;
     align-items: center;
 
-    width: 85%;
-    gap: 0;
+    width: 90%;
   }
 
   .footer-right a {
@@ -354,28 +342,40 @@ html {
     flex: 1;
   }
 
+  /* 🔥 SZIMBÓLUM */
   .footer-center {
     position: absolute;
     left: 50%;
-    top: 85px;
+    top: 90px;
     transform: translateX(-50%);
     text-align: center;
   }
 
   .footer-symbol {
-    width: 160px;
+    width: 170px;
   }
 
+  /* 🔥 COPYRIGHT – HELYES POZÍCIÓ */
   .footer-bottom {
     position: absolute;
     left: 50%;
-    top: 245px;
-    bottom: auto;
+    top: 250px; /* 👈 EZ A KULCS – nem lóg bele */
     transform: translateX(-50%);
     text-align: center;
+
     font-size: 12px;
     opacity: 0.5;
     width: 100%;
+  }
+
+  /* 🔥 DEVELOPED BY */
+  .footer-left {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+
+    font-size: 13px;
+    opacity: 0.5;
   }
 }
 
