@@ -499,13 +499,15 @@ html {
   grid-row: 2; /* 🔥 középső sáv */
 
   justify-self: start;
-  align-self: center;
+  align-self: start;
+  
+  transform: translateY(-20px);
 
   display: flex;
   flex-direction: column;
   gap: 30px;
 
-  padding-left: 8%;
+  padding-left: 15%;
 }
 
 /* 🔥 LINK SZÖVEG */
