@@ -496,12 +496,13 @@ html {
   grid-column: 1;
 
   justify-self: start;   /* 🔥 NEM end! */
-
+  align-self: center;
   display: flex;
   flex-direction: column;
   gap: 30px;
 
-  padding-left: 40px;    /* 🔥 NEM right */
+  padding-left: 80px;    /* 🔥 NEM right */
+  transform: translateY(-40px); /* ↑↓ */
 }
 
 /* 🔥 LINK SZÖVEG */
