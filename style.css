@@ -343,22 +343,10 @@ html {
 }
   
 .footer-right {
-  position: absolute;
-
-  bottom: 260px;  /* 🔥 innen indulunk */
-  left: 50%;
-  transform: translateX(-50%);
-
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-
-  gap: 20px;
-
-  width: auto;
-  z-index: 10;
+  outline: 2px solid red;
+  background: rgba(255,0,0,0.2);
 }
-
+  
 .footer-right a {
   font-size: 14px;
   text-align: center;
