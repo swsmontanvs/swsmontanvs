@@ -181,7 +181,11 @@ window.addEventListener("scroll", () => {
       const blur = Math.min(scrollY * blurSpeed, 3);
       const contentTranslate = scrollY * (1 - contentSpeed);
 
-      bg.style.transform = `translateY(${translate}px) scale(${bgScale})`;
+      if (window.innerWidth <= 768) {
+  bg.style.transform = `translateY(${translate}px)`;
+} else {
+  bg.style.transform = `translateY(${translate}px) scale(${bgScale})`;
+}
       bg.style.filter = `blur(${blur}px)`;
       content.style.top = `${contentTranslate}px`;
 
