@@ -471,6 +471,7 @@ html {
 
 /* 🔥 KÖZÉP – SZIMBÓLUM */
 .footer-center {
+  grid-column: 2;
   justify-self: center;
 }
 
@@ -492,13 +493,14 @@ html {
 
 /* 🔥 JOBB – LINKEK */
 .footer-right {
-  justify-self: start;
+  grid-column: 1;
+  justify-self: start;   /* 🔥 EZ A LÉNYEG */
 
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 28px;
 
-  margin-left: 40px; /* 👈 finom beljebb húzás */
+  margin-left: 40px;     /* 🔥 EZ ÍGY MÁR OKÉ */
 }
 
 .footer-right a {
