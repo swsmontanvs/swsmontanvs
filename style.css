@@ -343,11 +343,9 @@ html {
 .footer-right {
   position: absolute;
 
-  top: 0;
-  left: 0;
-  right: 0;
-
-  background: red; /* 🔥 DEBUG */
+  bottom: 260px;  /* 🔥 innen indulunk */
+  left: 50%;
+  transform: translateX(-50%);
 
   display: flex;
   flex-direction: row;
@@ -355,7 +353,8 @@ html {
 
   gap: 20px;
 
-  z-index: 9999;
+  width: auto;
+  z-index: 10;
 }
 
 .footer-right a {
