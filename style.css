@@ -336,16 +336,19 @@ html {
 
 .footer-right {
   position: absolute;
-  top: 100px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 20px;
+  left: 0;
+  right: 0;
+  
+  transform: none;
 
   display: flex !important;
   flex-direction: row !important;
-  gap: 20px;
-
-  background: red; /* 👈 EZ A TESZT */
-  z-index: 99999;   /* 👈 EZ A TESZT */
+  justify-content: center;
+  
+  gap: 25px;
+  
+  z-index: 10;   /* 👈 EZ A TESZT */
 }
 
 .footer-right a {
