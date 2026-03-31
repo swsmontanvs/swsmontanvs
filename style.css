@@ -337,7 +337,7 @@ html {
 /* 🔥 LINK SOR – FELÜL, KÖZÉPEN */
 .footer-right {
   position: absolute;
-  top: -50px;
+  top: 10px;
   left: 50%;
   transform: translateX(-50%);
 
@@ -382,8 +382,9 @@ html {
 .footer-left {
   position: absolute;
   bottom: 20px;
-  left: 1px; /* 🔥 ez volt a kérésed */
-
+  left: 0px; /* 🔥 ez volt a kérésed */
+  padding-left: 10px; /* 👈 ez a trükk */
+  
   font-size: 13px;
   opacity: 0.5;
 }
