@@ -501,8 +501,8 @@ html {
   flex-direction: column;
   gap: 30px;
 
-  padding-left: 80px;    /* 🔥 NEM right */
-  transform: translateY(-40px); /* ↑↓ */
+  padding-left: 60px;    /* 🔥 NEM right */
+  transform: translateY(-80px); /* ↑↓ */
 }
 
 /* 🔥 LINK SZÖVEG */
