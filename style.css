@@ -338,7 +338,7 @@ html {
 .footer-right {
   position: absolute;
   top: -50px;
-  left: 30%;
+  left: 50%;
   transform: translateX(-50%);
 
   display: flex !important;
@@ -494,26 +494,24 @@ html {
 /* 🔥 JOBB – LINKEK */
 .footer-right {
   grid-column: 1;
-  justify-self: start;   /* 🔥 EZ A LÉNYEG */
+
+  justify-self: start;   /* 🔥 NEM end! */
 
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 12px;
 
-  margin-left: 40px;     /* 🔥 EZ ÍGY MÁR OKÉ */
+  margin-left: 120px;    /* 🔥 NEM right */
 }
 
-.footer-right {
-  grid-column: 1;
+/* 🔥 LINK SZÖVEG */
+.footer-right a {
+  font-size: 15px;
+  text-decoration: none;
+  color: white !important;
+  opacity: 0.6;
 
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-
-  align-items: flex-start;
-
-  position: relative;
-  left: 120px;   /* 🔥 EZT FIGYELD */
+  transition: 0.3s ease;
 }
 
 .footer-right a:hover {
