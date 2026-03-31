@@ -453,7 +453,9 @@ html {
 .footer-top {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
-  align-items: center;
+  grid-template-rows: auto 1fr auto; /* 🔥 EZ A KULCS */
+
+  height: 100%
 
   max-width: 1100px;
   margin: 0 auto;
@@ -494,13 +496,14 @@ html {
 /* 🔥 JOBB – LINKEK */
 .footer-right {
   grid-column: 1;
+  grid-row: 2; /* 🔥 középső sáv */
+
+  justify-self: start;
+  align-self: center;
 
   display: flex;
   flex-direction: column;
   gap: 30px;
-
-  justify-self: start;
-  align-self: start;
 
   padding-left: 8%;
 }
