@@ -501,13 +501,13 @@ html {
   justify-self: start;
   align-self: start;
   
-  transform: translateY(-60px);
+  transform: translateY(-80px);
 
   display: flex;
   flex-direction: column;
   gap: 30px;
 
-  padding-left: 30%;
+  padding-left: 50%;
 }
 
 /* 🔥 LINK SZÖVEG */
