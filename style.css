@@ -343,18 +343,19 @@ html {
 .footer-right {
   position: absolute;
 
-  top: 40px;              /* 🔥 ezt állítod majd */
-  left: 50%;
-  transform: translateX(-50%);
+  top: 0;
+  left: 0;
+  right: 0;
+
+  background: red; /* 🔥 DEBUG */
 
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
 
-  gap: 25px;
+  gap: 20px;
 
-  width: 100%;
+  z-index: 9999;
 }
 
 .footer-right a {
