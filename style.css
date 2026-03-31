@@ -14,10 +14,6 @@ html {
   scroll-behavior: smooth;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 /* 🌄 HÁTTÉR */
 .hero-bg {
   position: fixed;
@@ -390,6 +386,8 @@ html {
 
   font-size: 13px;
   opacity: 0.5;
+}
+  
 }
 
 
