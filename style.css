@@ -263,7 +263,7 @@ html {
     width: 140px;
 
     transform: scale(1);
-    transform-origin: center;
+    transform-origin: bottom right;
   }
 
   .corner-logo:hover {
