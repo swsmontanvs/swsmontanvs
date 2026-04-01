@@ -353,6 +353,7 @@ html {
   gap: 25px;
 
   margin-top: 90px;
+  margin-left: -103px;
 
   left: 50%;                      /* 🔥 */
   transform: translateX(-20px);    /* 🔥 EZ A KULCS */
