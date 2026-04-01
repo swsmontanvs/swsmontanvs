@@ -378,28 +378,16 @@ html {
 }
 
 /* 🔥 COPYRIGHT – SZIMBÓLUM ALÁ */
-.footer-bottom {
-  position: absolute;
-  left: 50%;
-  top: 370px; /* 🔥 lejjebb húzva */
-  transform: translateX(-50%);
-  text-align: center;
-
-  font-size: 12px;
-  opacity: 0.5;
-}
-
-/* 🔥 DEVELOPED BY – KIJJEBB BALRA */
 .footer-left {
   position: absolute;
   bottom: 20px;
   left: 0px; /* 🔥 ez volt a kérésed */
   
-  transform: translateX(-25px);
+  transform: translate(-25px, 10px);
   
   font-size: 12px;
   opacity: 0.5;
-}
+} 
   
 }
 
