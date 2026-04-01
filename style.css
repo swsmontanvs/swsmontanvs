@@ -373,6 +373,18 @@ html {
   opacity: 0.5;
 } 
   
+  .footer-bottom {
+  position: absolute;
+
+  left: 50%;
+  top: 260px;
+
+  transform: translateX(-50%);
+
+  font-size: 12px;
+  opacity: 0.5;
+}
+  
 }
 
 
