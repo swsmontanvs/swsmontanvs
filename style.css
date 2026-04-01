@@ -394,9 +394,10 @@ html {
   position: absolute;
   bottom: 20px;
   left: 0px; /* 🔥 ez volt a kérésed */
-  padding-left: 10px; /* 👈 ez a trükk */
   
-  font-size: 13px;
+  transform: translateX(-25px);
+  
+  font-size: 12px;
   opacity: 0.5;
 }
   
