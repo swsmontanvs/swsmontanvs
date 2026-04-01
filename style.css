@@ -271,7 +271,7 @@ html {
   }
 
   .corner-logo.active {
-    bottom: 50px;
+    bottom: 100px;
     left: 50%;
     right: auto;
     top: auto;
