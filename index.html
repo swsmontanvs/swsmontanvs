@@ -6,43 +6,36 @@
   <meta name="description" content="Official website of S.W.S. Montanus – author of Areanis.">
   <title>S.W.S. Montanus</title>
   <link rel="icon" href="favicon.ico">
-
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-<link rel="manifest" href="site.webmanifest">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<a href="https://swsmontanvs.com/" class="home-link">
-  <img src="homelink.png" alt="Montanus">
-</a>
+  <a href="https://swsmontanvs.com/" class="home-link">
+    <img src="homelink.png" alt="Montanus">
+  </a>
 
-<div class="lang-switcher">
-  <img src="eng.png" alt="English">
-  <img src="hun.png" alt="Magyar">
-</div>
-
-<div class="hero-bg"></div>
-
-<section class="hero">
-
-  <nav class="main-menu">
-    <a href="areanis.html">
-      <img src="areanis-title.png" alt="Areanis" class="menu-areanis">
-    </a>
-  </nav>
-
-  <div class="hero-text">
-    <h1>The official website of S.W.S. Montanus, author</h1>
-    <p>Under development...</p>
+  <div class="lang-switcher">
+    <img src="eng.png" alt="English">
+    <img src="hun.png" alt="Magyar">
   </div>
 
-</section>
+  <div class="hero-bg"></div>
+
+  <section class="hero">
+    <nav class="main-menu">
+      <a href="areanis.html">
+        <img src="areanis-title.png" alt="Areanis" class="menu-areanis">
+      </a>
+    </nav>
+    <div class="hero-text">
+      <h1>The official website of S.W.S. Montanus, author</h1>
+      <p>Under development...</p>
+    </div>
+  </section>
 
 <section class="content">
   <h2>Welcome</h2>
@@ -121,146 +114,126 @@
   <p>Lorem ipsum dolor sit amet.</p>
   
 </section>
-
-<footer class="site-footer">
-
-  <div class="footer-top">
-
-    <div class="footer-left">
-      Developed by S.W.S. Montanus
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-left">
+        Developed by S.W.S. Montanus
+      </div>
+      <div class="footer-center">
+        <img src="symbol.png" alt="Montanus Symbol" class="footer-symbol">
+      </div>
+      <div class="footer-right">
+        <a href="#">Contact</a>
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+      </div>
     </div>
-
-    <div class="footer-center">
-      <img src="symbol.png" alt="Montanus Symbol" class="footer-symbol">
+    <div class="footer-bottom">
+      &copy; 2026 S.W.S. Montanus &mdash; All rights reserved.
     </div>
+  </footer>
 
-    <div class="footer-right">
-      <a href="#">Contact</a>
-      <a href="#">Terms</a>
-      <a href="#">Privacy</a>
-    </div>
+  <!-- SCROLL TOP -->
+  <a href="#" class="scroll-top" id="scrollTopBtn">↑</a>
 
-  </div>
+  <!-- LOGÓ -->
+  <img src="logo.png" alt="Montanus Seal" class="corner-logo">
 
-  <div class="footer-bottom">
-    © 2026 S.W.S. Montanus — All rights reserved.
-  </div>
+  <script>
+    const bg          = document.querySelector(".hero-bg");
+    const content     = document.querySelector(".content");
+    const homeLink    = document.querySelector(".home-link");
+    const hero        = document.querySelector(".hero");
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    const cornerLogo  = document.querySelector(".corner-logo");
 
-</footer>
+    // 🔧 JAVÍTÁS: matchMedia cache-elve, nem kérdezzük le minden frame-ben
+    const isMobile = () => window.matchMedia("(max-width: 768px)").matches;
 
-  
-<a href="#" class="scroll-top" id="scrollTopBtn">↑</a>
+    let ticking = false;
 
+    window.addEventListener("scroll", () => {
+      if (cornerLogo.classList.contains("active")) return;
 
-<img src="logo.png" alt="Montanus Seal" class="corner-logo">
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const scrollY = window.scrollY;
 
-<script>
-const bg = document.querySelector(".hero-bg");
-const content = document.querySelector(".content");
-const homeLink = document.querySelector(".home-link");
-const hero = document.querySelector(".hero");
-const scrollTopBtn = document.getElementById("scrollTopBtn");
-const cornerLogo = document.querySelector(".corner-logo");
+          // 🔥 PARALLAX
+          const speed         = 0.2;
+          const zoomSpeed     = 0.00005;
+          const blurSpeed     = 0.002;
+          const contentSpeed  = 0.85;
 
-let ticking = false;
+          const translate       = -scrollY * speed;
+          const bgScale         = 1 + scrollY * zoomSpeed;
+          const blur            = Math.min(scrollY * blurSpeed, 3);
+          // 🔧 JAVÍTÁS: content-et transform-mal mozgatjuk, nem top-pal
+          const contentTranslate = scrollY * (1 - contentSpeed);
 
-window.addEventListener("scroll", () => {
-  if (cornerLogo.classList.contains("active")) return;
-  if (!ticking) {
-    requestAnimationFrame(() => {
+          if (isMobile()) {
+            bg.style.transform = `translateY(${translate}px)`;
+          } else {
+            bg.style.transform = `translateY(${translate}px) scale(${bgScale})`;
+          }
 
-      const scrollY = window.scrollY;
+          bg.style.filter = `blur(${blur}px)`;
+          // 🔧 JAVÍTÁS: top helyett transform – GPU-gyorsított, nincs reflow
+          content.style.transform = `translateY(${contentTranslate}px)`;
 
-      
-      const speed = 0.2;
-      const zoomSpeed = 0.00005;
-      const blurSpeed = 0.002;
-      const contentSpeed = 0.85;
+          // 🔥 LOGO VISELKEDÉS
+          if (isMobile()) {
+            const scrollRange = hero.offsetHeight;
+            let progress = Math.min(scrollY / scrollRange, 1);
+            progress = Math.max((progress - 0.7) / 0.35, 0);
 
-      const translate = -scrollY * speed;
-      const bgScale = 1 + scrollY * zoomSpeed;
-      const blur = Math.min(scrollY * blurSpeed, 3);
-      const contentTranslate = scrollY * (1 - contentSpeed);
+            const scale    = 1 - (progress * 0.35);
+            const startTop = 80;
+            const endTop   = 25;
+            const topPos   = startTop - (progress * (startTop - endTop));
+            const left     = 50 - (progress * 30);
 
-      if (window.innerWidth <= 768) {
-  bg.style.transform = `translateY(${translate}px)`;
-} else {
-  bg.style.transform = `translateY(${translate}px) scale(${bgScale})`;
-}
-      bg.style.filter = `blur(${blur}px)`;
-      content.style.top = `${contentTranslate}px`;
+            homeLink.style.left      = `${left}%`;
+            homeLink.style.top       = `${topPos}px`;
+            homeLink.style.transform = `translateX(-50%) scale(${scale})`;
+          } else {
+            const scrollRange = hero.offsetHeight + 1200;
+            let progress = Math.min(scrollY / scrollRange, 1);
+            progress = Math.max((progress - 0.25) / 0.75, 0);
 
-      
-      if (window.innerWidth <= 768) {
+            const logoScale = 1 - (progress * 0.40);
+            const topPos    = 30 - (progress * 15);
 
-        const scrollRange = hero.offsetHeight;
-        let progress = Math.min(scrollY / scrollRange, 1);
-        progress = Math.max((progress - 0.7) / 0.35, 0);
+            homeLink.style.transform = `scale(${logoScale})`;
+            homeLink.style.left      = `${Math.max(15, 80 - (progress * 65))}px`;
+            homeLink.style.top       = `${topPos}px`;
+          }
 
-        const scale = 1 - (progress * 0.35);
+          // 🔥 SCROLL BUTTON
+          scrollTopBtn.classList.toggle("visible", scrollY > 400);
 
-        const startTop = 80;
-        const endTop = 25;
-        const topPos = startTop - (progress * (startTop - endTop));
+          ticking = false;
+        });
 
-        const left = 50 - (progress * 30);
-
-        homeLink.style.left = `${left}%`;
-        homeLink.style.top = `${topPos}px`;
-        homeLink.style.transform = `translateX(-50%) scale(${scale})`;
-
-      } else {
-
-        const scrollRange = hero.offsetHeight + 1200;
-
-        let progress = Math.min(scrollY / scrollRange, 1);
-        progress = Math.max((progress - 0.25) / 0.75, 0);
-
-        const logoScale = 1 - (progress * 0.40);
-        const topPos = 30 - (progress * 15);
-
-        homeLink.style.transform = `scale(${logoScale})`;
-        homeLink.style.left = `${Math.max(15, 80 - (progress * 65))}px`;
-        homeLink.style.top = `${topPos}px`;
+        ticking = true;
       }
-
-      
-      if (scrollY > 400) {
-        scrollTopBtn.classList.add("visible");
-      } else {
-        scrollTopBtn.classList.remove("visible");
-      }
-
-      ticking = false;
-
     });
 
-    ticking = true;
-  }
-});
+    // 🔥 PECSÉT – kattintásra középre, újra kattintásra vissza
+    let logoOpen = false;
 
+    cornerLogo.addEventListener("click", (e) => {
+      e.stopPropagation();
+      logoOpen = !logoOpen;
+      cornerLogo.classList.toggle("active", logoOpen);
+    });
 
-
-let logoOpen = false;
-
-cornerLogo.addEventListener("click", (e) => {
-  e.stopPropagation();
-
-  logoOpen = !logoOpen;
-
-  if (logoOpen) {
-    cornerLogo.classList.add("active");
-  } else {
-    cornerLogo.classList.remove("active");
-  }
-});
-
-
-document.addEventListener("click", () => {
-  cornerLogo.classList.remove("active");
-  logoOpen = false;
-});
-</script>
+    // 🔥 KÜLSŐ KATTINTÁS → VISSZAZÁR
+    document.addEventListener("click", () => {
+      cornerLogo.classList.remove("active");
+      logoOpen = false;
+    });
+  </script>
 
 </body>
 </html>
