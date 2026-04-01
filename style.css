@@ -273,7 +273,7 @@ html {
   }
 
   .corner-logo.active {
-    transform: translate(-39vw, -100px) scale(3);
+    transform: translate(-38vw, -100px) scale(3);
   }
 
   .home-link {
