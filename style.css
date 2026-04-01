@@ -355,7 +355,7 @@ html {
   margin-top: 100px;
 
   left: 50%;                      /* 🔥 */
-  transform: translateX(-50%);    /* 🔥 EZ A KULCS */
+  transform: translateX(-30%);    /* 🔥 EZ A KULCS */
 }
   
 .footer-right a {
