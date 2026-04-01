@@ -343,10 +343,10 @@ html {
 }
   
 .footer-right {
-  position: static;
+  position: relative;
 
   display: flex;
-  flex-direction: row !important;   /* 🔥 EZ A KULCS */ /* 🔥 vízszintes */
+  flex-direction: row !important;
   justify-content: center;
   align-items: center;
 
@@ -354,7 +354,8 @@ html {
 
   margin-top: 100px;
 
-  width: auto;   /* 🔥 EZ A KULCS */
+  left: 50%;                      /* 🔥 */
+  transform: translateX(-50%);    /* 🔥 EZ A KULCS */
 }
   
 .footer-right a {
