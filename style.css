@@ -13,29 +13,32 @@ html {
   scroll-behavior: smooth;
 }
 
+/* 🌄 HÁTTÉR */
+
 .hero-bg {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 120vh;
-
   background-image: url("hegy.png");
   background-size: cover;
   background-position: 50% 20%;
-
   z-index: 0;
   will-change: transform;
 }
+
+/* 🎬 HERO */
 
 .hero {
   height: 100vh;
   position: relative;
   z-index: 1;
-
   left: 0;
   right: 0;
 }
+
+/* 📝 SZÖVEG */
 
 .hero-text {
   position: absolute;
@@ -57,20 +60,23 @@ html {
   font-size: 14px;
 }
 
+/* 📜 CONTENT */
+
 .content {
   position: relative;
   z-index: 2;
   background: #0b0b0b;
   padding: 80px 20px;
   text-align: center;
-  will-change: top;
-
+  /* 🔧 JAVÍTÁS: will-change: top → transform, mert JS-ből transform-mal mozgatjuk */
+  will-change: transform;
   max-width: 100%;
-
   margin: 0 auto;
   left: 0;
   right: 0;
 }
+
+/* LÁGY ÁTMENET */
 
 .content::before {
   content: "";
@@ -79,8 +85,10 @@ html {
   left: 0;
   width: 100%;
   height: 60px;
-  background: linear-gradient(to bottom, rgba(11,11,11,0), #0b0b0b);
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0), #0b0b0b);
 }
+
+/* 🌐 NYELVVÁLASZTÓ */
 
 .lang-switcher {
   position: fixed;
@@ -95,7 +103,7 @@ html {
   width: 28px;
   cursor: pointer;
   opacity: 0.7;
-  transition: 0.2s;
+  transition: opacity 0.2s, transform 0.2s;
 }
 
 .lang-switcher img:hover {
@@ -103,12 +111,13 @@ html {
   transform: scale(1.1);
 }
 
+/* 🏠 HOMELINK */
+
 .home-link {
   position: fixed;
   top: 30px;
   left: 80px;
   z-index: 10;
-
   transform-origin: top left;
   transition: none;
 }
@@ -117,9 +126,7 @@ html {
   width: 250px;
   height: auto;
   opacity: 0.95;
-
   filter: drop-shadow(0 0 8px rgba(255, 120, 60, 0.7));
-
   transition: transform 0.3s cubic-bezier(0.22, 1.6, 0.36, 1),
               filter 0.3s ease,
               opacity 0.2s ease;
@@ -131,6 +138,7 @@ html {
   filter: drop-shadow(0 0 16px rgba(255, 140, 80, 0.8));
 }
 
+/* 🔥 MENÜ – AREANIS */
 
 .main-menu {
   position: absolute;
@@ -138,7 +146,7 @@ html {
   left: 70%;
   transform: translateX(-50%);
   z-index: 9999;
-  will-change: auto;
+  /* 🔧 JAVÍTÁS: will-change: auto eltávolítva – ekvivalens a semmivel */
 }
 
 .menu-areanis {
@@ -148,9 +156,7 @@ html {
   min-height: 60px;
   transform-origin: center;
   opacity: 0.95;
-
   filter: drop-shadow(0 0 10px rgba(255, 140, 60, 0.5));
-
   transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
               filter 0.3s ease,
               opacity 0.3s ease;
@@ -162,83 +168,109 @@ html {
   opacity: 1;
 }
 
+/* 🔥 JOBB ALSÓ LOGÓ */
+
 .corner-logo {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
-
   width: 220px;
   height: auto;
-
   opacity: 0.95;
-
   z-index: 9999;
-
   pointer-events: auto;
-
-  transform-origin: bottom right;
-
   filter: drop-shadow(0 0 16px rgba(255, 120, 60, 0.8));
-
   transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
               filter 0.4s ease,
               opacity 0.3s ease;
+
+  /*
+   * 🔧 JAVÍTÁS: a pozíciót kizárólag transform-mal kezeljük,
+   * így GPU-gyorsított marad minden állapotban.
+   *
+   * Alap (jobb alsó sarok):
+   *   top: 0 + left: 0 + translate(jobb alsó sarokba)
+   *
+   * A képlet: 100vw - 100% = elem jobb széle = viewport jobb széle
+   *           100vh - 100% = elem alsó széle = viewport alja
+   *
+   * 30px-es margót transform-ban viszünk be, nem bottom/right-tal.
+   */
+  top: 0;
+  left: 0;
+  transform-origin: bottom right;
+  transform: translate(
+    calc(100vw - 100% - 30px),
+    calc(100vh - 100% - 30px)
+  );
 }
 
-.corner-logo:hover {
-  transform: scale(2.1);
-
-  filter: drop-shadow(0 0 30px rgba(255, 140, 80, 0.95));
-
-  opacity: 1;
+/* 🔥 HOVER – csak desktopra */
+@media (hover: hover) {
+  .corner-logo:hover {
+    transform: translate(
+      calc(100vw - 100% - 30px),
+      calc(100vh - 100% - 30px)
+    ) scale(2.1);
+    filter: drop-shadow(0 0 30px rgba(255, 140, 80, 0.95));
+    opacity: 1;
+  }
 }
 
 .corner-logo::after {
   content: "";
   position: absolute;
   inset: 0;
-
-  background: radial-gradient(circle, rgba(255,140,80,0.6) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 140, 80, 0.6) 0%, transparent 70%);
   opacity: 0;
-
   transition: opacity 0.6s ease;
   pointer-events: none;
 }
 
-.corner-logo:hover::after {
-  opacity: 1;
-  transition-delay: 0.2s;
+@media (hover: hover) {
+  .corner-logo:hover::after {
+    opacity: 1;
+    transition-delay: 0.2s;
+  }
 }
 
+/*
+ * 🔧 JAVÍTÁS: .corner-logo.active (kattintásra középre úszik)
+ *
+ * Régen: bottom/left/right/top tulajdonságokat animált → nem GPU-gyorsított.
+ * Most: kizárólag transform, a korábban megbeszélt képlettel.
+ *
+ * Középre:  50vw - 50% = elem vízszintes közepe = viewport közepe
+ *           50vh - 50% = elem függőleges közepe = viewport közepe
+ */
+.corner-logo.active {
+  transform: translate(
+    calc(50vw - 50%),
+    calc(50vh - 50%)
+  ) scale(3.0);
+  filter: drop-shadow(0 0 40px rgba(255, 140, 80, 1));
+  opacity: 1;
+}
+
+/* 🔥 SCROLL TO TOP */
 
 .scroll-top {
   position: fixed;
   bottom: 260px;
   right: 40px;
-
   width: 55px;
   height: 55px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-size: 26px;
   text-decoration: none;
-
   color: white;
   background: rgba(0, 0, 0, 0.4);
-
   border-radius: 50%;
-
   z-index: 9999;
-
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-
   opacity: 0;
   pointer-events: none;
-
   transition: opacity 0.4s ease,
               transform 0.3s ease,
               background 0.3s ease;
@@ -254,26 +286,166 @@ html {
   background: rgba(255, 140, 60, 0.3);
 }
 
+/* ========================================= */
+/* 🔥 AREANIS – SAJÁT VILÁG                  */
+/* ========================================= */
+
+.areanis-page {
+  background-color: #000;
+}
+
+.areanis-page .hero-bg {
+  background-image: none;
+}
+
+.areanis-page .hero {
+  height: 100vh;
+}
+
+.areanis-page .hero-text {
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.areanis-page .hero-text h1 {
+  letter-spacing: 3px;
+  font-size: 28px;
+  opacity: 0.85;
+}
+
+.areanis-page .content {
+  display: none;
+}
+
+/* ========================================= */
+/* 🔥 FOOTER – STABIL DESKTOP LAYOUT         */
+/* ========================================= */
+
+.site-footer {
+  position: relative;
+  z-index: 2;
+  background: #050505;
+  padding: 120px 40px 80px;
+  min-height: 350px;
+}
+
+/* 🔥 HALVÁNY PEREM */
+
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(to bottom, transparent, #050505);
+}
+
+/* 🔥 GRID ALAP */
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: auto 1fr auto;
+  height: 100%;
+  /* 🔧 JAVÍTÁS: hiányzó pontosvessző pótolva a height után */
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* 🔥 BAL – DEVELOPED BY */
+
+.footer-left {
+  position: absolute;
+  bottom: 20px;
+  left: 40px;
+  font-size: 13px;
+  opacity: 0.5;
+}
+
+/* 🔥 KÖZÉP – SZIMBÓLUM */
+
+.footer-center {
+  grid-column: 2;
+  justify-self: center;
+}
+
+.footer-symbol {
+  width: 260px;
+  opacity: 0.95;
+  filter: drop-shadow(0 0 25px rgba(255, 120, 60, 0.8));
+  transition: transform 0.4s ease,
+              filter 0.4s ease;
+}
+
+.footer-symbol:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 45px rgba(255, 150, 80, 1));
+}
+
+/* 🔥 JOBB – LINKEK */
+
+.footer-right {
+  grid-column: 1;
+  grid-row: 2;
+  justify-self: start;
+  align-self: start;
+  transform: translateY(-180px);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-left: 50%;
+}
+
+/* 🔥 LINK SZÖVEG */
+
+.footer-right a {
+  font-size: 15px;
+  text-decoration: none;
+  color: white !important;
+  opacity: 0.6;
+  transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.footer-right a:hover {
+  opacity: 1;
+  color: rgba(255, 140, 80, 0.9) !important;
+}
+
+/* 🔥 COPYRIGHT – ALUL KÖZÉP */
+
+.footer-bottom {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 13px;
+  opacity: 0.5;
+}
+
+/* ========================================= */
+/* 📱 MOBIL JAVÍTÁSOK                        */
+/* ========================================= */
+
 @media (max-width: 768px) {
 
+  /*
+   * 🔧 JAVÍTÁS: .corner-logo mobilon
+   *
+   * Régen: bottom/right pixel-értékek + scale → kevert pozícionálás,
+   *        a transform-origin: bottom right eltolta a scale-t.
+   *
+   * Most: ugyanolyan transform-only megközelítés mint desktopon,
+   *       csak más végpont (jobb alsó sarok kisebb margóval).
+   *       Az .active állapot is közös, méretfüggetlen.
+   */
   .corner-logo {
-    position: fixed;
-    bottom: 10px;
-    right: -25px;
-    
     width: 140px;
-
-    transform: translate(0px, 0px) scale(1);
-    transform-origin: center;
-    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-
-  .corner-logo:hover {
-    transform: none; !important;
-  }
-
-  .corner-logo.active {
-    transform: translate(-38vw, -100px) scale(3);
+    transform: translate(
+      calc(100vw - 100% - 10px),
+      calc(100vh - 100% - 10px)
+    );
+    transform-origin: bottom right;
   }
 
   .home-link {
@@ -310,220 +482,85 @@ html {
     top: 60%;
   }
 
+  /* 🔥 FOOTER MOBIL */
 
-.site-footer {
-  padding: 60px 20px 60px;
-  min-height: 360px;
-  position: relative;
-}
+  .site-footer {
+    padding: 60px 20px 60px;
+    min-height: 360px;
+    position: relative;
+  }
 
-.footer-top {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  .footer-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 260px;
+  }
 
-  min-height: 260px;
-}
-  
-.footer-right {
-  position: relative;
+  /*
+   * 🔧 JAVÍTÁS: .footer-right mobilon
+   * Régen: margin-left: -103px + transform: translateX(-20px) – kézi
+   *        magic numberek, törékenyek.
+   * Most: flexbox-szal középre igazítva, margin-left eltávolítva.
+   */
+  .footer-right {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-top: 90px;
+    margin-left: 0;
+    left: auto;
+    transform: none;
+    padding-left: 0;
+    grid-column: unset;
+    grid-row: unset;
+  }
 
-  display: flex;
-  flex-direction: row !important;
-  justify-content: center;
-  align-items: center;
+  .footer-right a {
+    font-size: 14px;
+    text-align: center;
+  }
 
-  gap: 25px;
+  /* 🔥 SZIMBÓLUM – KÖZÉP */
 
-  margin-top: 90px;
-  margin-left: -103px;
+  .footer-center {
+    position: absolute;
+    left: 50%;
+    top: 70px;
+    transform: translateX(-50%);
+    text-align: center;
+  }
 
-  left: 50%;
-  transform: translateX(-20px);
-}
-  
-.footer-right a {
-  font-size: 14px;
-  text-align: center;
-}
+  .footer-symbol {
+    width: 170px;
+  }
 
-.footer-center {
-  position: absolute;
-  left: 50%;
-  top: 70px;
-  transform: translateX(-50%);
-  text-align: center;
-}
+  /*
+   * 🔧 JAVÍTÁS: .footer-left mobilon
+   * Régen: transform: translate(-35px, 15px) – magic number.
+   * Most: left: 20px, bottom igazítás marad, transform törölve.
+   */
+  .footer-left {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    transform: none;
+    font-size: 12px;
+    opacity: 0.5;
+  }
 
-.footer-symbol {
-  width: 170px;
-}
-
-.footer-left {
-  position: absolute;
-  bottom: 20px;
-  left: 0px;
-  
-  transform: translate(-35px, 15px);
-  
-  font-size: 12px;
-  opacity: 0.5;
-} 
-  
   .footer-bottom {
-  position: absolute;
+    position: absolute;
+    left: 50%;
+    top: 260px;
+    transform: translateX(-50%);
+    font-size: 12px;
+    opacity: 0.5;
+    white-space: nowrap;
+    text-align: center;
+  }
 
-  left: 50%;
-  top: 350px;
-
-  transform: translateX(-50%);
-
-  font-size: 12px;
-  opacity: 0.5;
-
-  white-space: nowrap;
-  text-align: center;
-}
-  
-}
-
-
-
-
-.areanis-page {
-  background-color: #000;
-}
-
-.areanis-page .hero-bg {
-  background-image: none;
-}
-
-.areanis-page .hero {
-  height: 100vh;
-}
-
-.areanis-page .hero-text {
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.areanis-page .hero-text h1 {
-  letter-spacing: 3px;
-  font-size: 28px;
-  opacity: 0.85;
-}
-
-.areanis-page .content {
-  display: none;
-}
-
-
-
-.site-footer {
-  position: relative;
-  z-index: 2;
-
-  background: #050505;
-  padding: 120px 40px 80px;
-
-  min-height: 350px;
-}
-
-
-.site-footer::before {
-  content: "";
-  position: absolute;
-  top: -80px;
-  left: 0;
-  width: 100%;
-  height: 80px;
-
-  background: linear-gradient(to bottom, transparent, #050505);
-}
-
-
-.footer-top {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  grid-template-rows: auto 1fr auto;
-
-  height: 100%
-
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-
-.footer-left {
-  position: absolute;
-  bottom: 20px;
-  left: 40px;
-
-  font-size: 13px;
-  opacity: 0.5;
-}
-
-
-.footer-center {
-  grid-column: 2;
-  justify-self: center;
-}
-
-.footer-symbol {
-  width: 260px;
-
-  opacity: 0.95;
-
-  filter: drop-shadow(0 0 25px rgba(255, 120, 60, 0.8));
-
-  transition: transform 0.4s ease,
-              filter 0.4s ease;
-}
-
-.footer-symbol:hover {
-  transform: scale(1.05);
-  filter: drop-shadow(0 0 45px rgba(255, 150, 80, 1));
-}
-
-
-.footer-right {
-  grid-column: 1;
-  grid-row: 2;
-
-  justify-self: start;
-  align-self: start;
-  
-  transform: translateY(-180px);
-
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-
-  padding-left: 50%;
-}
-
-
-.footer-right a {
-  font-size: 15px;
-  text-decoration: none;
-  color: white !important;
-  opacity: 0.6;
-
-  transition: 0.3s ease;
-}
-
-.footer-right a:hover {
-  opacity: 1;
-  color: rgba(255, 140, 80, 0.9);
-}
-
-
-.footer-bottom {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-
-  font-size: 13px;
-  opacity: 0.5;
 }
