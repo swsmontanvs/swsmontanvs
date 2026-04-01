@@ -148,10 +148,10 @@
 
 </footer>
 
-<!-- SCROLL TOP -->
+  
 <a href="#" class="scroll-top" id="scrollTopBtn">↑</a>
 
-<!-- LOGÓ -->
+
 <img src="logo.png" alt="Montanus Seal" class="corner-logo">
 
 <script>
@@ -170,7 +170,7 @@ window.addEventListener("scroll", () => {
 
       const scrollY = window.scrollY;
 
-      // 🔥 PARALLAX
+      
       const speed = 0.2;
       const zoomSpeed = 0.00005;
       const blurSpeed = 0.002;
@@ -189,7 +189,7 @@ window.addEventListener("scroll", () => {
       bg.style.filter = `blur(${blur}px)`;
       content.style.top = `${contentTranslate}px`;
 
-      // 🔥 LOGO VISELKEDÉS
+      
       if (window.innerWidth <= 768) {
 
         const scrollRange = hero.offsetHeight;
@@ -223,7 +223,7 @@ window.addEventListener("scroll", () => {
         homeLink.style.top = `${topPos}px`;
       }
 
-      // 🔥 SCROLL BUTTON
+      
       if (scrollY > 400) {
         scrollTopBtn.classList.add("visible");
       } else {
@@ -239,7 +239,7 @@ window.addEventListener("scroll", () => {
 });
 
 
-// 🔥 PECSÉT – JAVÍTOTT VEZÉRLÉS
+
 let logoOpen = false;
 
 cornerLogo.addEventListener("click", (e) => {
@@ -254,7 +254,7 @@ cornerLogo.addEventListener("click", (e) => {
   }
 });
 
-// 🔥 KÜLSŐ KATTINTÁS → VISSZAZÁR
+
 document.addEventListener("click", () => {
   cornerLogo.classList.remove("active");
   logoOpen = false;
