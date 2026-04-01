@@ -339,12 +339,22 @@ html {
   flex-direction: column;
   align-items: center;
 
-  padding-top: 220; /* 🔥 EZ A KULCS */
+  min-height: 260px; /* 🔥 EZ A KULCS */
 }
   
 .footer-right {
-  outline: 2px solid red;
-  background: rgba(255,0,0,0.2);
+  position: static;
+
+  display: flex;
+  flex-direction: row;   /* 🔥 vízszintes */
+  justify-content: center;
+  align-items: center;
+
+  gap: 25px;
+
+  margin-top: 40px;
+
+  width: 100%;
 }
   
 .footer-right a {
