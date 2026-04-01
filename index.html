@@ -165,6 +165,7 @@ const cornerLogo = document.querySelector(".corner-logo");
 let ticking = false;
 
 window.addEventListener("scroll", () => {
+  if (cornerLogo.classList.contains("active")) return;
   if (!ticking) {
     requestAnimationFrame(() => {
 
