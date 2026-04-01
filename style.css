@@ -346,7 +346,7 @@ html {
   position: static;
 
   display: flex;
-  flex-direction: row;   /* 🔥 vízszintes */
+  flex-direction: row !important;   /* 🔥 EZ A KULCS */ /* 🔥 vízszintes */
   justify-content: center;
   align-items: center;
 
