@@ -352,9 +352,9 @@ html {
 
   gap: 25px;
 
-  margin-top: 40px;
+  margin-top: 120px;
 
-  width: 100%;
+  width: auto;   /* 🔥 EZ A KULCS */
 }
   
 .footer-right a {
