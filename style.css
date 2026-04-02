@@ -267,6 +267,7 @@ html {
 }
 
 
+
 @media (max-width: 768px) {
 
 .corner-logo {
@@ -398,7 +399,7 @@ html {
   position: absolute;
 
   left: 50%;
-  top: 260px;
+  top: 350px !important;
 
   transform: translateX(-50%);
 
@@ -464,7 +465,6 @@ html {
 
   background: linear-gradient(to bottom, transparent, #050505);
 }
-
 
 .footer-top {
   display: grid;
@@ -542,7 +542,6 @@ html {
   top: 515px;
   left: 50%;
   transform: translateX(-50%);
-
-  font-size: 13px;
+  
   opacity: 0.5;
 }
