@@ -269,28 +269,32 @@ html {
 
 @media (max-width: 768px) {
 
-  .corner-logo {
-    bottom: 10px;
-    right: -25px;
-    left: auto;
-    width: 140px;
+.corner-logo {
+  bottom: 0;
+  right: 0;
+  left: auto;
+  width: 140px;
+  transform: translate(calc(-1 * (30px - 25px)), -10px);
+  transform-origin: center;
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              filter 0.4s ease,
+              opacity 0.3s ease;
+}
 
-    transform: scale(1);
-    transform-origin: center;
-  }
+.corner-logo:hover {
+  transform: translate(calc(-1 * (30px - 25px)), -10px);
+}
 
-  .corner-logo:hover {
-    transform: none;
-  }
-
-  .corner-logo.active {
-    bottom: 100px;
-    left: 50%;
-    right: auto;
-    top: auto;
-
-    transform: translateX(-50%) scale(3.0);
-  }
+.corner-logo.active {
+  bottom: 0;
+  left: auto;
+  right: 0;
+  top: auto;
+  transform: translate(
+    calc(-50vw + 50%),
+    calc(-50vh + 50% + 170px)
+  ) scale(3.0);
+}
 
   .home-link {
     left: 50%;
