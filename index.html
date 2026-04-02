@@ -260,6 +260,14 @@ document.addEventListener("click", () => {
   cornerLogo.classList.remove("active");
   logoOpen = false;
 });
+
+
+  scrollTopBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  scrollTopBtn.blur();
+});
+  
 </script>
 
 </body>
