@@ -293,7 +293,7 @@ html {
   top: auto;
   transform: translate(
     calc(-50vw + 50%),
-    calc(-50vh + 50% + 170px)
+    calc(-50vh + 50% + 200px)
   ) scale(3.0);
 }
 
