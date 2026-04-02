@@ -267,6 +267,17 @@ document.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
   scrollTopBtn.blur();
 });
+
+
+  scrollTopBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+
+  
+  setTimeout(() => {
+    scrollTopBtn.blur();
+  }, 50);
+});
   
 </script>
 
