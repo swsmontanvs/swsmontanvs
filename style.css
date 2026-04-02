@@ -204,15 +204,19 @@ html {
 }
 
 /* 🔥 HOVER – csak desktopra */
+
 @media (hover: hover) {
-  .corner-logo:hover {
-    transform: translate(
-      calc(100vw - 100% - 30px),
-      calc(100vh - 100% - 30px)
-    ) scale(2.1);
-    filter: drop-shadow(0 0 30px rgba(255, 140, 80, 0.95));
-    opacity: 1;
-  }
+
+.corner-logo:hover {
+
+transform: scale(2.1);
+
+filter: drop-shadow(0 0 30px rgba(255, 140, 80, 0.95));
+
+opacity: 1;
+
+}
+
 }
 
 .corner-logo::after {
