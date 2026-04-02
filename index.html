@@ -269,14 +269,17 @@ document.addEventListener("click", () => {
 });
 
 
-  scrollTopBtn.addEventListener("click", (e) => {
+scrollTopBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  window.scrollTo({ top: 0, behavior: "smooth" });
 
-  
-  setTimeout(() => {
-    scrollTopBtn.blur();
-  }, 50);
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+
+  // 🔥 biztos fókusz törlés (nem csak blur)
+  scrollTopBtn.blur();
+  document.activeElement.blur();
 });
   
 </script>
