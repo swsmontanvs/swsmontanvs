@@ -203,12 +203,12 @@ if (logoParallax) {
 }
 
 
-const logoSpeed = 0.15;
+const bgSpeed = 0.15;
 const logoOffset = logoSection.offsetTop;
 const relativeScroll = scrollY - logoOffset;
 
 if (relativeScroll > -window.innerHeight && relativeScroll < window.innerHeight * 2) {
-  logoSection.style.transform = `translateY(${relativeScroll * logoSpeed}px)`;
+  logoSection.style.backgroundPosition = `center ${relativeScroll * bgSpeed}px`;
 }
 
       
