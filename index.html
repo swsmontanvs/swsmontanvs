@@ -187,7 +187,7 @@ if (logoSection) {
   const bgSpeed = 0.45;
 
   if (sectionRect.top < window.innerHeight && sectionRect.bottom > 0) {
-    const bgOffset = (window.innerHeight - sectionRect.top) * bgSpeed;
+    const bgOffset = -(window.innerHeight - sectionRect.top) * bgSpeed;
     logoSection.style.backgroundPosition = `center ${bgOffset}px`;
   }
 }
@@ -202,7 +202,7 @@ if (logoParallax) {
 
     const centerOffset = rect.top + rect.height / 2 - windowHeight / 2;
 
-    const speed = 0.4;
+    const speed = 0.3;
     const offset = centerOffset * speed;
 
     logoParallax.style.transform = `
