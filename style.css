@@ -83,7 +83,7 @@ html {
 }
 
 .content-break img {
-  width: 100%;
+  width: 50%;
   max-width: 900px;
 
   opacity: 0.95;
