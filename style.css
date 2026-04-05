@@ -64,7 +64,7 @@ html {
 
 .content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   background: #0b0b0b;
   padding: 80px 20px;
   text-align: center;
@@ -124,7 +124,7 @@ html {
   background: #000;
 
   position: relative;
-  z-index: 2;
+  z-index: 1;
 
   display: flex;
   align-items: center;
