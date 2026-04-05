@@ -188,7 +188,10 @@ if (logoParallax) {
   const windowHeight = window.innerHeight;
 
   if (rect.top < windowHeight && rect.bottom > 0) {
-    const offset = (rect.top - windowHeight / 2) * 0.2;
+
+    const progress = (windowHeight - rect.top) / (windowHeight + rect.height);
+
+    const offset = (progress - 0.5) * 120;
 
     logoParallax.style.transform = `
       translateY(${offset}px)
