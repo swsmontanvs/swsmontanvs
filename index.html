@@ -184,7 +184,7 @@ window.addEventListener("scroll", () => {
 
 if (logoSection) {
   const sectionRect = logoSection.getBoundingClientRect();
-  const bgSpeed = 0.25;
+  const bgSpeed = 0.45;
 
   if (sectionRect.top < window.innerHeight && sectionRect.bottom > 0) {
     const bgOffset = (window.innerHeight - sectionRect.top) * bgSpeed;
@@ -202,7 +202,7 @@ if (logoParallax) {
 
     const centerOffset = rect.top + rect.height / 2 - windowHeight / 2;
 
-    const speed = 0.7;
+    const speed = 0.4;
     const offset = centerOffset * speed;
 
     logoParallax.style.transform = `
