@@ -139,6 +139,10 @@ html {
 
   position: absolute;
 
+  top: 58%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   will-change: transform;
 
   opacity: 0.95;
