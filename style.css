@@ -150,6 +150,20 @@ html {
   filter:
     drop-shadow(0 0 18px rgba(255, 120, 60, 0.5))
     drop-shadow(0 0 40px rgba(255, 80, 20, 0.25));
+
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+            filter 0.3s ease,
+            opacity 0.3s ease;
+}
+
+.logo-parallax:hover {
+  transform: translate(-50%, -50%) scale(1.15);
+
+  filter:
+    drop-shadow(0 0 30px rgba(255, 140, 80, 0.8))
+    drop-shadow(0 0 60px rgba(255, 100, 40, 0.5));
+
+  opacity: 1;
 }
 
 
