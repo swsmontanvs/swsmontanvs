@@ -125,6 +125,8 @@ html {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-color: #020305;
+  background-blend-mode: lighten;
 
   position: relative;
   z-index: 1;
