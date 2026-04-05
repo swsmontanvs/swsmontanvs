@@ -170,8 +170,7 @@ const homeLink = document.querySelector(".home-link");
 const hero = document.querySelector(".hero");
 const scrollTopBtn = document.getElementById("scrollTopBtn");
 const cornerLogo = document.querySelector(".corner-logo");
-
-const cornerLogo = document.querySelector(".corner-logo");
+const logoParallax = document.querySelector(".logo-parallax");
 
 let ticking = false;
 
@@ -183,14 +182,18 @@ window.addEventListener("scroll", () => {
       const scrollY = window.scrollY;
 
       
-if (contentLogo) {
-  const rect = contentLogo.getBoundingClientRect();
+
+if (logoParallax) {
+  const rect = logoParallax.getBoundingClientRect();
   const windowHeight = window.innerHeight;
 
   if (rect.top < windowHeight && rect.bottom > 0) {
-    const offset = (rect.top - windowHeight / 2) * 0.05;
+    const offset = (rect.top - windowHeight / 2) * 0.2;
 
-    contentLogo.style.transform = `translateY(${offset}px) scale(1.02)`;
+    logoParallax.style.transform = `
+      translateY(${offset}px)
+      scale(1.05)
+    `;
   }
 }
 
