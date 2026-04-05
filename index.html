@@ -166,6 +166,8 @@ const hero = document.querySelector(".hero");
 const scrollTopBtn = document.getElementById("scrollTopBtn");
 const cornerLogo = document.querySelector(".corner-logo");
 
+const cornerLogo = document.querySelector(".corner-logo");
+
 let ticking = false;
 
 window.addEventListener("scroll", () => {
@@ -174,6 +176,18 @@ window.addEventListener("scroll", () => {
     requestAnimationFrame(() => {
 
       const scrollY = window.scrollY;
+
+      
+if (contentLogo) {
+  const rect = contentLogo.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+
+  if (rect.top < windowHeight && rect.bottom > 0) {
+    const offset = (rect.top - windowHeight / 2) * 0.05;
+
+    contentLogo.style.transform = `translateY(${offset}px) scale(1.02)`;
+  }
+}
 
       
       const speed = 0.2;
