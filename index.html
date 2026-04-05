@@ -189,9 +189,10 @@ if (logoParallax) {
 
   if (rect.top < windowHeight && rect.bottom > 0) {
 
-    const progress = (windowHeight - rect.top) / (windowHeight + rect.height);
+    const centerOffset = rect.top + rect.height / 2 - windowHeight / 2;
 
-    const offset = (progress - 0.5) * 120;
+    const speed = 0.35; // 🔥 EZ A SEBESSÉG (nagyobb = gyorsabb)
+    const offset = -centerOffset * speed;
 
     logoParallax.style.transform = `
       translateY(${offset}px)
