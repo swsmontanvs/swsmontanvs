@@ -166,6 +166,7 @@
 <script>
 const bg = document.querySelector(".hero-bg");
 const content = document.querySelector(".content");
+const logoSection = document.querySelector(".logo-section");
 const homeLink = document.querySelector(".home-link");
 const hero = document.querySelector(".hero");
 const scrollTopBtn = document.getElementById("scrollTopBtn");
@@ -199,6 +200,15 @@ if (logoParallax) {
       scale(1.05)
     `;
   }
+}
+
+
+const logoSpeed = 0.15;
+const logoOffset = logoSection.offsetTop;
+const relativeScroll = scrollY - logoOffset;
+
+if (relativeScroll > -window.innerHeight && relativeScroll < window.innerHeight * 2) {
+  logoSection.style.transform = `translateY(${relativeScroll * logoSpeed}px)`;
 }
 
       
