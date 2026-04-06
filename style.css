@@ -194,7 +194,7 @@ html {
 .logo-parallax:hover {
   transform: translate(-50%, -50%) scale(1.15);
   
-  animation: lightningHover 0.6s infinite alternate;
+  animation: lightningHover 1.6s infinite alternate;
 
   /* filter:
     drop-shadow(0 0 30px rgba(255, 140, 80, 0.8))
