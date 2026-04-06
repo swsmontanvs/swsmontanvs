@@ -117,6 +117,34 @@ html {
   background: linear-gradient(to top, rgba(11,11,11,0), #0b0b0b);
 }
 
+
+.content-logo {
+  text-align: center;
+  margin: 80px 0;
+}
+
+.content-logo-img {
+  width: 50%;
+  max-width: 600px;
+
+  opacity: 0.95;
+
+  filter:
+    drop-shadow(0 0 18px rgba(255, 120, 60, 0.5))
+    drop-shadow(0 0 40px rgba(255, 80, 20, 0.25));
+
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              filter 0.3s ease,
+              opacity 0.3s ease;
+}
+
+.content-logo-img:hover {
+  transform: scale(1.15);
+  animation: lightningHover 1.6s infinite alternate;
+  opacity: 1;
+}
+
+
 .logo-section {
   width: 100%;
   height: 120vh;
