@@ -190,7 +190,7 @@ if (logoSection) {
 
   if (sectionRect.top < window.innerHeight && sectionRect.bottom > 0) {
     
-    const bgOffset = -(window.innerHeight - sectionRect.top) * bgSpeed;
+    const bgOffset = -(sectionRect.top * bgSpeed);
 
     if (logoBg) {
       logoBg.style.transform = `translateY(${bgOffset}px)`;
