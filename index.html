@@ -73,10 +73,10 @@
 
   <section class="logo-section">
     <div class="logo-bg"></div>
-  <!-- <img src="montanvslogo.png" class="logo-parallax"> -->
+  <!-- <img src="montanvslogo.png" class="logo-parallax">
   <img src="montanvslogo.png" class="logo-parallax red">
-  <!-- <img src="montanvslogo.png" class="logo-parallax blue"> -->
-  <img class="logo-parallax blue flash">
+  <!-- <img src="montanvslogo.png" class="logo-parallax blue">
+  <img class="logo-parallax blue flash"> -->
 </section>
 
 <section class="content">
@@ -110,6 +110,10 @@
   <p>Lorem ipsum dolor sit amet.</p>
   <p>Lorem ipsum dolor sit amet.</p>
   <p>Lorem ipsum dolor sit amet.</p>
+
+  <div class="content-logo">
+  <img src="montanvslogo.png" class="content-logo-img">
+</div>
 
   <p>Lorem ipsum dolor sit amet.</p>
   <p>Lorem ipsum dolor sit amet.</p>
@@ -175,7 +179,7 @@ const homeLink = document.querySelector(".home-link");
 const hero = document.querySelector(".hero");
 const scrollTopBtn = document.getElementById("scrollTopBtn");
 const cornerLogo = document.querySelector(".corner-logo");
-const logoParallax = document.querySelector(".logo-parallax");
+/* const logoParallax = document.querySelector(".logo-parallax"); */
 const logoBg = document.querySelector(".logo-bg");
 
 let ticking = false;
@@ -203,7 +207,7 @@ if (logoSection) {
 
       
 
-if (logoParallax) {
+/* if (logoParallax) {
   const rect = logoParallax.getBoundingClientRect();
   const windowHeight = window.innerHeight;
 
@@ -219,7 +223,7 @@ if (logoParallax) {
       scale(1.05)
     `;
   }
-}
+} */
 
 
 
@@ -343,16 +347,17 @@ scrollTopBtn.addEventListener("click", (e) => {
 });
 
   function lightningFlash() {
-  if (!logoBg || !logoParallax) return;
+  /* if (!logoBg || !logoParallax) return; */
+    if (!logoBg) return;
 
-  // villám felvillan
+  
   logoBg.classList.add("flash");
-  logoParallax.classList.add("flash");
+ /* logoParallax.classList.add("flash"); */
 
-  // visszahalványul
+  
   setTimeout(() => {
     logoBg.classList.remove("flash");
-    logoParallax.classList.remove("flash");
+    /* logoParallax.classList.remove("flash"); */
   }, 120);
 }
 
