@@ -22,7 +22,7 @@ html {
   width: 100%;
   height: 120vh;
 
-  background-image: url("stormpeak.png");
+  background-image: url("hegy.png");
   background-size: cover;
   background-position: 50% 20%;
 
@@ -142,7 +142,7 @@ html {
   width: 100%;
   height: 200%;
 
-  background-image: url("storm-bg.png");
+  background-image: url("stormpeak.png");
   background-size: cover;
   background-position: center;
 
