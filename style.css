@@ -119,12 +119,13 @@ html {
 
 .logo-section {
   width: 100%;
-  height: 110vh;
+  height: 120vh;
 
-  background-image: url("stars-bg.png");
+  background-image: url("storm-bg.png");
   background-size: cover;
-  background-position: center;
+  background-position: center 30%;
   background-repeat: no-repeat;
+
   background-color: #020305;
   background-blend-mode: lighten;
 
@@ -136,7 +137,6 @@ html {
   justify-content: center;
 
   will-change: transform;
-
   overflow: hidden;
 }
 
