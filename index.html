@@ -174,7 +174,7 @@
 
 <script>
 const bg = document.querySelector(".hero-bg");
-const content = document.querySelector(".content");
+const content = document.querySelectorAll(".content");
 const logoSection = document.querySelector(".logo-section");
 const homeLink = document.querySelector(".home-link");
 const hero = document.querySelector(".hero");
@@ -253,7 +253,10 @@ if (relativeScroll > -window.innerHeight && relativeScroll < window.innerHeight 
   bg.style.transform = `translateY(${translate}px) scale(${bgScale})`;
 }
       bg.style.filter = `blur(${blur}px)`;
-      content.style.top = `${contentTranslate}px`;
+      /* content.style.top = `${contentTranslate}px`; */
+      contents.forEach(content => {
+  content.style.top = `${contentTranslate}px`;
+});
 
       
       if (window.innerWidth <= 768) {
