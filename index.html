@@ -355,14 +355,21 @@ scrollTopBtn.addEventListener("click", (e) => {
 
 
 setInterval(() => {
-  const randomDelay = Math.random();
+  if (!logoSection) return;
 
-  if (randomDelay > 0.7) {
-    lightningFlash();
+  const rect = logoSection.getBoundingClientRect();
 
-    // dupla villám néha 😏
-    if (Math.random() > 0.6) {
-      setTimeout(lightningFlash, 120);
+  
+  if (rect.top < window.innerHeight && rect.bottom > 0) {
+
+    const randomDelay = Math.random();
+
+    if (randomDelay > 0.7) {
+      lightningFlash();
+
+      if (Math.random() > 0.6) {
+        setTimeout(lightningFlash, 120);
+      }
     }
   }
 }, 1200);
