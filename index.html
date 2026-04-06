@@ -338,6 +338,34 @@ scrollTopBtn.addEventListener("click", (e) => {
   scrollTopBtn.blur();
   document.activeElement.blur();
 });
+
+  function lightningFlash() {
+  if (!logoBg || !logoParallax) return;
+
+  // villám felvillan
+  logoBg.classList.add("flash");
+  logoParallax.classList.add("flash");
+
+  // visszahalványul
+  setTimeout(() => {
+    logoBg.classList.remove("flash");
+    logoParallax.classList.remove("flash");
+  }, 120);
+}
+
+
+setInterval(() => {
+  const randomDelay = Math.random();
+
+  if (randomDelay > 0.7) {
+    lightningFlash();
+
+    // dupla villám néha 😏
+    if (Math.random() > 0.6) {
+      setTimeout(lightningFlash, 120);
+    }
+  }
+}, 1200);
   
 </script>
 
