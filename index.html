@@ -72,6 +72,7 @@
   </section>
 
   <section class="logo-section">
+    <div class="logo-bg"></div>
   <img src="montanvslogo.png" class="logo-parallax">
 </section>
 
@@ -172,6 +173,7 @@ const hero = document.querySelector(".hero");
 const scrollTopBtn = document.getElementById("scrollTopBtn");
 const cornerLogo = document.querySelector(".corner-logo");
 const logoParallax = document.querySelector(".logo-parallax");
+const logoBg = document.querySelector(".logo-bg");
 
 let ticking = false;
 
@@ -187,8 +189,12 @@ if (logoSection) {
   const bgSpeed = 0.30;
 
   if (sectionRect.top < window.innerHeight && sectionRect.bottom > 0) {
+    
     const bgOffset = -(window.innerHeight - sectionRect.top) * bgSpeed;
-    logoSection.style.backgroundPosition = `center ${bgOffset}px`;
+
+    if (logoBg) {
+      logoBg.style.transform = `translateY(${bgOffset}px)`;
+    }
   }
 }
 
@@ -203,7 +209,7 @@ if (logoParallax) {
     const centerOffset = rect.top + rect.height / 2 - windowHeight / 2;
 
     const speed = 0.3;
-    const offset = centerOffset * speed;
+    const offset = -centerOffset * speed;
 
     logoParallax.style.transform = `
       translate(-50%, calc(-50% + ${offset}px))
