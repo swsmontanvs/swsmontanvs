@@ -147,7 +147,7 @@ html {
 
 .logo-section {
   width: 100%;
-  height: 200vh;
+  height: 220vh;
 
   background-color: #000;
 
@@ -172,7 +172,7 @@ html {
 
   background-image: url("stormpeak.png");
   background-size: cover;
-  background-position: center;
+  background-position: center 140%;
 
   z-index: 0;
 
