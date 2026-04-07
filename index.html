@@ -251,12 +251,15 @@ if (relativeScroll > -window.innerHeight && relativeScroll < window.innerHeight 
       const blur = Math.min(scrollY * blurSpeed, 3);
       const contentTranslate = scrollY * (1 - contentSpeed);
 
-      if (window.innerWidth <= 768) {
-  bg.style.transform = `translateY(${translate}px)`;
-} else {
-  bg.style.transform = `translateY(${translate}px) scale(${bgScale})`;
+if (bg) {
+  if (window.innerWidth <= 768) {
+    bg.style.transform = `translateY(${translate}px)`;
+  } else {
+    bg.style.transform = `translateY(${translate}px) scale(${bgScale})`;
+  }
+
+  bg.style.filter = `blur(${blur}px)`;
 }
-      bg.style.filter = `blur(${blur}px)`;
       /* content.style.top = `${contentTranslate}px`; */
       contents.forEach(content => {
   content.style.top = `${contentTranslate}px`;
