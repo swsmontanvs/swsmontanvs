@@ -176,13 +176,6 @@ html {
   opacity: 1;
 }
 
-.content-logo:hover::after {
-  
-  animation: glowPulse 2.6s ease-in-out infinite;
-  will-change: transform;
-  
-  opacity: 1;
-}
 
 .logo-section {
   width: 100%;
