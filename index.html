@@ -392,6 +392,25 @@ setInterval(() => {
     }
   }
 }, 1200);
+
+  const contentLogo = document.querySelector(".content-logo-img");
+
+if (contentLogo) {
+
+  contentLogo.addEventListener("mouseenter", () => {
+    contentLogo.classList.add("pulse");
+  });
+
+  contentLogo.addEventListener("mouseleave", () => {
+
+    // 🔥 itt történik a varázslat
+    setTimeout(() => {
+      contentLogo.classList.remove("pulse");
+    }, 600); // ← ez az "elhalás ideje"
+
+  });
+
+}
   
 </script>
 
