@@ -598,7 +598,7 @@ html {
   .footer-center {
     position: absolute;
     left: 50%;
-    top: 70px;
+    top: 80px;
     transform: translateX(-50%);
     text-align: center;
   }
@@ -609,8 +609,8 @@ html {
 
   .footer-left {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
+    bottom: 5px;
+    left: 5px;
     transform: none;
     font-size: 12px;
     opacity: 0.5;
@@ -619,7 +619,7 @@ html {
   .footer-bottom {
     position: absolute;
     left: 50%;
-    top: 260px;
+    top: 270px;
     transform: translateX(-50%);
     font-size: 12px;
     opacity: 0.5;
