@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Official website of S.W.S. Montanus – author of Areanis.">
   <title>S.W.S. Montanus</title>
-
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -18,8 +17,8 @@
 
 <!-- LANG -->
 <div class="lang-switcher">
-  <img src="eng.png">
-  <img src="hun.png">
+  <img src="eng.png" alt="English">
+  <img src="hun.png" alt="Magyar">
 </div>
 
 <!-- BG -->
@@ -27,6 +26,7 @@
 
 <!-- HERO -->
 <section class="hero">
+
   <nav class="main-menu">
     <a href="areanis.html">
       <img src="areanis-title.png" class="menu-areanis">
@@ -37,6 +37,7 @@
     <h1>The official website of S.W.S. Montanus</h1>
     <p>Under development...</p>
   </div>
+
 </section>
 
 <!-- CONTENT -->
@@ -66,13 +67,29 @@
 
 <!-- FOOTER -->
 <footer class="site-footer">
-  <div class="footer-center">
-    <img src="symbol.png" class="footer-symbol">
+
+  <div class="footer-top">
+
+    <div class="footer-left">
+      Developed by S.W.S. Montanus
+    </div>
+
+    <div class="footer-center">
+      <img src="symbol.png" class="footer-symbol">
+    </div>
+
+    <div class="footer-right">
+      <a href="#">Contact</a>
+      <a href="#">Terms</a>
+      <a href="#">Privacy</a>
+    </div>
+
   </div>
 
   <div class="footer-bottom">
     © 2026 S.W.S. Montanus
   </div>
+
 </footer>
 
 <!-- SCROLL -->
@@ -85,10 +102,10 @@
 
 const bg = document.querySelector(".hero-bg");
 const content = document.querySelector(".content");
-const logoSection = document.querySelector(".logo-section");
-const logoBg = document.querySelector(".logo-bg");
 const hero = document.querySelector(".hero");
 const scrollTopBtn = document.getElementById("scrollTopBtn");
+const logoSection = document.querySelector(".logo-section");
+const logoBg = document.querySelector(".logo-bg");
 
 let ticking = false;
 
@@ -100,20 +117,23 @@ window.addEventListener("scroll", () => {
 
       const scrollY = window.scrollY;
 
-      // PARALLAX
       const speed = 0.2;
-      const zoom = 1 + scrollY * 0.00005;
-      const blur = Math.min(scrollY * 0.002, 3);
+      const zoomSpeed = 0.00005;
+      const blurSpeed = 0.002;
+      const contentSpeed = 0.85;
 
-      bg.style.transform = `translateY(${-scrollY * speed}px) scale(${zoom})`;
+      const translate = -scrollY * speed;
+      const scale = 1 + scrollY * zoomSpeed;
+      const blur = Math.min(scrollY * blurSpeed, 3);
+
+      bg.style.transform = `translateY(${translate}px) scale(${scale})`;
       bg.style.filter = `blur(${blur}px)`;
 
-      content.style.transform = `translateY(${scrollY * 0.15}px)`;
+      content.style.transform = `translateY(${scrollY * (1 - contentSpeed)}px)`;
 
-      // SCROLL BTN
       scrollTopBtn.classList.toggle("visible", scrollY > 400);
 
-      // ⚡ LOGO SECTION PARALLAX
+      // ⚡ LOGO SECTION
       if (logoSection && logoBg) {
         const rect = logoSection.getBoundingClientRect();
 
@@ -150,11 +170,15 @@ function flash() {
 }
 
 setInterval(() => {
+
+  if (!logoSection) return;
+
   const rect = logoSection.getBoundingClientRect();
 
   if (rect.top < window.innerHeight && rect.bottom > 0) {
     if (Math.random() > 0.7) flash();
   }
+
 }, 1200);
 
 </script>
