@@ -261,9 +261,9 @@ if (bg) {
   bg.style.filter = `blur(${blur}px)`;
 }
       /* content.style.top = `${contentTranslate}px`; */
-      contents.forEach(content => {
+if (content) {
   content.style.top = `${contentTranslate}px`;
-});
+}
 
       
       if (window.innerWidth <= 768) {
