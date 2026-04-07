@@ -392,23 +392,24 @@ setInterval(() => {
     }
   }
 }, 1200);
+  
+let stopPulse = false;
 
-  const contentLogo = document.querySelector(".content-logo-img");
+contentLogo.addEventListener("mouseenter", () => {
+  stopPulse = false;
+  contentLogo.classList.add("pulse");
+});
 
-if (contentLogo) {
+contentLogo.addEventListener("mouseleave", () => {
+  stopPulse = true;
+});
 
-  contentLogo.addEventListener("mouseenter", () => {
-    contentLogo.classList.add("pulse");
-  });
 
-  contentLogo.addEventListener("mouseleave", () => {
-
-    // 🔥 itt történik a varázslat
-    setTimeout(() => {
-      contentLogo.classList.remove("pulse");
-    }, 600); // ← ez az "elhalás ideje"
-
-  });
+contentLogo.addEventListener("animationiteration", () => {
+  if (stopPulse) {
+    contentLogo.classList.remove("pulse");
+  }
+});
 
 }
   
