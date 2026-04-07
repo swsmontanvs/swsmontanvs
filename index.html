@@ -304,6 +304,17 @@
         }
       }
     }, 1200);
+
+    const logo = document.querySelector(".content-logo");
+
+logo.addEventListener("mouseenter", () => {
+  logo.classList.add("pulse");
+});
+
+logo.addEventListener("mouseleave", () => {
+  logo.classList.remove("pulse");
+});
+    
   </script>
 
 </body>
