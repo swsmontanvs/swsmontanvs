@@ -259,10 +259,12 @@
       cornerLogo.classList.toggle("active", logoOpen);
     });
 
-    document.addEventListener("click", () => {
+    document.addEventListener("click", (e) => {
+      if (!cornerLogo.contains(e.target)) {
       cornerLogo.classList.remove("active");
       logoOpen = false;
-    });
+    }
+  });
 
     scrollTopBtn.addEventListener("click", (e) => {
       e.preventDefault();
