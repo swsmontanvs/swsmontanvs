@@ -157,123 +157,195 @@
 
   <img src="logo.png" alt="Montanus Seal" class="corner-logo">
 
-  <script>
-const bg = document.querySelector(".hero-bg");
-const contents = document.querySelectorAll(".content");
-const logoSection = document.querySelector(".logo-section");
-const homeLink = document.querySelector(".home-link");
-const hero = document.querySelector(".hero");
-const scrollTopBtn = document.getElementById("scrollTopBtn");
-const cornerLogo = document.querySelector(".corner-logo");
-const logoBg = document.querySelector(".logo-bg");
+<script>
+  const bg = document.querySelector(".hero-bg");
+  const contents = document.querySelectorAll(".content");
+  const logoSection = document.querySelector(".logo-section");
+  const homeLink = document.querySelector(".home-link");
+  const hero = document.querySelector(".hero");
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+  const cornerLogo = document.querySelector(".corner-logo");
+  const logoBg = document.querySelector(".logo-bg");
+  const logo = document.querySelector(".content-logo");
 
-const isMobile = () => window.matchMedia("(max-width: 768px)").matches;
+  const isMobile = () => window.matchMedia("(max-width: 768px)").matches;
 
-let ticking = false;
-let logoOpen = false;
+  let ticking = false;
+  let logoOpen = false;
 
-window.addEventListener("scroll", () => {
-  if (cornerLogo.classList.contains("active")) return;
-
-  if (!ticking) {
-    requestAnimationFrame(() => {
-      const scrollY = window.scrollY;
-
-      const translate = -scrollY * 0.2;
-      const bgScale = 1 + scrollY * 0.00005;
-      const blur = Math.min(scrollY * 0.002, 3);
-      const contentTranslate = scrollY * 0.15;
-
-      if (bg) {
-        if (isMobile()) {
-          bg.style.transform = `translateY(${translate}px) scale(1.05)`;
-        } else {
-          bg.style.transform = `translateY(${translate}px) scale(${bgScale})`;
-        }
-        bg.style.filter = `blur(${blur}px)`;
-      }
-
-      contents.forEach((section, index) => {
-        section.style.transform = index === 0
-          ? `translateY(${contentTranslate}px)`
-          : "none";
-      });
-
-      if (logoSection && logoBg) {
-        const rect = logoSection.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-          logoBg.style.transform = `translateY(${-rect.top * 0.3}px)`;
-        }
-      }
-
-      scrollTopBtn.classList.toggle("visible", scrollY > 400);
-
-      ticking = false;
-    });
-
-    ticking = true;
+  function openCornerLogo() {
+    logoOpen = true;
+    cornerLogo.classList.add("is-open");
   }
-});
 
-/* CORNER LOGO — fix 2 állapot */
-cornerLogo.addEventListener("click", (e) => {
-  e.stopPropagation();
-  logoOpen = !logoOpen;
-  cornerLogo.classList.toggle("active", logoOpen);
-});
-
-/* csak akkor zár, ha kívül kattintasz */
-document.addEventListener("click", (e) => {
-  if (!cornerLogo.contains(e.target)) {
+  function closeCornerLogo() {
     logoOpen = false;
-    cornerLogo.classList.remove("active");
+    cornerLogo.classList.remove("is-open");
   }
-});
 
-/* TOP SCROLL — reset azonnal */
-scrollTopBtn.addEventListener("click", (e) => {
-  e.preventDefault();
+  function toggleCornerLogo(e) {
+    e.preventDefault();
+    e.stopPropagation();
 
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-
-  setTimeout(() => {
-    scrollTopBtn.blur();
-    if (document.activeElement) document.activeElement.blur();
-  }, 50);
-});
-
-/* lightning */
-function lightningFlash() {
-  if (!logoBg) return;
-  logoBg.classList.add("flash");
-  setTimeout(() => logoBg.classList.remove("flash"), 120);
-}
-
-setInterval(() => {
-  if (!logoSection) return;
-  const rect = logoSection.getBoundingClientRect();
-  if (rect.top < window.innerHeight && rect.bottom > 0) {
-    if (Math.random() > 0.7) {
-      lightningFlash();
-      if (Math.random() > 0.6) {
-        setTimeout(lightningFlash, 120);
-      }
+    if (logoOpen) {
+      closeCornerLogo();
+    } else {
+      openCornerLogo();
     }
   }
-}, 1200);
 
-const logo = document.querySelector(".content-logo");
+  function pressScrollTop() {
+    scrollTopBtn.classList.add("pressed");
+  }
 
-logo.addEventListener("mouseenter", () => {
-  logo.classList.add("pulse");
-});
+  function releaseScrollTop() {
+    scrollTopBtn.classList.remove("pressed");
+    scrollTopBtn.blur();
+    if (document.activeElement) {
+      document.activeElement.blur();
+    }
+  }
 
-logo.addEventListener("mouseleave", () => {
-  logo.classList.remove("pulse");
-});
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+
+        const speed = 0.2;
+        const zoomSpeed = 0.00005;
+        const blurSpeed = 0.002;
+        const contentSpeed = 0.85;
+
+        const translate = -scrollY * speed;
+        const bgScale = 1 + scrollY * zoomSpeed;
+        const blur = Math.min(scrollY * blurSpeed, 3);
+        const contentTranslate = scrollY * (1 - contentSpeed);
+
+        if (bg) {
+          if (isMobile()) {
+            bg.style.transform = `translateY(${translate}px)`;
+          } else {
+            bg.style.transform = `translateY(${translate}px) scale(${bgScale})`;
+          }
+
+          bg.style.filter = `blur(${blur}px)`;
+        }
+
+        contents.forEach((section, index) => {
+          if (index === 0) {
+            section.style.transform = `translateY(${contentTranslate}px)`;
+          } else {
+            section.style.transform = "none";
+          }
+        });
+
+        if (logoSection && logoBg) {
+          const sectionRect = logoSection.getBoundingClientRect();
+          const bgSpeed = 0.30;
+
+          if (sectionRect.top < window.innerHeight && sectionRect.bottom > 0) {
+            const bgOffset = -(sectionRect.top * bgSpeed);
+            logoBg.style.transform = `translateY(${bgOffset}px)`;
+          }
+        }
+
+        if (isMobile()) {
+          const scrollRange = hero.offsetHeight;
+          let progress = Math.min(scrollY / scrollRange, 1);
+          progress = Math.max((progress - 0.7) / 0.35, 0);
+
+          const scale = 1 - (progress * 0.35);
+          const startTop = 80;
+          const endTop = 25;
+          const topPos = startTop - (progress * (startTop - endTop));
+          const left = 50 - (progress * 30);
+
+          homeLink.style.left = `${left}%`;
+          homeLink.style.top = `${topPos}px`;
+          homeLink.style.transform = `translateX(-50%) scale(${scale})`;
+        } else {
+          const scrollRange = hero.offsetHeight + 1200;
+          let progress = Math.min(scrollY / scrollRange, 1);
+          progress = Math.max((progress - 0.25) / 0.75, 0);
+
+          const logoScale = 1 - (progress * 0.40);
+          const topPos = 30 - (progress * 15);
+
+          homeLink.style.transform = `scale(${logoScale})`;
+          homeLink.style.left = `${Math.max(15, 80 - (progress * 65))}px`;
+          homeLink.style.top = `${topPos}px`;
+        }
+
+        scrollTopBtn.classList.toggle("visible", scrollY > 400);
+
+        ticking = false;
+      });
+
+      ticking = true;
+    }
+  });
+
+  cornerLogo.addEventListener("pointerup", toggleCornerLogo);
+
+  document.addEventListener("pointerup", (e) => {
+    if (logoOpen && !cornerLogo.contains(e.target)) {
+      closeCornerLogo();
+    }
+  });
+
+  scrollTopBtn.addEventListener("pointerdown", pressScrollTop);
+  scrollTopBtn.addEventListener("pointerup", releaseScrollTop);
+  scrollTopBtn.addEventListener("pointercancel", releaseScrollTop);
+  scrollTopBtn.addEventListener("pointerleave", releaseScrollTop);
+
+  scrollTopBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+    releaseScrollTop();
+  });
+
+  function lightningFlash() {
+    if (!logoBg) return;
+
+    logoBg.classList.add("flash");
+
+    setTimeout(() => {
+      logoBg.classList.remove("flash");
+    }, 120);
+  }
+
+  setInterval(() => {
+    if (!logoSection) return;
+
+    const rect = logoSection.getBoundingClientRect();
+
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      const randomDelay = Math.random();
+
+      if (randomDelay > 0.7) {
+        lightningFlash();
+
+        if (Math.random() > 0.6) {
+          setTimeout(lightningFlash, 120);
+        }
+      }
+    }
+  }, 1200);
+
+  if (logo) {
+    logo.addEventListener("mouseenter", () => {
+      logo.classList.add("pulse");
+    });
+
+    logo.addEventListener("mouseleave", () => {
+      logo.classList.remove("pulse");
+    });
+  }
 </script>
 
 </body>
