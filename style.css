@@ -307,6 +307,19 @@ html {
   );
 }
 
+
+.corner-logo.active {
+  transform: translate(
+    calc(50vw - 50%),
+    calc(50vh - 50%)
+  ) scale(3.0);
+  transform-origin: center;
+  filter: drop-shadow(0 0 40px rgba(255, 140, 80, 1));
+  opacity: 1;
+}
+
+
+
 @media (hover: hover) {
   .corner-logo:hover {
     transform: translate(
@@ -335,14 +348,6 @@ html {
   }
 }
 
-.corner-logo.active {
-  transform: translate(
-    calc(50vw - 50%),
-    calc(50vh - 50%)
-  ) scale(3.0);
-  filter: drop-shadow(0 0 40px rgba(255, 140, 80, 1));
-  opacity: 1;
-}
 
 .scroll-top {
   position: fixed;
@@ -500,14 +505,18 @@ html {
 }
 
 @media (max-width: 768px) {
-  .corner-logo {
-    width: 140px;
-    transform: translate(
-      calc(100vw - 100% - 10px),
-      calc(100vh - 100% - 10px)
-    );
-    transform-origin: bottom right;
-  }
+  
+.corner-logo {
+  position: fixed;
+  width: 140px;
+  transform: translate(
+    calc(103vw - 100% - 10px),
+    calc(99vh - 100% - 10px)
+  );
+  transform-origin: bottom right;
+}
+
+
 
   .home-link {
     left: 50%;
@@ -575,7 +584,7 @@ html {
   }
 
   .footer-right {
-    position: relative;
+    position: absolute;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -584,11 +593,13 @@ html {
     margin-top: 90px;
     margin-left: 0;
     margin-bottom: 10px;
-    left: auto;
-    transform: none;
+    left: 50vw;
+    transform: translateX(-50%);
+    top: 3vh;
     padding-left: 0;
     grid-column: unset;
     grid-row: unset;
+    white-space: nowrap;
   }
 
   .footer-right a {
@@ -599,7 +610,7 @@ html {
   .footer-center {
     position: absolute;
     left: 50%;
-    top: 80px;
+    top: 160px;
     transform: translateX(-50%);
     text-align: center;
   }
@@ -617,14 +628,28 @@ html {
     opacity: 0.5;
   }
 
-  .footer-bottom {
-    position: absolute;
-    left: 50%;
-    top: 270px;
-    transform: translateX(-50%);
-    font-size: 12px;
-    opacity: 0.5;
-    white-space: nowrap;
-    text-align: center;
-  }
+.footer-bottom {
+  position: absolute;
+  left: 50%;
+  top: 350px;
+  transform: translateX(-50%);
+  font-size: 12px;
+  opacity: 0.5;
+  white-space: nowrap;
+  text-align: center;
 }
+  
+  
+  
+    .corner-logo.active {
+    left: 50% !important;
+    top: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+
+    transform: translate(-50%, -50%) scale(2.2) !important;
+    transform-origin: center !important;
+
+    filter: drop-shadow(0 0 40px rgba(255, 140, 80, 1));
+    opacity: 1;
+  }
