@@ -157,7 +157,11 @@
 
   <img src="logo.png" alt="Montanus Seal" class="corner-logo">
 
-<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  // =========================
+  // ELEMEK
+  // =========================
   const bg = document.querySelector(".hero-bg");
   const contents = document.querySelectorAll(".content");
   const logoSection = document.querySelector(".logo-section");
@@ -169,43 +173,13 @@
   const logo = document.querySelector(".content-logo");
 
   const isMobile = () => window.matchMedia("(max-width: 768px)").matches;
+  const isMobileOrTablet = () => window.matchMedia("(max-width: 1024px)").matches;
 
   let ticking = false;
-  /* let logoOpen = false;
 
-  function openCornerLogo() {
-    logoOpen = true;
-    cornerLogo.classList.add("is-open");
-  }
-
-  function closeCornerLogo() {
-    logoOpen = false;
-    cornerLogo.classList.remove("is-open");
-  }
-
-  function toggleCornerLogo(e) {
-    e.preventDefault();
-    e.stopPropagation();
-
-    if (logoOpen) {
-      closeCornerLogo();
-    } else {
-      openCornerLogo();
-    }
-  } */
-
-  function pressScrollTop() {
-    scrollTopBtn.classList.add("pressed");
-  }
-
-  function releaseScrollTop() {
-    scrollTopBtn.classList.remove("pressed");
-    scrollTopBtn.blur();
-    if (document.activeElement) {
-      document.activeElement.blur();
-    }
-  }
-
+  // =========================
+  // SCROLL ANIMÁCIÓK
+  // =========================
   window.addEventListener("scroll", () => {
     if (!ticking) {
       requestAnimationFrame(() => {
@@ -221,6 +195,7 @@
         const blur = Math.min(scrollY * blurSpeed, 3);
         const contentTranslate = scrollY * (1 - contentSpeed);
 
+        // HERO BG
         if (bg) {
           if (isMobile()) {
             bg.style.transform = `translateY(${translate}px)`;
@@ -231,6 +206,7 @@
           bg.style.filter = `blur(${blur}px)`;
         }
 
+        // CONTENT
         contents.forEach((section, index) => {
           if (index === 0) {
             section.style.transform = `translateY(${contentTranslate}px)`;
@@ -239,16 +215,18 @@
           }
         });
 
+        // LOGO SECTION PARALLAX
         if (logoSection && logoBg) {
-          const sectionRect = logoSection.getBoundingClientRect();
+          const rect = logoSection.getBoundingClientRect();
           const bgSpeed = 0.30;
 
-          if (sectionRect.top < window.innerHeight && sectionRect.bottom > 0) {
-            const bgOffset = -(sectionRect.top * bgSpeed);
-            logoBg.style.transform = `translateY(${bgOffset}px)`;
+          if (rect.top < window.innerHeight && rect.bottom > 0) {
+            const offset = -(rect.top * bgSpeed);
+            logoBg.style.transform = `translateY(${offset}px)`;
           }
         }
 
+        // HOME LINK ANIM
         if (isMobile()) {
           const scrollRange = hero.offsetHeight;
           let progress = Math.min(scrollY / scrollRange, 1);
@@ -268,14 +246,15 @@
           let progress = Math.min(scrollY / scrollRange, 1);
           progress = Math.max((progress - 0.25) / 0.75, 0);
 
-          const logoScale = 1 - (progress * 0.40);
+          const scale = 1 - (progress * 0.40);
           const topPos = 30 - (progress * 15);
 
-          homeLink.style.transform = `scale(${logoScale})`;
+          homeLink.style.transform = `scale(${scale})`;
           homeLink.style.left = `${Math.max(15, 80 - (progress * 65))}px`;
           homeLink.style.top = `${topPos}px`;
         }
 
+        // SCROLL TOP BUTTON
         scrollTopBtn.classList.toggle("visible", scrollY > 400);
 
         ticking = false;
@@ -285,15 +264,18 @@
     }
   });
 
-  /* cornerLogo.addEventListener("pointerup", toggleCornerLogo); */
+  // =========================
+  // SCROLL TOP GOMB
+  // =========================
+  function pressScrollTop() {
+    scrollTopBtn.classList.add("pressed");
+  }
 
-  /*
-  document.addEventListener("pointerup", (e) => {
-    if (logoOpen && !cornerLogo.contains(e.target)) {
-      closeCornerLogo();
-    }
-  });
-  */
+  function releaseScrollTop() {
+    scrollTopBtn.classList.remove("pressed");
+    scrollTopBtn.blur();
+    if (document.activeElement) document.activeElement.blur();
+  }
 
   scrollTopBtn.addEventListener("pointerdown", pressScrollTop);
   scrollTopBtn.addEventListener("pointerup", releaseScrollTop);
@@ -311,18 +293,25 @@
     releaseScrollTop();
   });
 
+  // =========================
+  // CORNER LOGO – TISZTA
+  // =========================
+  if (cornerLogo) {
+    let isActive = false;
 
-  let isActive = false;
+    cornerLogo.addEventListener("click", (e) => {
+      if (!isMobileOrTablet()) return;
 
-cornerLogo.addEventListener("click", () => {
-  if (window.innerWidth <= 1024) {
-    isActive = !isActive;
-    cornerLogo.classList.toggle("active", isActive);
+      e.stopPropagation();
+
+      isActive = !isActive;
+      cornerLogo.classList.toggle("active", isActive);
+    });
   }
-});
 
-  
-
+  // =========================
+  // LIGHTNING EFFECT
+  // =========================
   function lightningFlash() {
     if (!logoBg) return;
 
@@ -339,9 +328,7 @@ cornerLogo.addEventListener("click", () => {
     const rect = logoSection.getBoundingClientRect();
 
     if (rect.top < window.innerHeight && rect.bottom > 0) {
-      const randomDelay = Math.random();
-
-      if (randomDelay > 0.7) {
+      if (Math.random() > 0.7) {
         lightningFlash();
 
         if (Math.random() > 0.6) {
@@ -351,6 +338,9 @@ cornerLogo.addEventListener("click", () => {
     }
   }, 1200);
 
+  // =========================
+  // CONTENT LOGO HOVER
+  // =========================
   if (logo) {
     logo.addEventListener("mouseenter", () => {
       logo.classList.add("pulse");
@@ -360,7 +350,8 @@ cornerLogo.addEventListener("click", () => {
       logo.classList.remove("pulse");
     });
   }
-</script>
+
+});
 
 </body>
 </html>
