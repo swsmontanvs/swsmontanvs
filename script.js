@@ -1,4 +1,5 @@
 const bg = document.querySelector(".hero-bg");
+const parallaxBg = document.querySelector(".parallax-bg");
 const homeLink = document.querySelector(".home-link");
 const hero = document.querySelector(".hero");
 const scrollTopBtn = document.getElementById("scrollTopBtn");
@@ -23,6 +24,16 @@ function updateScene() {
     bg.style.transform = `translate3d(0, ${bgTranslate}px, 0) scale(${bgScale})`;
     bg.style.filter = `blur(${bgBlur}px)`;
   }
+
+  if (parallaxBg) {
+  const rect = parallaxBg.parentElement.getBoundingClientRect();
+  const speed = 0.3;
+
+  if (rect.top < window.innerHeight && rect.bottom > 0) {
+    const offset = -rect.top * speed;
+    parallaxBg.style.transform = `translate3d(0, ${offset}px, 0)`;
+  }
+}
 
   /* HOME LINK MOTION */
   if (homeLink) {
@@ -107,7 +118,7 @@ updateScene();
 
 
 const parallaxSection = document.querySelector(".parallax-section");
-const parallaxBg = document.querySelector(".parallax-bg");
+/* const parallaxBg = document.querySelector(".parallax-bg"); */
 
 function lightningFlash() {
   if (!parallaxBg) return;
