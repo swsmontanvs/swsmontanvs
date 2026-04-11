@@ -647,7 +647,7 @@ html {
     right: auto !important;
     bottom: auto !important;
 
-    transform: translate(-50%, -50%) scale(2.2) !important;
+    transform: translate(-50%, -50%) scale(2.1) !important;
     transform-origin: center !important;
 
     filter: drop-shadow(0 0 40px rgba(255, 140, 80, 1));
