@@ -7,6 +7,8 @@ const cornerSeal = document.getElementById("cornerSeal");
 
 let ticking = false;
 
+let mobile = isMobile();
+
 function isMobile() {
   return window.innerWidth <= 768;
 }
@@ -17,7 +19,8 @@ function updateScene() {
 
   /* BACKGROUND PARALLAX */
   const bgTranslate = -scrollY * 0.2;
-  const bgScale = isMobile() ? 1 : 1 + scrollY * 0.00005;
+  /* const bgScale = isMobile() ? 1 : 1 + scrollY * 0.00005; */
+  const bgScale = mobile ? 1 : 1 + scrollY * 0.00005;
   const bgBlur = Math.min(scrollY * 0.002, 3);
 
   if (bg) {
@@ -88,7 +91,12 @@ window.addEventListener("scroll", () => {
   }
 });
 
+/* window.addEventListener("resize", () => {
+  updateScene();
+}); */
+
 window.addEventListener("resize", () => {
+  mobile = isMobile();   /* 🔥 EZ AZ ÚJ */
   updateScene();
 });
 
