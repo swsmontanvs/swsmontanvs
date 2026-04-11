@@ -645,3 +645,8 @@ a {
 
   z-index: 0;
 }
+
+
+.parallax-bg.flash {
+  filter: brightness(1.8) contrast(1.2);
+}
