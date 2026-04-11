@@ -149,7 +149,7 @@ setInterval(() => {
   const rect = parallaxSection.getBoundingClientRect();
 
   if (rect.top < window.innerHeight && rect.bottom > 0) {
-    if (Math.random() > 0.85) {
+    if (Math.random() > 0.6) {
       lightningFlash();
     }
   }
