@@ -287,11 +287,13 @@
 
   cornerLogo.addEventListener("pointerup", toggleCornerLogo);
 
+  /*
   document.addEventListener("pointerup", (e) => {
     if (logoOpen && !cornerLogo.contains(e.target)) {
       closeCornerLogo();
     }
   });
+  */
 
   scrollTopBtn.addEventListener("pointerdown", pressScrollTop);
   scrollTopBtn.addEventListener("pointerup", releaseScrollTop);
