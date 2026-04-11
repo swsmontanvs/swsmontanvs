@@ -123,7 +123,9 @@ const parallaxSection = document.querySelector(".parallax-section");
 function lightningFlash() {
   if (!parallaxBg) return;
 
-  parallaxBg.style.filter = "brightness(1.8) contrast(1.2)";
+  /* parallaxBg.style.filter = "brightness(1.8) contrast(1.2)"; */
+  parallaxBg.classList.add("flash");
+  parallaxBg.classList.remove("flash");
 
   setTimeout(() => {
     parallaxBg.style.filter = "";
@@ -136,7 +138,7 @@ setInterval(() => {
   const rect = parallaxSection.getBoundingClientRect();
 
   if (rect.top < window.innerHeight && rect.bottom > 0) {
-    if (Math.random() > 0.7) {
+    if (Math.random() > 0.85) {
       lightningFlash();
     }
   }
