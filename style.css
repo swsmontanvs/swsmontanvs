@@ -314,7 +314,7 @@ a {
 .footer-left {
   position: absolute;
   left: 5px;
-  bottom: 5px;
+  bottom: 0px;
   font-size: 13px;
   opacity: 0.5;
 }
@@ -322,6 +322,7 @@ a {
 .footer-center {
   grid-column: 2;
   justify-self: center;
+  transform: translateY(-40px);
 }
 
 .footer-symbol {
@@ -630,7 +631,7 @@ a {
   inset: 0;
   background-image: url("stormpeak.png");
   background-size: cover;
-  background-position: center center;
+  background-position: center 30%;
   will-change: transform, filter;
   z-index: 0;
 }
