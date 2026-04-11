@@ -170,7 +170,7 @@
 
   const isMobile = () => window.matchMedia("(max-width: 768px)").matches;
 
-  let ticking = false;
+/*  let ticking = false;
   let logoOpen = false;
 
   function openCornerLogo() {
@@ -192,7 +192,7 @@
     } else {
       openCornerLogo();
     }
-  }
+  } */
 
   function pressScrollTop() {
     scrollTopBtn.classList.add("pressed");
@@ -285,7 +285,7 @@
     }
   });
 
-  cornerLogo.addEventListener("pointerup", toggleCornerLogo);
+  /* cornerLogo.addEventListener("pointerup", toggleCornerLogo); */
 
   /*
   document.addEventListener("pointerup", (e) => {
@@ -310,6 +310,18 @@
 
     releaseScrollTop();
   });
+
+
+  let isActive = false;
+
+cornerLogo.addEventListener("click", () => {
+  if (window.innerWidth <= 1024) {
+    isActive = !isActive;
+    cornerLogo.classList.toggle("active", isActive);
+  }
+});
+
+  
 
   function lightningFlash() {
     if (!logoBg) return;
