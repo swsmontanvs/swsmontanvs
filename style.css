@@ -308,16 +308,6 @@ html {
 }
 
 
-.corner-logo.active {
-  transform: translate(
-    calc(50vw - 50%),
-    calc(50vh - 50%)
-  ) scale(3.0);
-  transform-origin: center;
-  filter: drop-shadow(0 0 40px rgba(255, 140, 80, 1));
-  opacity: 1;
-}
-
 
 
 @media (hover: hover) {
@@ -504,17 +494,6 @@ html {
   opacity: 0.5;
 }
 
-@media (max-width: 768px) {
-  
-.corner-logo {
-  position: fixed;
-  width: 140px;
-  transform: translate(
-    calc(103vw - 100% - 10px),
-    calc(99vh - 100% - 10px)
-  );
-  transform-origin: bottom right;
-}
 
 
 
@@ -639,17 +618,35 @@ html {
   text-align: center;
 }
   
-  
-  
-    .corner-logo.active {
-    left: 50% !important;
-    top: 50% !important;
-    right: auto !important;
-    bottom: auto !important;
 
-    transform: translate(-50%, -50%) scale(2.1) !important;
-    transform-origin: center !important;
+@media (max-width: 1024px) {
+
+  .corner-logo {
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
+
+    /* 👉 középről jobbra kitolva */
+    transform: translateX(-50%) translateX(42vw) scale(1);
+
+    width: 150px;
+
+    transform-origin: center center;
+
+    transition: 
+      transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+      filter 0.4s ease,
+      opacity 0.3s ease;
+
+    z-index: 9999;
+  }
+
+  .corner-logo.active {
+    /* 👉 vissza középre */
+    transform: translateX(-50%) scale(2.4);
 
     filter: drop-shadow(0 0 40px rgba(255, 140, 80, 1));
     opacity: 1;
   }
+
+}
