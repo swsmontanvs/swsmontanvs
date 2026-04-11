@@ -157,11 +157,11 @@
 
   <img src="logo.png" alt="Montanus Seal" class="corner-logo">
 
-document.addEventListener("DOMContentLoaded", () => {
 
-  // =========================
-  // ELEMEK
-  // =========================
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+
+
   const bg = document.querySelector(".hero-bg");
   const contents = document.querySelectorAll(".content");
   const logoSection = document.querySelector(".logo-section");
@@ -177,9 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let ticking = false;
 
-  // =========================
-  // SCROLL ANIMÁCIÓK
-  // =========================
+
   window.addEventListener("scroll", () => {
     if (!ticking) {
       requestAnimationFrame(() => {
@@ -195,7 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const blur = Math.min(scrollY * blurSpeed, 3);
         const contentTranslate = scrollY * (1 - contentSpeed);
 
-        // HERO BG
+  
         if (bg) {
           if (isMobile()) {
             bg.style.transform = `translateY(${translate}px)`;
@@ -206,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
           bg.style.filter = `blur(${blur}px)`;
         }
 
-        // CONTENT
+       
         contents.forEach((section, index) => {
           if (index === 0) {
             section.style.transform = `translateY(${contentTranslate}px)`;
@@ -215,7 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         });
 
-        // LOGO SECTION PARALLAX
+        
         if (logoSection && logoBg) {
           const rect = logoSection.getBoundingClientRect();
           const bgSpeed = 0.30;
@@ -226,7 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         }
 
-        // HOME LINK ANIM
+        
         if (isMobile()) {
           const scrollRange = hero.offsetHeight;
           let progress = Math.min(scrollY / scrollRange, 1);
@@ -254,7 +252,7 @@ document.addEventListener("DOMContentLoaded", () => {
           homeLink.style.top = `${topPos}px`;
         }
 
-        // SCROLL TOP BUTTON
+        
         scrollTopBtn.classList.toggle("visible", scrollY > 400);
 
         ticking = false;
@@ -264,9 +262,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // =========================
-  // SCROLL TOP GOMB
-  // =========================
+
   function pressScrollTop() {
     scrollTopBtn.classList.add("pressed");
   }
@@ -293,9 +289,7 @@ document.addEventListener("DOMContentLoaded", () => {
     releaseScrollTop();
   });
 
-  // =========================
-  // CORNER LOGO – TISZTA
-  // =========================
+
   if (cornerLogo) {
     let isActive = false;
 
@@ -309,9 +303,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // =========================
-  // LIGHTNING EFFECT
-  // =========================
+
   function lightningFlash() {
     if (!logoBg) return;
 
@@ -338,9 +330,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }, 1200);
 
-  // =========================
-  // CONTENT LOGO HOVER
-  // =========================
+
   if (logo) {
     logo.addEventListener("mouseenter", () => {
       logo.classList.add("pulse");
@@ -352,6 +342,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+
+  </script>
 
 </body>
 </html>
