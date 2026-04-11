@@ -71,6 +71,7 @@ a {
   transform: translate3d(0, 0, 0) scale(1);
   will-change: transform, filter;
   z-index: 0;
+  pointer-events: none;
 }
 
 .hero-overlay {
@@ -414,7 +415,7 @@ a {
   position: fixed;
   right: 26px;
   bottom: 26px;
-  z-index: 40;
+  z-index: 9999;
   width: 220px;
   padding: 0;
   border: 0;
@@ -621,7 +622,7 @@ a {
 
 .parallax-section {
   position: relative;
-  height: 180vh;
+  height: 150vh;
   overflow: hidden;
   z-index: 1;
   background: #000;
@@ -632,11 +633,30 @@ a {
   inset: 0;
   background-image: url("stormpeak.png");
   background-size: cover;
-  background-position: center 30%;
+  width: 110%;
+  height: 110%;
+  top: -20%;
+  left: -10%;
+  transform: scale(0.85);
+  background-position: center -80px;
   will-change: transform, filter;
   z-index: 0;
+  
 }
 
 .parallax-bg.flash {
   filter: brightness(1.8) contrast(1.2);
+}
+
+
+@media (max-width: 1024px) {
+  .parallax-bg {
+    background-size: 120%;
+  }
+}
+
+@media (max-width: 768px) {
+  .parallax-bg {
+    background-size: 140%;
+  }
 }
