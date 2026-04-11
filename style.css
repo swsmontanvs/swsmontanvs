@@ -1,652 +1,419 @@
-body {
-  margin: 0;
-  font-family: Georgia, serif;
-  background-color: #0b0b0b;
-  color: white;
-}
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Official website of S.W.S. Montanus – author of Areanis.">
+  <title>S.W.S. Montanus</title>
+  <link rel="icon" href="favicon.ico">
 
-html, body {
-  overflow-x: hidden;
-}
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 
-html {
-  scroll-behavior: smooth;
-}
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-.hero-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 120vh;
-  background-image: url("hegy.png");
-  background-size: cover;
-  background-position: 50% 20%;
-  z-index: 0;
-  will-change: transform;
-}
+<link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="style.css">
+</head>
 
-.hero {
-  height: 100vh;
-  position: relative;
-  z-index: 1;
-  left: 0;
-  right: 0;
-}
+<body>
 
-.hero-text {
-  position: absolute;
-  top: 75%;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  z-index: 2;
-  width: 100%;
-  max-width: 900px;
-}
+<a href="https://swsmontanvs.com/" class="home-link">
+  <img src="homelink.png" alt="Montanus">
+</a>
 
-.hero-text h1 {
-  margin-bottom: 10px;
-}
+<div class="lang-switcher">
+  <img src="eng.png" alt="English">
+  <img src="hun.png" alt="Magyar">
+</div>
 
-.hero-text p {
-  opacity: 0.8;
-  font-size: 14px;
-}
+<div class="hero-bg"></div>
 
-.content {
-  position: relative;
-  z-index: 3;
-  background: #0b0b0b;
-  padding: 80px 20px;
-  text-align: center;
-  will-change: transform;
-  max-width: 100%;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-}
+<section class="hero">
 
+  <nav class="main-menu">
+    <a href="areanis.html">
+      <img src="areanis-title.png" alt="Areanis" class="menu-areanis">
+    </a>
+  </nav>
 
-.content::before {
-  content: "";
-  position: absolute;
-  top: -60px;
-  left: 0;
-  width: 100%;
-  height: 60px;
-  background: linear-gradient(to bottom, rgba(11,11,11,0), #0b0b0b);
+  <div class="hero-text">
+    <h1>The official website of S.W.S. Montanus, author</h1>
+    <p>Under development...</p>
+  </div>
+
+</section>
+
+<section class="content">
   
-  pointer-events: none;
-}
+  <h2>Welcome</h2>
+  <p>This is where the journey begins...</p>
 
+  <h3>Lorem Ipsum</h3>
 
-.content::after {
-  content: "";
-  position: absolute;
-  bottom: -60px;
-  left: 0;
-  width: 100%;
-  height: 60px;
-  background: linear-gradient(to top, rgba(11,11,11,0), #0b0b0b);
-}
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+  <p>Duis aute irure dolor in reprehenderit.</p>
+  <p>Excepteur sint occaecat cupidatat non proident.</p>
 
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  <p>Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
 
+  <h3>More Content</h3>
 
-.content-break {
-  margin: 120px 0;
-  text-align: center;
-}
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  <p>In condimentum facilisis porta.</p>
+  <p>Donec sit amet eros.</p>
+  <p>Maecenas fermentum consequat mi.</p>
 
-.content-logo {
-  position: relative;
-  height: 300px;
-  margin: 120px 0;
-}
+  <p>Duis sapien sem, aliquet nec.</p>
+  <p>Aliquam faucibus elit ut dictum aliquet.</p>
 
-.content-logo::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 50%;
-  max-width: 600px;
-  height: 120px;
-  transform: translate(-50%, -50%) scale(1);
-  background: radial-gradient(circle, rgba(255, 120, 60, 0.7), transparent 70%);
-  opacity: 0.55;
-  pointer-events: none;
-  /* animation: glowPulse 2.5s ease-in-out infinite; */
-  animation: none;
-  transition: opacity 0.9s ease;
-  z-index: 1;
-}
+  </section>
 
+  <section class="logo-section">
+    <div class="logo-bg"></div>
+  <!-- <img src="montanvslogo.png" class="logo-parallax">
+  <img src="montanvslogo.png" class="logo-parallax red">
+  <!-- <img src="montanvslogo.png" class="logo-parallax blue">
+  <img class="logo-parallax blue flash"> -->
+</section>
 
-
-.content-logo.pulse::after {
-  animation: glowPulse 2.6s ease-in-out infinite;
-  opacity: 1;
-}
-
-
-.content-logo-img {
-
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  /*animation: subtlePulse 2.8s ease-in-out infinite; */
+<section class="content">
   
-  width: 50%;
-  max-width: 600px;
+  <h3>Even More</h3>
 
-  opacity: 0.95;
+  <p>Curabitur augue lorem.</p>
+  <p>Aenean magna nisl.</p>
+  <p>In hac habitasse platea dictumst.</p>
 
-  z-index: 2;
+  <h3>Scroll Test Zone</h3>
+
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
 
   
-  filter:
-    drop-shadow(0 0 10px rgba(255, 120, 60, 0.4))
-    drop-shadow(0 0 25px rgba(255, 80, 20, 0.25));
+<div class="content-break"></div>
 
-  transition:
-    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-    filter 0.6s ease,
-    opacity 0.3s ease;
-}
+<div class="content-logo">
+  <img src="montanvslogo.png" class="content-logo-img logo-effect red">
+</div>
 
-@keyframes subtlePulse {
-  0%   { filter: drop-shadow(0 0 10px rgba(255,120,60,0.4)); }
-  50%  { filter: drop-shadow(0 0 16px rgba(255,140,80,0.6)); }
-  100% { filter: drop-shadow(0 0 10px rgba(255,120,60,0.4)); }
-}
+<div class="content-break"></div>
 
-.content-logo-img:hover {
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Lorem ipsum dolor sit amet.</p>
   
-  /* animation: glowPulse 2.6s ease-in-out infinite; */
-  transform: translate(-50%, -50%) scale(1.12);
+</section>
+
+<footer class="site-footer">
+
+  <div class="footer-top">
+
+    <div class="footer-left">
+      Developed by Montanus Studio
+    </div>
+
+    <div class="footer-center">
+      <img src="symbol.png" alt="Montanus Symbol" class="footer-symbol">
+    </div>
+
+    <div class="footer-right">
+      <a href="#">Contact</a>
+      <a href="#">Terms</a>
+      <a href="#">Privacy</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 S.W.S. Montanus — All rights reserved.
+  </div>
+
+</footer>
+
+
+<a href="#" class="scroll-top" id="scrollTopBtn">↑</a>
+
+
+<img src="logo.png" alt="Montanus Seal" class="corner-logo">
+
+<script>
+const bg = document.querySelector(".hero-bg");
+const content = document.querySelector(".content");
+const logoSection = document.querySelector(".logo-section");
+const homeLink = document.querySelector(".home-link");
+const hero = document.querySelector(".hero");
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+const cornerLogo = document.querySelector(".corner-logo");
+/* const logoParallax = document.querySelector(".logo-parallax"); */
+const logoBg = document.querySelector(".logo-bg");
+
+let ticking = false;
+
+window.addEventListener("scroll", () => {
+  if (cornerLogo.classList.contains("active")) return;
+  if (!ticking) {
+    requestAnimationFrame(() => {
+
+      const scrollY = window.scrollY;
+
+if (logoSection && logoBg) {
+  const sectionRect = logoSection.getBoundingClientRect();
+  const bgSpeed = 0.30;
+
+  if (sectionRect.top < window.innerHeight && sectionRect.bottom > 0) {
+    
+    const bgOffset = -(sectionRect.top * bgSpeed);
+
+    if (logoBg) {
+      logoBg.style.transform = `translateY(${bgOffset}px)`;
+    }
+  }
+}
+
+      
+
+/* if (logoParallax) {
+  const rect = logoParallax.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+
+  if (rect.top < windowHeight && rect.bottom > 0) {
+
+    const centerOffset = rect.top + rect.height / 2 - windowHeight / 2;
+
+    const speed = 0.3;
+    const offset = -centerOffset * speed;
+
+    logoParallax.style.transform = `
+      translate(-50%, calc(-50% + ${offset}px))
+      scale(1.05)
+    `;
+  }
+} */
+
+
+
+/*const bgSpeed = 0.15;
+const logoOffset = logoSection.offsetTop;
+const relativeScroll = scrollY - logoOffset;
+
+if (relativeScroll > -window.innerHeight && relativeScroll < window.innerHeight * 2) {
+  logoSection.style.backgroundPosition = `center ${relativeScroll * bgSpeed}px`;
+} */
+
+      
+      const speed = 0.2;
+      const zoomSpeed = 0.00005;
+      const blurSpeed = 0.002;
+      const contentSpeed = 0.85;
+
+      const translate = -scrollY * speed;
+      const bgScale = 1 + scrollY * zoomSpeed;
+      const blur = Math.min(scrollY * blurSpeed, 3);
+      const contentTranslate = scrollY * (1 - contentSpeed);
+
+if (bg) {
+  if (window.innerWidth <= 768) {
+    bg.style.transform = `translateY(${translate}px)`;
+  } else {
+    bg.style.transform = `translateY(${translate}px) scale(${bgScale})`;
+  }
+
+  bg.style.filter = `blur(${blur}px)`;
+}
+      /* content.style.top = `${contentTranslate}px`; */
+if (content) {
+  content.style.top = `${contentTranslate}px`;
+}
+
+      
+      if (window.innerWidth <= 768) {
+
+        const scrollRange = hero.offsetHeight;
+        let progress = Math.min(scrollY / scrollRange, 1);
+        progress = Math.max((progress - 0.7) / 0.35, 0);
+
+        const scale = 1 - (progress * 0.35);
+
+        const startTop = 80;
+        const endTop = 25;
+        const topPos = startTop - (progress * (startTop - endTop));
+
+        const left = 50 - (progress * 30);
+
+        homeLink.style.left = `${left}%`;
+        homeLink.style.top = `${topPos}px`;
+        homeLink.style.transform = `translateX(-50%) scale(${scale})`;
+
+      } else {
+
+        const scrollRange = hero.offsetHeight + 1200;
+
+        let progress = Math.min(scrollY / scrollRange, 1);
+        progress = Math.max((progress - 0.25) / 0.75, 0);
+
+        const logoScale = 1 - (progress * 0.40);
+        const topPos = 30 - (progress * 15);
+
+        homeLink.style.transform = `scale(${logoScale})`;
+        homeLink.style.left = `${Math.max(15, 80 - (progress * 65))}px`;
+        homeLink.style.top = `${topPos}px`;
+      }
+
+      
+      if (scrollY > 400) {
+        scrollTopBtn.classList.add("visible");
+      } else {
+        scrollTopBtn.classList.remove("visible");
+      }
+
+      ticking = false;
+
+    });
+
+    ticking = true;
+  }
+});
+
+
+
+let logoOpen = false;
+
+cornerLogo.addEventListener("click", (e) => {
+  e.stopPropagation();
+
+  logoOpen = !logoOpen;
+
+  if (logoOpen) {
+    cornerLogo.classList.add("active");
+  } else {
+    cornerLogo.classList.remove("active");
+  }
+});
+
+
+document.addEventListener("click", () => {
+  cornerLogo.classList.remove("active");
+  logoOpen = false;
+});
+
+
+  scrollTopBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  scrollTopBtn.blur();
+});
+
+
+scrollTopBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 
   
-  filter:
-    drop-shadow(0 0 14px rgba(255, 140, 80, 0.6))
-    drop-shadow(0 0 30px rgba(255, 100, 40, 0.4));
+  scrollTopBtn.blur();
+  document.activeElement.blur();
+});
 
-  opacity: 1;
+  function lightningFlash() {
+  /* if (!logoBg || !logoParallax) return; */
+    if (!logoBg) return;
+
+  
+  logoBg.classList.add("flash");
+ /* logoParallax.classList.add("flash"); */
+
+  
+  setTimeout(() => {
+    logoBg.classList.remove("flash");
+    /* logoParallax.classList.remove("flash"); */
+  }, 120);
 }
 
 
-.logo-section {
-  width: 100%;
-  height: 250vh;
-  background-color: #000;
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  will-change: transform;
-  overflow: hidden;
-}
+setInterval(() => {
+  if (!logoSection) return;
 
-.logo-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 90%;
-  background-image: url("stormpeak.png");
-  background-size: cover;
-  background-position: center 140%;
-  z-index: 0;
-  will-change: transform;
-}
+  const rect = logoSection.getBoundingClientRect();
 
-.logo-bg.flash {
-  filter: brightness(1.8) contrast(1.2);
-  transition: filter 0.1s ease;
-}
+  
+  if (rect.top < window.innerHeight && rect.bottom > 0) {
 
-@keyframes glowPulse {
-  0%   { transform: translate(-50%, -50%) scale(1); }
-  50%  { transform: translate(-50%, -50%) scale(1.15); }
-  100% { transform: translate(-50%, -50%) scale(1); }
-}
+    const randomDelay = Math.random();
 
-.lang-switcher {
-  position: fixed;
-  top: 30px;
-  right: 160px;
-  display: flex;
-  gap: 30px;
-  z-index: 10;
-}
+    if (randomDelay > 0.7) {
+      lightningFlash();
 
-.lang-switcher img {
-  width: 28px;
-  cursor: pointer;
-  opacity: 0.7;
-  transition: opacity 0.2s, transform 0.2s;
-}
-
-.lang-switcher img:hover {
-  opacity: 1;
-  transform: scale(1.1);
-}
-
-.home-link {
-  position: fixed;
-  top: 30px;
-  left: 80px;
-  z-index: 10;
-  transform-origin: top left;
-  transition: none;
-}
-
-.home-link img {
-  width: 250px;
-  height: auto;
-  opacity: 0.95;
-  filter: drop-shadow(0 0 8px rgba(255, 120, 60, 0.7));
-  transition: transform 0.3s cubic-bezier(0.22, 1.6, 0.36, 1),
-              filter 0.3s ease,
-              opacity 0.2s ease;
-}
-
-.home-link img:hover {
-  opacity: 1;
-  transform: scale(1.1);
-  filter: drop-shadow(0 0 16px rgba(255, 140, 80, 0.8));
-}
-
-.main-menu {
-  position: absolute;
-  top: 8%;
-  left: 70%;
-  transform: translateX(-50%);
-  z-index: 9999;
-}
-
-.menu-areanis {
-  display: block;
-  height: 6vw;
-  max-height: 120px;
-  min-height: 60px;
-  transform-origin: center;
-  opacity: 0.95;
-  filter: drop-shadow(0 0 10px rgba(255, 140, 60, 0.5));
-  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-              filter 0.3s ease,
-              opacity 0.3s ease;
-}
-
-.menu-areanis:hover {
-  transform: scale(1.12);
-  filter: drop-shadow(0 0 20px rgba(255, 160, 80, 0.9));
-  opacity: 1;
-}
-
-.corner-logo {
-  position: fixed;
-  width: 220px;
-  height: auto;
-  opacity: 0.95;
-  z-index: 9999;
-  pointer-events: auto;
-  filter: drop-shadow(0 0 16px rgba(255, 120, 60, 0.8));
-  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-              filter 0.4s ease,
-              opacity 0.3s ease;
-  top: 0;
-  left: 0;
-  transform-origin: bottom right;
-  transform: translate(
-    calc(100vw - 100% - 30px),
-    calc(100vh - 100% - 30px)
-  );
-}
-
-
-
-
-@media (hover: hover) {
-  .corner-logo:hover {
-    transform: translate(
-      calc(100vw - 100% - 30px),
-      calc(100vh - 100% - 30px)
-    ) scale(2.1);
-    filter: drop-shadow(0 0 30px rgba(255, 140, 80, 0.95));
-    opacity: 1;
+      if (Math.random() > 0.6) {
+        setTimeout(lightningFlash, 120);
+      }
+    }
   }
-}
+}, 1200);
+  
+let stopPulse = false;
 
-.corner-logo::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle, rgba(255, 140, 80, 0.6) 0%, transparent 70%);
-  opacity: 0;
-  transition: opacity 0.6s ease;
-  pointer-events: none;
-}
+contentLogo.addEventListener("mouseenter", () => {
+  stopPulse = false;
+  contentLogo.classList.add("pulse");
+});
 
-@media (hover: hover) {
-  .corner-logo:hover::after {
-    opacity: 1;
-    transition-delay: 0.2s;
+contentLogo.addEventListener("mouseleave", () => {
+  stopPulse = true;
+});
+
+
+contentLogo.addEventListener("animationiteration", () => {
+  if (stopPulse) {
+    contentLogo.classList.remove("pulse");
   }
-}
+});
 
-
-.scroll-top {
-  position: fixed;
-  bottom: 260px;
-  right: 40px;
-  width: 55px;
-  height: 55px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 26px;
-  text-decoration: none;
-  color: white;
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 50%;
-  z-index: 9999;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s ease,
-              transform 0.3s ease,
-              background 0.3s ease;
-}
-
-.scroll-top.visible {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-@media (hover: hover) {
-  .scroll-top:hover {
-    transform: scale(1.2);
-    background: rgba(255, 140, 60, 0.3);
-  }
-}
-
-.scroll-top:active {
-  transform: scale(1.1);
-  background: rgba(255, 140, 60, 0.3);
-}
-
-.areanis-page {
-  background-color: #000;
-}
-
-.areanis-page .hero-bg {
-  background-image: none;
-}
-
-.areanis-page .hero {
-  height: 100vh;
-}
-
-.areanis-page .hero-text {
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.areanis-page .hero-text h1 {
-  letter-spacing: 3px;
-  font-size: 28px;
-  opacity: 0.85;
-}
-
-.areanis-page .content {
-  display: none;
-}
-
-.site-footer {
-  position: relative;
-  z-index: 2;
-  background: #050505;
-  padding: 120px 40px 80px;
-  min-height: 350px;
-}
-
-.site-footer::before {
-  content: "";
-  position: absolute;
-  top: -80px;
-  left: 0;
-  width: 100%;
-  height: 80px;
-  background: linear-gradient(to bottom, transparent, #050505);
-}
-
-.footer-top {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  grid-template-rows: auto 1fr auto;
-  height: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.footer-left {
-  position: absolute;
-  bottom: 20px;
-  left: 40px;
-  font-size: 13px;
-  opacity: 0.5;
-}
-
-.footer-center {
-  grid-column: 2;
-  justify-self: center;
-}
-
-.footer-symbol {
-  width: 260px;
-  opacity: 0.95;
-  filter: drop-shadow(0 0 25px rgba(255, 120, 60, 0.8));
-  transition: transform 0.4s ease,
-              filter 0.4s ease;
-}
-
-.footer-symbol:hover {
-  transform: scale(1.05);
-  filter: drop-shadow(0 0 45px rgba(255, 150, 80, 1));
-}
-
-.footer-right {
-  grid-column: 1;
-  grid-row: 2;
-  justify-self: start;
-  align-self: start;
-  transform: translateY(-180px);
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  padding-left: 50%;
-}
-
-.footer-right a {
-  font-size: 15px;
-  text-decoration: none;
-  color: white !important;
-  opacity: 0.6;
-  transition: opacity 0.3s ease, color 0.3s ease;
-}
-
-.footer-right a:hover {
-  opacity: 1;
-  color: rgba(255, 140, 80, 0.9) !important;
-}
-
-.footer-bottom {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 13px;
-  opacity: 0.5;
-}
-
-
-
-
-  .home-link {
-    left: 50%;
-    top: 80px;
-    transform: translateX(-50%);
-  }
-
-  .home-link img {
-    width: 170px;
-  }
-
-  .lang-switcher {
-    right: auto;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 20px;
-  }
-
-  .main-menu {
-    position: absolute;
-    top: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 20px;
-  }
-
-  .menu-areanis {
-    height: 36px;
-  }
-
-  .hero-text {
-    top: 60%;
-  }
-
-  .content-logo {
-    height: 220px;
-    margin: 90px 0;
-  }
-
-  .content-logo-img {
-    width: 80%;
-  }
-
-  .content-logo::after {
-    width: 80%;
-    height: 90px;
-  }
-
-  .logo-section {
-    height: 180vh;
-  }
-
-  .site-footer {
-    padding: 60px 20px 60px;
-    min-height: 360px;
-    position: relative;
-  }
-
-  .footer-top {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 260px;
-  }
-
-  .footer-right {
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-    margin-top: 90px;
-    margin-left: 0;
-    margin-bottom: 10px;
-    left: 50vw;
-    transform: translateX(-50%);
-    top: 3vh;
-    padding-left: 0;
-    grid-column: unset;
-    grid-row: unset;
-    white-space: nowrap;
-  }
-
-  .footer-right a {
-    font-size: 14px;
-    text-align: center;
-  }
-
-  .footer-center {
-    position: absolute;
-    left: 50%;
-    top: 160px;
-    transform: translateX(-50%);
-    text-align: center;
-  }
-
-  .footer-symbol {
-    width: 170px;
-  }
-
-  .footer-left {
-    position: absolute;
-    bottom: 5px;
-    left: 5px;
-    transform: none;
-    font-size: 12px;
-    opacity: 0.5;
-  }
-
-.footer-bottom {
-  position: absolute;
-  left: 50%;
-  top: 350px;
-  transform: translateX(-50%);
-  font-size: 12px;
-  opacity: 0.5;
-  white-space: nowrap;
-  text-align: center;
 }
   
+</script>
 
-@media (max-width: 1024px) {
-
-  .corner-logo {
-    position: fixed;
-    bottom: 5%;
-    left: 50%;
-
-    /* 👉 középről jobbra kitolva */
-    transform: translateX(-50%) translateX(42vw) scale(1);
-
-    width: 150px;
-
-    transform-origin: center center;
-
-    transition: 
-      transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-      filter 0.4s ease,
-      opacity 0.3s ease;
-
-    z-index: 9999;
-  }
-
-  .corner-logo.active {
-    /* 👉 vissza középre */
-    transform: translateX(-50%) scale(2.4);
-
-    filter: drop-shadow(0 0 40px rgba(255, 140, 80, 1));
-    opacity: 1;
-  }
-
-}
+</body>
+</html>
