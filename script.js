@@ -104,3 +104,29 @@ if (cornerSeal) {
 
 /* INITIAL PAINT */
 updateScene();
+
+
+const parallaxSection = document.querySelector(".parallax-section");
+const parallaxBg = document.querySelector(".parallax-bg");
+
+function lightningFlash() {
+  if (!parallaxBg) return;
+
+  parallaxBg.style.filter = "brightness(1.8) contrast(1.2)";
+
+  setTimeout(() => {
+    parallaxBg.style.filter = "";
+  }, 120);
+}
+
+setInterval(() => {
+  if (!parallaxSection) return;
+
+  const rect = parallaxSection.getBoundingClientRect();
+
+  if (rect.top < window.innerHeight && rect.bottom > 0) {
+    if (Math.random() > 0.7) {
+      lightningFlash();
+    }
+  }
+}, 1200);
