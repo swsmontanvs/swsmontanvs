@@ -132,8 +132,11 @@ function lightningFlash() {
   if (!parallaxBg) return;
 
   /* parallaxBg.style.filter = "brightness(1.8) contrast(1.2)"; */
-  parallaxBg.classList.add("flash");
+parallaxBg.classList.add("flash");
+
+setTimeout(() => {
   parallaxBg.classList.remove("flash");
+}, 120);
 
   setTimeout(() => {
     parallaxBg.style.filter = "";
