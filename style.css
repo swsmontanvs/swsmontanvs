@@ -212,11 +212,6 @@ a {
   z-index: 5;
 }
 
-.page-main {
-  position: relative;
-  z-index: 5;
-}
-
 .content-section {
   position: relative;
   z-index: 6;
@@ -557,21 +552,21 @@ a {
     height: 50px;
   }
 
-  .corner-seal {
+  .corner-logo {
     right: 10px;
     bottom: 10px;
     width: 140px;
   }
 
-  .corner-seal:hover {
+  .corner-logo:hover {
     transform: none;
   }
 
-  .corner-seal::after {
+  .corner-logo::after {
     display: none;
   }
 
-  .corner-seal.is-open {
+  .corner-logo.is-open {
     right: 50%;
     bottom: 50%;
     transform: translate(50%, 50%) scale(2.35);
