@@ -3,7 +3,6 @@ const parallaxBg = document.querySelector(".parallax-bg");
 const homeLink = document.querySelector(".home-link");
 const hero = document.querySelector(".hero");
 const scrollTopBtn = document.getElementById("scrollTopBtn");
-const cornerLogo = document.getElementById("cornerLogo");
 
 let ticking = false;
 
@@ -109,17 +108,6 @@ if (scrollTopBtn) {
   });
 }
 
-/* CORNER LOGO OPEN / CLOSE */
-if (cornerLogo) {
-  cornerLogo.addEventListener("click", (event) => {
-    event.stopPropagation();
-    cornerLogo.classList.toggle("is-open");
-  });
-
-  document.addEventListener("click", () => {
-    cornerLogo.classList.remove("is-open");
-  });
-}
 
 /* INITIAL PAINT */
 updateScene();
