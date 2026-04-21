@@ -9,7 +9,9 @@
   width: 220px;
   cursor: pointer;
   transform-origin: bottom right;
+
   filter: drop-shadow(0 0 16px rgba(255, 120, 60, 0.85));
+
   transition:
     transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
     filter 0.35s ease;
@@ -20,23 +22,22 @@
   display: block;
 }
 
-/* Desktop hover csak ott, ahol tényleg van hover */
+/* 🖥️ DESKTOP – CSAK HOVER */
 @media (hover: hover) and (pointer: fine) {
-  .corner-logo:not(.is-open):hover {
-    transform: scale(2);
+
+  .corner-logo:hover {
+    transform: scale(2) translateX(-20%);
   }
+
 }
 
-.corner-logo.is-open {
-  transform: translate(50%, 50%) scale(2.6);
-}
-
-/* MOBILE */
+/* 📱 MOBILE */
 @media (max-width: 768px) {
 
   #corner-logo-root {
     right: 0;
     bottom: 10px;
+
     transition:
       right 0.6s cubic-bezier(0.22, 1, 0.36, 1),
       bottom 0.6s cubic-bezier(0.22, 1, 0.36, 1),
@@ -46,10 +47,14 @@
   .corner-logo {
     width: 140px;
     transform: none;
+
+    transition:
+      transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
+  /* 🔥 EZ HIÁNYZOTT */
   .corner-logo.is-open {
-    transform: none;
+    transform: scale(2.3);
   }
 
   #corner-logo-root.is-open {
@@ -57,4 +62,5 @@
     bottom: 9vh;
     transform: translateX(50%) translateY(-10%);
   }
+
 }
