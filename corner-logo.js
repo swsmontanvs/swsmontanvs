@@ -12,9 +12,11 @@ if (root) {
   logo.addEventListener("click", (e) => {
     e.stopPropagation();
     logo.classList.toggle("is-open");
+    root.classList.toggle("is-open");
   });
 
   document.addEventListener("click", () => {
     logo.classList.remove("is-open");
+    root.classList.remove("is-open");
   });
 }
