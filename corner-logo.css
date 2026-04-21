@@ -1,1 +1,53 @@
+#corner-logo-root {
+  position: fixed;
+  right: 26px;
+  bottom: 26px;
+  z-index: 9999;
+}
 
+.corner-logo {
+  width: 220px;
+  cursor: pointer;
+  transform-origin: bottom right;
+
+  transition:
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.35s ease;
+
+  filter: drop-shadow(0 0 16px rgba(255, 120, 60, 0.85));
+}
+
+.corner-logo img {
+  width: 100%;
+  display: block;
+}
+
+.corner-logo:hover {
+  transform: scale(2);
+}
+
+.corner-logo.is-open {
+  right: 50%;
+  bottom: 50%;
+  transform: translate(50%, 50%) scale(2.6);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  #corner-logo-root {
+    right: 10px;
+    bottom: 10px;
+  }
+
+  .corner-logo {
+    width: 140px;
+  }
+
+  .corner-logo:hover {
+    transform: none;
+  }
+
+  .corner-logo.is-open {
+    transform: translate(50%, 50%) scale(2.3);
+  }
+}
