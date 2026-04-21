@@ -18,7 +18,7 @@
   transform-origin: bottom right;
 
   /* 🔥 ALAP: MINDENHOL KICSI */
-  filter: drop-shadow(0 0 6px rgba(255, 120, 60, 0.35));
+  filter: drop-shadow(0 0 10px rgba(255, 120, 60, 0.45));
 
   transition:
     transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
@@ -35,10 +35,13 @@
 
 @media (hover: hover) and (pointer: fine) {
 
-  .corner-logo:hover {
-    transform: scale(2) translateX(-20%);
-  }
+.corner-logo:hover {
+  transform: scale(2) translateX(-20%);
 
+  /* 🔥 DESKTOP FELIZZÁS */
+  filter:
+    drop-shadow(0 0 14px rgba(255, 140, 80, 0.85))
+    drop-shadow(0 0 30px rgba(255, 120, 60, 0.5));
 }
 
 
@@ -79,7 +82,7 @@
 
   /* 🔥 AKTÍV ÁLLAPOT – MOZGÁS (FINOMÍTOTT!) */
   #corner-logo-root.is-open {
-    transform: translate(-23.5vw, 0vh);
+    transform: translate(-24.7vw, 0vh);
   }
 
 }
