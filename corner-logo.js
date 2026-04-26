@@ -27,10 +27,12 @@ if (root) {
         root.classList.toggle("is-open");
       });
 
-      document.addEventListener("click", () => {
-        newLogo.classList.remove("is-open");
-        root.classList.remove("is-open");
-      });
+setTimeout(() => {
+  document.addEventListener("click", () => {
+    newLogo.classList.remove("is-open");
+    root.classList.remove("is-open");
+  });
+}, 50);
 
     } else {
       // 🖥️ DESKTOP → SEMMI CLICK
