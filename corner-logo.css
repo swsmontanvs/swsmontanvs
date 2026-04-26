@@ -49,10 +49,11 @@
 
 @media (max-width: 768px) {
 
-  #corner-logo-root {
-    right: 10px;
-    bottom: 10px;
-  }
+#corner-logo-root {
+  right: 10px;
+  bottom: 10px;
+  pointer-events: auto;
+}
 
 .corner-logo {
   width: 140px;
