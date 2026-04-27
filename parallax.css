@@ -1,1 +1,24 @@
+.parallax-section {
+  position: relative;
+  height: 75vh;
+  overflow: hidden;
+  background: #000;
+}
 
+.parallax-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.parallax-bg img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  width: 120%;
+  height: auto;
+
+  transform: translate(-50%, -50%) scale(1.1);
+  will-change: transform;
+}
