@@ -578,7 +578,7 @@ a {
 
 .parallax-section {
   position: relative;
-  height: 58vh;
+  height: 50vh;
   overflow: hidden;
   z-index: 1;
   background: #000;
