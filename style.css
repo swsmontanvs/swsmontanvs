@@ -222,6 +222,10 @@ a {
   margin: 0;
 }
 
+.content-section-bottom {
+  margin-top: -60px;
+}
+
 .content-section::before {
   content: "";
   position: absolute;
