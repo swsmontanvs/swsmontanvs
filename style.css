@@ -587,18 +587,19 @@ a {
 .parallax-bg {
   position: absolute;
   inset: 0;
-  background-image: url("stormpeak.png");
-  background-size: cover;
-  width: 110%;
-  height: 130%;
-  top: 0%;
-  left: -10%;
-  transform: scale(0.85);
-  background-position: center 20px;
-  will-change: transform, filter;
+  overflow: hidden;
   z-index: 0;
-  background-repeat: no-repeat;
-  
+}
+
+.parallax-bg img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  width: 120%;
+  height: auto;
+
+  transform: translate(-50%, -50%);
 }
 
 .parallax-bg.flash {
@@ -617,8 +618,8 @@ a {
 .parallax-bg {
   background-size: 140%;
 
-  height: 135%;          /* 🔥 EZ A KULCS */
-  top: -10%;             /* 🔥 ellensúly */
+  height: 135%;
+  top: -10%;
 
   background-position: center 20px;
 }
