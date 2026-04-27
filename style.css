@@ -594,7 +594,7 @@ a {
   top: 0%;
   left: -10%;
   transform: scale(0.85);
-  background-position: center 0px;
+  background-position: center 20px;
   will-change: transform, filter;
   z-index: 0;
   background-repeat: no-repeat;
