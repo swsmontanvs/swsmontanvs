@@ -33,6 +33,9 @@ if (parallaxImg) {
   const rect = parallaxImg.parentElement.parentElement.getBoundingClientRect();
   const speed = 0.3;
 
+  const baseX = -45;
+  const baseY = -55;
+
   if (rect.top < window.innerHeight && rect.bottom > 0) {
     const offset = -rect.top * speed;
 
