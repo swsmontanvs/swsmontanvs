@@ -602,7 +602,8 @@ a {
   transform: translate(-50%, -50%);
 }
 
-.parallax-bg.flash {
+/* villám effekt */
+.parallax-bg.flash img {
   filter: brightness(1.8) contrast(1.2);
 }
 
@@ -615,13 +616,10 @@ a {
 
 @media (max-width: 768px) {
 
-.parallax-bg {
-  background-size: 140%;
+@media (max-width: 768px) {
 
-  height: 135%;
-  top: -10%;
-
-  background-position: center 20px;
-}
+  .parallax-bg img {
+    width: 140%;
+  }
 
 }
