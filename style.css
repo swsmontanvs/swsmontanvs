@@ -223,7 +223,7 @@ a {
 }
 
 .content-section-bottom {
-  margin-top: -60px;
+  margin-top: -130px;
 }
 
 .content-section::before {
@@ -582,7 +582,7 @@ a {
 
 .parallax-section {
   position: relative;
-  height: 50vh;
+  height: 80vh;
   overflow: hidden;
   z-index: 1;
   background: #000;
@@ -600,10 +600,10 @@ a {
   left: 50%;
   top: 50%;
 
-  width: 140%;
+  width: 120%;
   height: auto;
 
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1.1);
 }
 
 /* villám effekt */
@@ -613,17 +613,16 @@ a {
 
 
 @media (max-width: 1024px) {
-  .parallax-bg {
-    background-size: 120%;
+  .parallax-bg img {
+    transform: translate(-50%, -50%) scale(1.15);
+    width: 125%;
   }
 }
 
-@media (max-width: 768px) {
 
 @media (max-width: 768px) {
-
   .parallax-bg img {
+    transform: translate(-50%, -60%) scale(2.5);
     width: 140%;
   }
-
 }
