@@ -10,8 +10,7 @@ function updateParallax() {
   if (rect.top < window.innerHeight && rect.bottom > 0) {
     const offset = -rect.top * speed;
 
-    parallaxImg.style.transform =
-      `translate(-50%, calc(-50% + ${offset}px)) scale(var(--scale, 1))`;
+    parallaxImg.style.setProperty("--parallaxY", `${offset}px`);
   }
 }
 
