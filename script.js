@@ -27,17 +27,19 @@ function updateScene() {
     bg.style.filter = `blur(${bgBlur}px)`;
   }
 
- /*
-  if (parallaxBg) {
-  const rect = parallaxBg.parentElement.getBoundingClientRect();
+const parallaxImg = document.querySelector(".parallax-bg img");
+
+if (parallaxImg) {
+  const rect = parallaxImg.parentElement.parentElement.getBoundingClientRect();
   const speed = 0.3;
 
   if (rect.top < window.innerHeight && rect.bottom > 0) {
     const offset = -rect.top * speed;
-    parallaxBg.style.transform = `translate3d(0, ${offset}px, 0)`;
+
+    parallaxImg.style.transform =
+      `translate(-50%, calc(-50% + ${offset}px)) scale(1.1)`;
   }
 }
-*/
   /* HOME LINK MOTION */
   if (homeLink) {
     if (isMobile()) {
