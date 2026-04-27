@@ -616,7 +616,7 @@ a {
 
   .parallax-bg {
     background-size: 140%;
-    background-position: center 100px; /* 🔥 EZ A LÉNYEG */
+    background-position: center 10px; /* 🔥 EZ A LÉNYEG */
   }
 
 }
