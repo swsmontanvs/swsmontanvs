@@ -582,7 +582,7 @@ a {
 
 .parallax-section {
   position: relative;
-  height: 80vh;
+  height: 75vh;
   overflow: hidden;
   z-index: 1;
   background: #000;
@@ -615,7 +615,7 @@ a {
 /* 📱 MOBIL */
 @media (max-width: 768px) {
   .parallax-bg img {
-    transform: translate(-50%, -50%) scale(2.3);
+    transform: translate(-50%, -60%) scale(2.3);
     width: 140%;
   }
 }
