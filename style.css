@@ -614,9 +614,13 @@ a {
 
 @media (max-width: 768px) {
 
-  .parallax-bg {
-    background-size: 140%;
-    background-position: center 0px; /* 🔥 EZ A LÉNYEG */
-  }
+.parallax-bg {
+  background-size: 140%;
+
+  height: 135%;          /* 🔥 EZ A KULCS */
+  top: -10%;             /* 🔥 ellensúly */
+
+  background-position: center 20px;
+}
 
 }
