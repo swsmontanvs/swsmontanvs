@@ -27,6 +27,7 @@ function updateScene() {
     bg.style.filter = `blur(${bgBlur}px)`;
   }
 
+ /*
   if (parallaxBg) {
   const rect = parallaxBg.parentElement.getBoundingClientRect();
   const speed = 0.3;
@@ -36,7 +37,7 @@ function updateScene() {
     parallaxBg.style.transform = `translate3d(0, ${offset}px, 0)`;
   }
 }
-
+*/
   /* HOME LINK MOTION */
   if (homeLink) {
     if (isMobile()) {
