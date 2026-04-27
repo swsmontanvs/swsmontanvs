@@ -14,10 +14,15 @@
 .parallax-bg img {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 40%;
 
   width: 120%;
   height: auto;
 
-  transform: translate(-50%, -50%) scale(0.9);
+  --parallaxY: 0px;
+  --scale: 1;
+
+  transform:
+    translate(-50%, calc(-50% + var(--parallaxY)))
+    scale(var(--scale));
 }
