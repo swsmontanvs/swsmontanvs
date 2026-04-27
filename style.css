@@ -612,17 +612,18 @@ a {
 }
 
 
-@media (max-width: 1024px) {
+/* 📱 MOBIL */
+@media (max-width: 768px) {
   .parallax-bg img {
-    transform: translate(-50%, -50%) scale(1.15);
-    width: 125%;
+    transform: translate(-50%, -50%) scale(2.3);
+    width: 140%;
   }
 }
 
-
-@media (max-width: 768px) {
+/* 📟 TABLET */
+@media (min-width: 769px) and (max-width: 1024px) {
   .parallax-bg img {
-    transform: translate(-50%, -60%) scale(2.5);
-    width: 140%;
+    transform: translate(-50%, -50%) scale(1.15);
+    width: 125%;
   }
 }
