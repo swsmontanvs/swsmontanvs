@@ -19,6 +19,5 @@
   width: 120%;
   height: auto;
 
-  transform: translate(-50%, -50%) scale(1.1);
-  will-change: transform;
+  transform: translate(-50%, -50%) scale(0.9);
 }
