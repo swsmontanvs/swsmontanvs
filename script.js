@@ -37,7 +37,7 @@ if (parallaxImg) {
     const offset = -rect.top * speed;
 
     parallaxImg.style.transform =
-      `translate(-50%, calc(-50% + ${offset}px)) scale(1.1)`;
+      `translate(-45%, calc(-55% + ${offset}px)) scale(1.1)`;
   }
 }
   /* HOME LINK MOTION */
