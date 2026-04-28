@@ -18,6 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     cooldownTimer = setTimeout(() => {
       logo.classList.remove("cooldown");
-    }, 700);
+    }, 800);
   });
 });
