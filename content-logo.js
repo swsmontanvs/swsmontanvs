@@ -1,5 +1,3 @@
-console.log("CONTENT LOGO JS FUT");
-
 document.addEventListener("DOMContentLoaded", () => {
   const logo = document.querySelector(".content-logo-img");
 
