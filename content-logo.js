@@ -14,12 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
     logo.classList.remove("active");
     logo.classList.add("cooldown");
 
-    // biztosítjuk, hogy visszaálljon alapba
     cooldownTimer = setTimeout(() => {
       logo.classList.remove("cooldown");
     }, 800);
   });
 });
-
-
-/*.*/
