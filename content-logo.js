@@ -1,1 +1,22 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const logo = document.querySelector(".content-logo-img");
 
+  let cooldownTimer = null;
+
+  logo.addEventListener("mouseenter", () => {
+    clearTimeout(cooldownTimer);
+
+    logo.classList.remove("cooldown");
+    logo.classList.add("active");
+  });
+
+  logo.addEventListener("mouseleave", () => {
+    logo.classList.remove("active");
+    logo.classList.add("cooldown");
+
+    // biztosítjuk, hogy visszaálljon alapba
+    cooldownTimer = setTimeout(() => {
+      logo.classList.remove("cooldown");
+    }, 800);
+  });
+});
