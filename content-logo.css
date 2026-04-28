@@ -1,3 +1,11 @@
+.content-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px 0;
+  width: 100%;
+}
+
 /* ===== ALAP ===== */
 
 .content-logo-img {
