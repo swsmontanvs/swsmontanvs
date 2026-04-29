@@ -1,11 +1,3 @@
-.content-logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: 100px 0;
-}
-
 .content-logo-img {
   width: 420px;
   max-width: 80%;
@@ -14,10 +6,10 @@
   transform: scale(1);
   opacity: 0.95;
 
-  /* 🔥 ALAP GLOW – mint a corner logo */
+  /* 🔥 ERŐSEBB ALAP GLOW */
   filter:
-    drop-shadow(0 0 6px rgba(255, 120, 60, 0.35))
-    drop-shadow(0 0 14px rgba(255, 80, 20, 0.25));
+    drop-shadow(0 0 10px rgba(255, 120, 60, 0.45))
+    drop-shadow(0 0 22px rgba(255, 80, 20, 0.35));
 
   transition:
     transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
@@ -25,8 +17,8 @@
     opacity 0.3s ease;
 }
 
-/* 🔥 HOVER = NAGYOBB + ERŐSEBB GLOW + PULZÁLÁS */
-.content-logo-img:hover {
+/* 🔥 AKTÍV ÁLLAPOT (hover helyett EZ) */
+.content-logo-img.active {
   transform: scale(1.12);
   opacity: 1;
 
@@ -37,7 +29,12 @@
   animation: glowPulse 3.5s ease-in-out infinite;
 }
 
-/* 🔥 PULZÁLÁS – FINOM, NEM VILLAN */
+/* 🔥 COOLDOWN – EZ A KULCS */
+.content-logo-img.cooldown {
+  animation: glowPulse 2.5s ease-in-out 1;
+}
+
+
 @keyframes glowPulse {
   0% {
     filter:
