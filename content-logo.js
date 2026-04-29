@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
   const logo = document.querySelector(".content-logo-img");
-
   if (!logo) return;
 
   let cooldownTimer = null;
@@ -18,6 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     cooldownTimer = setTimeout(() => {
       logo.classList.remove("cooldown");
-    }, 800);
+    }, 2500); // 🔥 ez egyezzen az animációval
   });
 });
