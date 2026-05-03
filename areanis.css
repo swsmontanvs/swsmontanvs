@@ -43,8 +43,13 @@
 
 .areanis-menu {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 120px 100px;
+
+  /* KERETEZÉS */
+  width: 100%;
+  max-width: 1200px;   /* ez tartja egyben a layoutot */
+  margin: 0 auto;      /* középre igazít */
   padding: 160px 80px 200px;
 }
 
@@ -95,6 +100,14 @@
 
   .areanis-item:nth-child(n+3) {
     transform: translateX(20%);
+  }
+
+  /* ===== FOOTER FIX ===== */
+
+  .site-footer {
+    width: 100%;
+    max-width: none;   /* ne szűküljön */
+    margin: 0;         /* ne csússzon balra */
   }
 
 }
