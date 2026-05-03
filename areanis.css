@@ -67,11 +67,28 @@
     filter 0.4s ease;
 }
 
-/* ===== STAGGERED GRID OFFSET ===== */
+/* ===== ROW POSITIONING ===== */
 
-/* minden 5. képtől indul a következő sor */
-.areanis-item:nth-child(n+5) {
-  transform: translateX(50%);
+.top-row {
+  grid-row: 1;
+}
+
+.bottom-row {
+  grid-row: 2;
+}
+
+/* ALSÓ SOR ELTOLÁSA A HÉZAGOKBA */
+
+.bottom-row:nth-of-type(5) {
+  grid-column: 2;
+}
+
+.bottom-row:nth-of-type(6) {
+  grid-column: 3;
+}
+
+.bottom-row:nth-of-type(7) {
+  grid-column: 4;
 }
 
 .areanis-item:hover {
@@ -81,17 +98,6 @@
     drop-shadow(0 0 20px rgba(255,140,80,0.9))
     drop-shadow(0 0 40px rgba(255,120,60,0.5));
 }
-
-
-/* ===== STAGGERED LAYOUT ===== */
-
-/* .areanis-item:nth-child(odd) {
-  transform: translateY(0px);
-}
-
-.areanis-item:nth-child(even) {
-  transform: translateY(80px) translateX(40px);
-} */
 
 
 /* ===== MOBILE ===== */
