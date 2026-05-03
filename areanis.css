@@ -44,10 +44,12 @@
 .areanis-menu {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 80px 60px;
-  padding: 120px 60px;
-  max-width: 1200px;
-  margin: 0 auto;
+
+  gap: 120px 100px;
+
+  padding: 160px 80px 200px;
+
+  width: 100%;
 }
 
 
@@ -81,7 +83,7 @@
 }
 
 .areanis-item:nth-child(even) {
-  transform: translateY(60px);
+  transform: translateY(80px) translateX(40px);
 }
 
 
