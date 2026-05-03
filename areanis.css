@@ -74,6 +74,13 @@
   transition: transform 0.4s ease, filter 0.4s ease;
 }
 
+
+/* ===== ALSÓ SOR ELTOLÁSA ===== */
+.item5, .item6, .item7 {
+  transform: translateX(50%);
+}
+
+
 .areanis-item:hover {
   transform: scale(1.08);
   filter:
