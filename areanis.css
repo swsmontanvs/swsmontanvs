@@ -103,4 +103,14 @@
     transform: translateY(40px);
   }
 
+  .areanis-menu {
+  grid-template-columns: repeat(2, 1fr);
+  padding: 100px 20px 150px;
+  gap: 80px 40px;
+}
+
+.areanis-item:nth-child(even) {
+  transform: translateY(40px) translateX(20px);
+  }
+  
 }
