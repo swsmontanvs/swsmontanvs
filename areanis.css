@@ -44,13 +44,20 @@
 .areanis-menu {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-
   gap: 120px 100px;
-
-  padding: 150px 180px 400px;
-
-  width: 100%;
+  padding: 160px 80px 200px;
 }
+
+/* FELSŐ SOR */
+.item1 { grid-column: 1; grid-row: 1; }
+.item2 { grid-column: 2; grid-row: 1; }
+.item3 { grid-column: 3; grid-row: 1; }
+.item4 { grid-column: 4; grid-row: 1; }
+
+/* ALSÓ SOR – ELTOLVA */
+.item5 { grid-column: 2; grid-row: 2; }
+.item6 { grid-column: 3; grid-row: 2; }
+.item7 { grid-column: 4; grid-row: 2; }
 
 
 /* ===== ITEMS ===== */
