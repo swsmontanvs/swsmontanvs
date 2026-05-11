@@ -179,8 +179,10 @@ filter:
   opacity: 1;
 
 filter:
-  drop-shadow(0 0 14px rgba(220,230,255,0.42))
-  drop-shadow(0 0 34px rgba(180,200,255,0.18))
+  brightness(1.16)
+  contrast(1.08)
+  drop-shadow(0 0 14px rgba(235,240,255,0.55))
+  drop-shadow(0 0 36px rgba(210,220,255,0.22))
   drop-shadow(0 12px 24px rgba(0,0,0,0.9));
 }
 
