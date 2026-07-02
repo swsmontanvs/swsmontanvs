@@ -8,53 +8,42 @@ if (root) {
   `;
 
   const logo = document.getElementById("cornerLogo");
+  const compactQuery = window.matchMedia("(max-width: 1024px)");
 
-  /*
-    Telefon + tablet:
-    elsődleges érintéses eszközök.
-    Desktopon false marad, ott a hover működik.
-  */
-  const touchQuery = window.matchMedia(
-    "(hover: none) and (pointer: coarse)"
-  );
-
-  function isTouchDevice() {
-    return touchQuery.matches;
+  function isCompactLayout() {
+    return compactQuery.matches;
   }
 
-  function updateInteractionMode() {
-    const touchMode = isTouchDevice();
+  function syncCornerLogoMode() {
+    root.classList.toggle("touch-layout", isCompactLayout());
 
-    root.classList.toggle("touch-mode", touchMode);
-
-    /*
-      Ha például átméretezéskor desktop módba kerül,
-      ne maradjon nyitott állapotban.
-    */
-    if (!touchMode) {
+    /* Asztali nézetre váltva ne maradjon nyitva. */
+    if (!isCompactLayout()) {
       root.classList.remove("is-open");
     }
   }
 
   /*
-    Mobilon és tableten:
-    csak magára a corner logóra koppintva nyílik/csukódik.
-    A háttérre koppintás semmit nem csinál.
+    Mobil + tablet:
+    kizárólag magára a logóra koppintva vált CL1 és CL2 között.
+    A háttérre koppintás nem csinál semmit.
   */
   logo.addEventListener("click", (event) => {
-    if (!isTouchDevice()) return;
+    if (!isCompactLayout()) return;
 
+    event.preventDefault();
     event.stopPropagation();
+
     root.classList.toggle("is-open");
   });
 
-  updateInteractionMode();
+  syncCornerLogoMode();
 
-  if (typeof touchQuery.addEventListener === "function") {
-    touchQuery.addEventListener("change", updateInteractionMode);
+  if (typeof compactQuery.addEventListener === "function") {
+    compactQuery.addEventListener("change", syncCornerLogoMode);
   } else {
-    touchQuery.addListener(updateInteractionMode);
+    compactQuery.addListener(syncCornerLogoMode);
   }
 
-  window.addEventListener("resize", updateInteractionMode);
+  window.addEventListener("resize", syncCornerLogoMode);
 }
