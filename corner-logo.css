@@ -6,23 +6,34 @@
   bottom: 26px;
   z-index: 9999;
 
-  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  left: auto;
+  transform: translateX(0);
+
+  transition:
+    right 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    bottom 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 
-/* ===== LOGO ===== */
+/* ===== LOGO – ALAP ===== */
 
 .corner-logo {
   width: 220px;
   cursor: pointer;
+
+  transform: scale(1);
   transform-origin: bottom right;
 
-  /* 🔥 ALAP: MINDENHOL KICSI */
-  filter: drop-shadow(0 0 10px rgba(255, 120, 60, 0.45));
+  filter:
+    drop-shadow(0 0 10px rgba(255, 120, 60, 0.45));
 
   transition:
     transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
     filter 0.4s ease;
+
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 .corner-logo img {
@@ -31,62 +42,69 @@
 }
 
 
-/* ===== DESKTOP ===== */
+/* ===== DESKTOP – HOVER ===== */
 
 @media (hover: hover) and (pointer: fine) {
+  .corner-logo:hover {
+    transform: scale(2) translateX(-20%);
 
-.corner-logo:hover {
-  transform: scale(2) translateX(-20%);
-
-  /* 🔥 DESKTOP FELIZZÁS */
-  filter:
-    drop-shadow(0 0 14px rgba(255, 140, 80, 0.85))
-    drop-shadow(0 0 30px rgba(255, 120, 60, 0.5));
+    filter:
+      drop-shadow(0 0 14px rgba(255, 140, 80, 0.85))
+      drop-shadow(0 0 30px rgba(255, 120, 60, 0.5));
+  }
 }
 
 
-/* ===== MOBILE ===== */
+/* =====================================================
+   MOBIL + TABLET – CL1 ⇄ CL2 KOPPINTÁSOS MOZGÁS
+   ===================================================== */
 
-@media (max-width: 768px) {
+/* CL1: alapállapot, jobb alsó sarok */
 
-#corner-logo-root {
+#corner-logo-root.touch-mode {
   right: 10px;
   bottom: 10px;
-  pointer-events: auto;
+  left: auto;
+
+  transform: translateX(0);
 }
 
-.corner-logo {
+#corner-logo-root.touch-mode .corner-logo {
   width: 140px;
-  transform: scale(1);
 
-  /* 🔥 PICIT ERŐSEBB IDLE GLOW */
+  /*
+    Fontos:
+    mobilon/tableten középpontból nagyuljon,
+    ne jobbra-lefelé vagy balra-felfelé csússzon.
+  */
+  transform-origin: center center;
+
   filter:
     drop-shadow(0 0 6px rgba(255, 120, 60, 0.45))
     drop-shadow(0 0 14px rgba(255, 120, 60, 0.25));
 }
 
-  /* 🔥 HOVER TELJES KIIRTÁSA */
-  .corner-logo:hover,
-  .corner-logo:active {
-    transform: scale(1) !important;
-  }
 
-  /* 🔥 AKTÍV ÁLLAPOT – MÉRET */
-.corner-logo.is-open {
-  transform: scale(2.2) !important;
+/*
+   CL2: aktív állapot.
 
-  /* 🔥 MOBIL: CSAK AKTÍVAN NAGY */
+   A right és bottom egyszerre animálódik,
+   ezért egyetlen tiszta, átlós pályán megy fel,
+   majd ugyanazon a pályán jön vissza.
+*/
+
+#corner-logo-root.touch-mode.is-open {
+  right: 50%;
+  bottom: 12vh;
+  left: auto;
+
+  transform: translateX(50%);
+}
+
+#corner-logo-root.touch-mode.is-open .corner-logo {
+  transform: scale(2.2);
+
   filter:
     drop-shadow(0 0 14px rgba(255, 160, 80, 1))
     drop-shadow(0 0 28px rgba(255, 120, 60, 0.7));
-}
-#corner-logo-root.is-open {
-  left: 50%;
-  right: auto;
-
-  bottom: 12vh;
-
-  transform: translateX(-50%);
-}
-
 }
