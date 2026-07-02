@@ -1,9 +1,5 @@
 const root = document.getElementById("corner-logo-root");
 
-function isMobile() {
-  return window.innerWidth <= 768;
-}
-
 if (root) {
   root.innerHTML = `
     <div class="corner-logo" id="cornerLogo">
@@ -13,35 +9,52 @@ if (root) {
 
   const logo = document.getElementById("cornerLogo");
 
-  function setupBehavior() {
+  /*
+    Telefon + tablet:
+    elsődleges érintéses eszközök.
+    Desktopon false marad, ott a hover működik.
+  */
+  const touchQuery = window.matchMedia(
+    "(hover: none) and (pointer: coarse)"
+  );
 
-    // 🔥 MINDIG TÖRLÜNK ELŐZŐ ESEMÉNYT
-    logo.replaceWith(logo.cloneNode(true));
-    const newLogo = document.getElementById("cornerLogo");
+  function isTouchDevice() {
+    return touchQuery.matches;
+  }
 
-    if (isMobile()) {
-      // 📱 MOBIL → CSAK KATTINTÁS
-      newLogo.addEventListener("click", (e) => {
-        e.stopPropagation();
-        newLogo.classList.toggle("is-open");
-        root.classList.toggle("is-open");
-      });
+  function updateInteractionMode() {
+    const touchMode = isTouchDevice();
 
-setTimeout(() => {
-  document.addEventListener("click", () => {
-    newLogo.classList.remove("is-open");
-    root.classList.remove("is-open");
-  });
-}, 50);
+    root.classList.toggle("touch-mode", touchMode);
 
-    } else {
-      // 🖥️ DESKTOP → SEMMI CLICK
-      newLogo.classList.remove("is-open");
+    /*
+      Ha például átméretezéskor desktop módba kerül,
+      ne maradjon nyitott állapotban.
+    */
+    if (!touchMode) {
       root.classList.remove("is-open");
     }
   }
 
-  setupBehavior();
+  /*
+    Mobilon és tableten:
+    csak magára a corner logóra koppintva nyílik/csukódik.
+    A háttérre koppintás semmit nem csinál.
+  */
+  logo.addEventListener("click", (event) => {
+    if (!isTouchDevice()) return;
 
-  window.addEventListener("resize", setupBehavior);
+    event.stopPropagation();
+    root.classList.toggle("is-open");
+  });
+
+  updateInteractionMode();
+
+  if (typeof touchQuery.addEventListener === "function") {
+    touchQuery.addEventListener("change", updateInteractionMode);
+  } else {
+    touchQuery.addListener(updateInteractionMode);
+  }
+
+  window.addEventListener("resize", updateInteractionMode);
 }
