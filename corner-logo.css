@@ -1,25 +1,30 @@
-/* ===== ROOT ===== */
+/* =====================================================
+   CORNER LOGO – ALAP / DESKTOP
+   ===================================================== */
 
 #corner-logo-root {
+  --logo-size: 220px;
+  --logo-half: 110px;
+  --edge-gap: 26px;
+
   position: fixed;
-  right: 26px;
-  bottom: 26px;
+  width: var(--logo-size);
+
+  right: var(--edge-gap);
+  bottom: var(--edge-gap);
+
   z-index: 9999;
 
-  left: auto;
-  transform: translateX(0);
+  transform: translate3d(0, 0, 0);
 
   transition:
-    right 0.6s cubic-bezier(0.22, 1, 0.36, 1),
-    bottom 0.6s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+
+  will-change: transform;
 }
 
-
-/* ===== LOGO – ALAP ===== */
-
 .corner-logo {
-  width: 220px;
+  width: 100%;
   cursor: pointer;
 
   transform: scale(1);
@@ -29,7 +34,7 @@
     drop-shadow(0 0 10px rgba(255, 120, 60, 0.45));
 
   transition:
-    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
     filter 0.4s ease;
 
   -webkit-tap-highlight-color: transparent;
@@ -42,10 +47,12 @@
 }
 
 
-/* ===== DESKTOP – HOVER ===== */
+/* =====================================================
+   DESKTOP – HOVER
+   ===================================================== */
 
 @media (hover: hover) and (pointer: fine) {
-  .corner-logo:hover {
+  #corner-logo-root:not(.touch-layout) .corner-logo:hover {
     transform: scale(2) translateX(-20%);
 
     filter:
@@ -56,55 +63,76 @@
 
 
 /* =====================================================
-   MOBIL + TABLET – CL1 ⇄ CL2 KOPPINTÁSOS MOZGÁS
+   MOBIL + TABLET – CL1 ⇄ CL2
    ===================================================== */
 
-/* CL1: alapállapot, jobb alsó sarok */
+@media (max-width: 1024px) {
+  #corner-logo-root {
+    --logo-size: 140px;
+    --logo-half: 70px;
+    --edge-gap: 10px;
 
-#corner-logo-root.touch-mode {
-  right: 10px;
-  bottom: 10px;
-  left: auto;
+    right: var(--edge-gap);
+    bottom: var(--edge-gap);
+  }
 
-  transform: translateX(0);
-}
+  .corner-logo {
+    transform-origin: center center;
 
-#corner-logo-root.touch-mode .corner-logo {
-  width: 140px;
+    filter:
+      drop-shadow(0 0 6px rgba(255, 120, 60, 0.45))
+      drop-shadow(0 0 14px rgba(255, 120, 60, 0.25));
+  }
 
   /*
-    Fontos:
-    mobilon/tableten középpontból nagyuljon,
-    ne jobbra-lefelé vagy balra-felfelé csússzon.
+    CL1:
+    a logó jobb alsó sarokban van.
+
+    CL2:
+    a logó közepe a kijelző közepére kerül vízszintesen,
+    és a kijelző alsó negyedének felső részére függőlegesen.
+
+    A teljes út egyetlen átló:
+    nincs left/right pozícióváltás, nincs ugrás.
   */
-  transform-origin: center center;
+  #corner-logo-root.is-open {
+    transform: translate3d(
+      calc(-50vw + var(--logo-half) + var(--edge-gap)),
+      calc(-25vh + var(--logo-half) + var(--edge-gap)),
+      0
+    );
+  }
 
-  filter:
-    drop-shadow(0 0 6px rgba(255, 120, 60, 0.45))
-    drop-shadow(0 0 14px rgba(255, 120, 60, 0.25));
+  #corner-logo-root.is-open .corner-logo {
+    transform: scale(2.2);
+
+    filter:
+      drop-shadow(0 0 14px rgba(255, 160, 80, 1))
+      drop-shadow(0 0 28px rgba(255, 120, 60, 0.7));
+  }
+
+  /*
+    Érintős nézetben nincs hoveres elmozdulás.
+    Csak a koppintás vezérli.
+  */
+  .corner-logo:hover {
+    transform: scale(1);
+  }
+
+  #corner-logo-root.is-open .corner-logo:hover {
+    transform: scale(2.2);
+  }
 }
 
 
-/*
-   CL2: aktív állapot.
+/* =====================================================
+   TABLET – NAGYOBB KIINDULÓ LOGÓ, HOSSZABB ÚT
+   ===================================================== */
 
-   A right és bottom egyszerre animálódik,
-   ezért egyetlen tiszta, átlós pályán megy fel,
-   majd ugyanazon a pályán jön vissza.
-*/
-
-#corner-logo-root.touch-mode.is-open {
-  right: 50%;
-  bottom: 12vh;
-  left: auto;
-
-  transform: translateX(50%);
-}
-
-#corner-logo-root.touch-mode.is-open .corner-logo {
-  transform: scale(2.2);
-
-  filter:
-    drop-shadow(0 0 14px rgba(255, 160, 80, 1))
-    drop-shadow(0 0 28px rgba(255, 120, 60, 0.7));
+@media (min-width: 769px) and (max-width: 1024px) {
+  #corner-logo-root {
+    --logo-size: 170px;
+    --logo-half: 85px;
+    --edge-gap: 16px;
+  }
 }
