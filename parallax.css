@@ -1,6 +1,6 @@
 .parallax-section {
   width: 100%;
-  height: 80vh;
+  height: 200vh;
   position: relative;
   overflow: hidden;
   background: #000;
@@ -10,11 +10,11 @@
 
 .parallax-bg {
   position: absolute;
-  top: 0%;
-  left: -10%;
+  top: -5%;
+  left: 0%;
 
-  width: 110%;
-  height: 90%;
+  width: 100%;
+  height: 100%;
 
   background-image: url("stormpeak.png");
   background-size: cover;
@@ -25,6 +25,31 @@
   z-index: 0;
 }
 
+
 .parallax-bg.flash {
   filter: brightness(1.8) contrast(1.2);
+}
+
+
+/* =====================================================
+   MOBIL + TABLET
+   ===================================================== */
+
+@media (max-width: 1024px) {
+
+  .parallax-section {
+    height: 80vh;
+  }
+
+  .parallax-bg {
+    top: 0%;
+    left: -10%;
+
+    width: 110%;
+    height: 90%;
+
+    background-size: cover;
+    background-position: 45% 105%;
+  }
+
 }
