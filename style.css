@@ -524,11 +524,25 @@ a {
   }
 
   .scroll-top {
-    right: 18px;
-    bottom: 165px;
-    width: 50px;
-    height: 50px;
-  }
+ right: 18px;
+ bottom: 165px;
+ width: 50px;
+ height: 50px;
+
+ background: rgba(0, 0, 0, 0.42);
+ -webkit-tap-highlight-color: transparent;
+}
+
+.scroll-top:hover,
+.scroll-top:focus,
+.scroll-top:active {
+ background: rgba(0, 0, 0, 0.42);
+ transform: scale(1);
+}
+
+.scroll-top.is-visible {
+ transform: scale(1);
+}
 
 
 
