@@ -48,7 +48,8 @@
    DESKTOP – EGÉR HOVER
    ===================================================== */
 
-.scroll-top.mouse-hover {
+.scroll-top.mouse-hover,
+.scroll-top.touch-active {
   background: rgba(255, 140, 60, 0.28);
   transform: scale(1.1);
 }
