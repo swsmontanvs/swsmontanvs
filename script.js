@@ -1,7 +1,6 @@
 const bg = document.querySelector(".hero-bg");
 const homeLink = document.querySelector(".home-link");
 const hero = document.querySelector(".hero");
-const scrollTopBtn = document.getElementById("scrollTopBtn");
 
 let ticking = false;
 
@@ -65,11 +64,6 @@ function updateScene() {
     }
   }
 
-  /* SCROLL TOP BUTTON */
-  if (scrollTopBtn) {
-    scrollTopBtn.classList.toggle("is-visible", scrollY > 400);
-  }
-
   ticking = false;
 }
 
@@ -88,15 +82,6 @@ window.addEventListener("resize", () => {
   mobile = isMobile();   /* 🔥 EZ AZ ÚJ */
   updateScene();
 });
-
-if (scrollTopBtn) {
-  scrollTopBtn.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  });
-}
 
 
 /* INITIAL PAINT */
