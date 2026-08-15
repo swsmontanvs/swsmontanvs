@@ -415,9 +415,11 @@ a {
   transform: scale(1);
 }
 
-.scroll-top:hover {
+@media (hover: hover) and (pointer: fine) {
+ .scroll-top:hover {
   background: rgba(255, 140, 60, 0.28);
   transform: scale(1.1);
+ }
 }
 
 
