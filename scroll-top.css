@@ -44,14 +44,20 @@
 }
 
 
-/* =====================================================
-   DESKTOP – EGÉR HOVER
-   ===================================================== */
+/* DESKTOP – HOVER */
+@media (hover: hover) and (pointer: fine) {
+  .scroll-top:hover {
+    background: rgba(255, 140, 60, 0.28);
+    transform: scale(1.1);
+  }
+}
 
-.scroll-top.mouse-hover,
-.scroll-top.touch-active {
-  background: rgba(255, 140, 60, 0.28);
-  transform: scale(1.1);
+/* MOBIL / TABLET – CSAK LENYOMÁS KÖZBEN */
+@media (hover: none), (pointer: coarse) {
+  .scroll-top:active {
+    background: rgba(255, 140, 60, 0.28);
+    transform: scale(1.1);
+  }
 }
 
 
